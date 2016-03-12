@@ -1,0 +1,2 @@
+# WinterMinecraftProjects
+This repository regroups all my Minecraft projects I ever made. Since I'm not into Minecraft development anymore and I will never be again, I decided to post everything public. Some plugins were private ans specific to my server, others were premium resources on Spigot. Have fun digging into them. If you want to repost one of the plugin in there on Spigot and maintain it, I have no problems.
