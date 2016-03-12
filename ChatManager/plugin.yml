@@ -1,0 +1,7 @@
+name: ChatManager
+main: me.winterguardian.chatmanager.ChatManager
+version: 1.6.11
+desciption: Gestionnaire du chat minecraft du serveur
+author: Alexander Winter
+loadbefore: [Core]
+load: POSTWORLD

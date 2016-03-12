@@ -1,0 +1,111 @@
+#
+#Hi and welcome to BlockFarmers configuration
+#If you want to regen this file, just delete it and reload the plugin
+#
+
+#This is the length of the pause between each game in seconds
+#default: 15
+waiting-timer: 15
+
+#This is the length of the time when the game is finished when the fireworks spawn
+#default: 5
+clapping-timer: 5
+
+#This is the list of blocks that can be farmed in game, you need to specify the name and the data
+#
+#Example:
+#farmable-blocks:
+# - GRASS:0
+# - DIRT:1
+# - WOOD:5
+#
+#Theses are Bukkit material names and not vanilla names
+#The list of materials can be found here http://kiwike.se/wiki/index.php/Item_Names
+farmable-blocks:
+  - GRASS:0
+
+#The auto-join mode permit players to join instantly the game when joining the server.
+#Optimal for BungeeCord networks with BlockFarmers alone on a server
+#Players with the staff/admin permission (BlockFarmers.staff) are not automatically put in game and they can leave with the command
+auto-join: false
+
+#Since stats aren't synchronized between servers for now, you may want to disable stats if you have multiples blockfarmers servers in your network
+enable-stats: true
+
+#The teleport-join mode permit players to join the game when they are teleported in the region and leave the game when they are teleported out
+#Perfect for Multiverse servers with portals to join games
+#Players with the staff/admin permission (BlockFarmers.staff) are not automatically put in game when they are teleported in the region
+teleport-join: true
+
+#If you enable this, people in game will have their name red in the player list and they will have a header and a footer to their player list containing infos about the game
+color-in-tab: true
+
+#This is the command-blocking feature only actived for players in-game. You can enable it or disable it and you have the list of non-blocked commands just after
+block-commands: true
+allowed-commands:
+  - mobracers
+  - mr
+  - reload
+  - ban
+  - mute
+  - kick
+
+#Do you want to use displaynames or normal names ? Display names may include the ranks and essentials nicknames
+use-displaynames: false
+
+#The minimum of players cannot be less than 2 and the maximum cannot be more than 16
+min-players: 2
+max-players: 8
+
+#The invitation message is a message sent to all the server when a player join the game and there's not enough players to begin. 
+#There's an anti-spam measure which obligate the message to be sent every 30 messages minimum
+invitation-message: false
+
+#This is the list of worlds in which you want to broadcast the invitation message and the win message
+#You can put a star "*" to include all the worlds and "null" to send theses messages only for the players in the game.
+#If you decide to configure the list of worlds, you will need to organisate them as a string list just like the commands alloweds above
+broadcast-worlds: "*"
+
+#Do you want to keep the states of your players so they will get it back when leaving the game ?
+#This option is optimal for factions servers, there's no way to use MobRacers to get life or food with this.
+#Plus, it completly keeps the inventory and exp of all players.
+#This option also permit you to not set the exit location since they are teleported back to their previous location.
+#List of things saved by this feature:
+#The location, the velocity and the fall distance
+#Inventory, Armor and Item on the cursor
+#Health, Food level, saturation and exhaustion
+#Fire ticks and remaining air
+#Gamemode, the permission to fly and the flying itself
+#Walking speed and Flying speed
+#All potion effects
+keep-player-states: false
+
+#This option makes MobRacers change the server MOTD to the current MobRacers status
+#MOTDs are configurable in the lang file using the lines standby-status, arenaselect-status, vehicleselect-status and game-status
+#This can be really useful if you plan to do a big networks with multiples MobRacers server
+#and you need to show the current status of servers.
+enable-motd: false
+
+#Configures BlockFarmers' database connection
+#Disabling the sql without disabling stats above will use Yaml userdatas to save players data
+#The plugin support almost any databse compatible with jdbc
+#
+#Noticeable drivers & urls:
+#  com.mysql.jdbc.Driver
+#  jdbc:mysql://localhost:3306/yourdatabase
+#
+#  org.sqlite.JDBC
+#  jdbc:sqlite:/C:/Users/you/yourdatabase
+#
+sql-enabled: false
+sql-driver: com.example.jdbc.Driver
+sql-url: jdbc:example://localhost:3306/minecraft_db
+sql-user: blockfarmers_admin
+sql-password: secret
+
+#Use the end-game commands to use BlockFarmers with your economy ! You can set a list of commands, how much you want
+#The winner's name can be used with <winner>
+#
+#Remove the '#'s to activate it
+#endgame-commands:
+#  - 'give <winner> minecraft:diamond 1'

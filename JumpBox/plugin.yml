@@ -1,0 +1,13 @@
+name: JumpBox
+main: me.darkmoustache.jumpbox.JumpBox
+version: 1.4.26
+description: Mini jeu de parcours de sauts.
+author: Darkmoustache
+softdepend: [Core]
+load: POSTWORLD
+
+commands:
+    jumpbox:
+        description: Commande principale servant à jouer et consulter les stats.
+        usage: /<command> <args>
+        aliases: [jb, jump-box, jump]

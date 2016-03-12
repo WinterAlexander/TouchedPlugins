@@ -1,0 +1,38 @@
+insulte-liste: []
+broadcast:
+  default:
+    messages:
+    - '[{text:"Merci de configurer les messages automatiques dans ", color:yellow,
+      bold:false, italic:false, underlined:false, strikethrough:false, ofuscated:false,
+      hoverEvent:{}, clickEvent:{}},{text:"ChatManager", color:red, bold:false, italic:false,
+      underlined:false, strikethrough:false, ofuscated:false, hoverEvent:{}, clickEvent:{}}]'
+    isjson: true
+    sound: NOTE_PLING
+broadcast-delay: 12000
+join-title:
+  new:
+    title: '[{text:"Sekai",color:white, bold:true}, {text:"MC", color:gold, bold:true}]'
+    subtitle: '{text:''Bienvenue en créatif !'', color:yellow}'
+  normal:
+    title: '[{text:"Sekai",color:white, bold:true}, {text:"MC", color:gold, bold:true}]'
+    subtitle: '{text:''Serveur créatif'', color:yellow}'
+cmd-redirect:
+  p:
+    redirection: plot
+    canByPass: true
+
+chat-format:
+  level1: '%s §7§l» §r%s'
+  level2: '§3Ouvrier §r%s §3§l» §r%s'
+  level3: '§eGuide §r%s §e§l» §r%s'
+  level4: '§6§lVip §r%s §6§l» §r%s'
+  level5: '§f§lÉlite §r%s §f§l» §r%s'
+  level6: '§a§lDieu §r%s §a§l» §r%s'
+  level7: '§fYou§ctuber §r%s §f§l» §r%s'
+  level8: '§3Ingénieur §r%s §3§l» §r%s'
+  level9: '§eGardien §r%s §e§l» §r%s'
+  level10: '§3Architecte §r%s §3§l» §r%s'
+  level11: '§e§lModo §r%s §e§l» §r%s'
+  level12: '§c§lAdmin §r%s §c§l» §r%s'
+  level13: '§c§lDev §r%s §c§l» §r%s'
+  level14: '§c§lHôte §r%s §c§l» §r%s'

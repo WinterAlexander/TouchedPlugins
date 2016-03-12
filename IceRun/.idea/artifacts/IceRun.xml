@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="IceRun">
+    <output-path>$USER_HOME$/Desktop</output-path>
+    <root id="archive" name="IceRun.jar">
+      <element id="module-output" name="IceRun" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+    </root>
+  </artifact>
+</component>

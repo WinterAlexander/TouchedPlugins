@@ -1,0 +1,5 @@
+name: Core
+main: me.winterguardian.core.SekaiCore
+version: SEKAI
+author: WinterGuardian
+load: STARTUP

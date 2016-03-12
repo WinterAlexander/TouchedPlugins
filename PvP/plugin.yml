@@ -1,0 +1,8 @@
+name: SekaiPvP
+main: me.winterguardian.pvp.PvPPlugin
+version: 2.5.27
+description: Jeu de combats en arènes avec modes de jeux multiples.
+author: Alexander Winter
+depend: [Core]
+load: POSTWORLD
+

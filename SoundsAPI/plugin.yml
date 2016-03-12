@@ -1,0 +1,5 @@
+name: SoundsAPI
+main: me.winterguardian.soundsapi.SoundsAPI
+version: 1.0.0
+description: An simple API to use minecraft 1.8 sounds !
+author: WinterGuardian
