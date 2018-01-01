@@ -1,0 +1,4 @@
+[submodule "EasyScoreboards"]
+        path = EasyScoreboards
+	url = https://github.com/WinterGuardian/EasyScoreboards.git
+			
