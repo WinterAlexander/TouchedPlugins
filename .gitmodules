@@ -1,4 +1,3 @@
 [submodule "EasyScoreboards"]
-        path = EasyScoreboards
-	url = https://github.com/WinterGuardian/EasyScoreboards.git
-			
+	path = EasyScoreboards
+	url = http://github.com/WinterAlexander/EasyScoreboards.git
