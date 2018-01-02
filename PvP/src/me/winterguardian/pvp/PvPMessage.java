@@ -65,6 +65,7 @@ public class PvPMessage extends HardcodedMessage
 	GAME_START_DOM = new PvPMessage("§eLaissez place à la domination, bon courage !", true),
 	GAME_START_KOTH = new PvPMessage("§eQui sera donc le champion ? Bonne chance !", true),
 	GAME_START_SWI = new PvPMessage("§eLa partie de switch commence, bon jeu !", true),
+	GAME_START_BRAWL = new PvPMessage("§eLa partie commence, bonne baston !", true),
 
 	GAME_GUIDE_FFA = new PvPMessage("<mode>§f - Le but du jeu est de faire le plus de meurtres pour soi même. Il n'y a pas d'équipes ou d'alliances. §4§lALLIANCES = BAN", false),
 	GAME_GUIDE_OITC = new PvPMessage("<mode>§f - Le but du jeu est de faire le plus de meurtres pour soi même. Toutefois, les flèches tuent en un coup et les achats sont désactivés. Vous obtenez une flèche si vous arrivez à faire un meurtre. Il n'y a pas d'équipes ou d'alliances. §4§lALLIANCES = BAN", false),
@@ -73,6 +74,7 @@ public class PvPMessage extends HardcodedMessage
 	GAME_GUIDE_TDM = new PvPMessage("<mode>§f - Le but du jeu est de faire le plus de meurtes pour son équipe. L'équipe qui gagne est celle qui a réussi a faire le plus de meurtes. Évitez de mourir pour ne pas céder des points aux autres équipes.", false),
 	GAME_GUIDE_CTF = new PvPMessage("<mode>§f - Le but du jeu est de prendre des drapeaux et de les ramener à sa base en équipes. L'équipe gagnante est celle qui a capturée le plus de drapeaux. Attention, vous ne pouvez pas capturer un drapeau si votre drapeau n'est pas à sa base. Protégez-le porteur du drapeau et défendez votre drapeau pour ne pas donner de points aux autres équipes !", false),
 	GAME_GUIDE_DOM = new PvPMessage("<mode>§f - Le but du jeu est de capturer des zones pour accumuler des points ! Ce jeu se joue en équipe. Restez sur une zone jusqu'elle obtienne la couleur de votre équipe et défendez vos zones. Plus vous aurez de zones, plus les points de votre équipe augmenteront.", false),
+	GAME_GUIDE_BRAWL = new PvPMessage("<mode>§f - Le but du jeu est de se frapper pour obtenir des points. Vous ne pouvez pas mourir, alors battez vous !", false),
 
 	GAME_TABFOOTER = new PvPMessage("§aVous êtes en <mode> sur <arena>.", false),
 

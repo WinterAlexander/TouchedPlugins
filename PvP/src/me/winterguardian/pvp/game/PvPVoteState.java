@@ -5,6 +5,7 @@ import java.util.Map.Entry;
 
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.pvp.PvPPlugin;
+import me.winterguardian.pvp.game.solo.Brawl;
 import me.winterguardian.pvp.game.solo.FreeForAll;
 import me.winterguardian.pvp.game.solo.KingOfTheHill;
 import me.winterguardian.pvp.game.solo.OneInTheChamber;
@@ -236,6 +237,7 @@ public class PvPVoteState implements State, Runnable
 			games.put(new Switch(game), 1);
 			games.put(new OneInTheChamber(game), 1);
 			games.put(new KingOfTheHill(game), 1);
+			games.put(new Brawl(game), 1);
 		}
 		else if(game.getPlayers().size() < 6) //à partir de 4
 		{
@@ -244,6 +246,7 @@ public class PvPVoteState implements State, Runnable
 			games.put(new OneInTheChamber(game), 1);
 			games.put(new KingOfTheHill(game), 1);
 			games.put(new TeamDeathMatch(game, 2), 1);
+			games.put(new Brawl(game), 1);
 		}
 		else if(game.getPlayers().size() < 10) //à partir de 6
 		{
@@ -254,6 +257,7 @@ public class PvPVoteState implements State, Runnable
 			games.put(new TeamDeathMatch(game, 2), 2);
 			games.put(new CaptureTheFlag(game, 2), 2);
 			games.put(new Domination(game, 2), 2);
+			games.put(new Brawl(game), 1);
 		}
 		else if(game.getPlayers().size() < 15) //à partir de 10
 		{
@@ -263,6 +267,7 @@ public class PvPVoteState implements State, Runnable
 			games.put(new TeamDeathMatch(game, 2), 2);
 			games.put(new CaptureTheFlag(game, 2), 2);
 			games.put(new Domination(game, 2), 2);
+			games.put(new Brawl(game), 1);
 		}
 		else if(game.getPlayers().size() < 20) //à partir de 15
 		{
@@ -274,6 +279,7 @@ public class PvPVoteState implements State, Runnable
 
 			games.put(new Domination(game, 2), 1);
 			games.put(new Domination(game, 3), 1);
+			games.put(new Brawl(game), 1);
 		}
 		else if(game.getPlayers().size() < 30) //à partir de 20
 		{
@@ -288,6 +294,7 @@ public class PvPVoteState implements State, Runnable
 			games.put(new Domination(game, 2), 1);
 			games.put(new Domination(game, 3), 1);
 			games.put(new Domination(game, 4), 1);
+			games.put(new Brawl(game), 1);
 		}
 		else if(game.getPlayers().size() < 40) //à partir de 30
 		{
@@ -302,6 +309,7 @@ public class PvPVoteState implements State, Runnable
 			games.put(new Domination(game, 3), 1);
 			games.put(new Domination(game, 4), 1);
 			games.put(new Domination(game, 5), 1);
+			games.put(new Brawl(game), 1);
 		}
 		else if(game.getPlayers().size() < 60) //à partir de 40
 		{
@@ -316,6 +324,7 @@ public class PvPVoteState implements State, Runnable
 			games.put(new Domination(game, 4), 1);
 			games.put(new Domination(game, 6), 2);
 			games.put(new Domination(game, 8), 2);
+			games.put(new Brawl(game), 1);
 
 		}
 		else if(game.getPlayers().size() < 80) //à partir de 60
@@ -328,12 +337,14 @@ public class PvPVoteState implements State, Runnable
 
 			games.put(new Domination(game, 6), 1);
 			games.put(new Domination(game, 8), 2);
+			games.put(new Brawl(game), 1);
 		}
 		else //à partir de 80
 		{
 			games.put(new TeamDeathMatch(game, 8), 1);
 			games.put(new CaptureTheFlag(game, 8), 1);
 			games.put(new Domination(game, 8), 1);
+			games.put(new Brawl(game), 1);
 		}
 
 		int total = 0;

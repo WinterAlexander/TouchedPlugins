@@ -19,13 +19,12 @@ import java.util.UUID;
 public class KingOfTheHill extends SoloGame
 {
 	private Zone zone;
-	private HashMap<UUID, Integer> scores;
+	private HashMap<UUID, Integer> scores = new HashMap<>();
 	private GameStuff kothStuff;
 
 	public KingOfTheHill(PvP game)
 	{
 		super(game);
-		this.scores = new HashMap<>();
 		this.kothStuff = new GameStuff("koth");
 		this.kothStuff.load();
 	}

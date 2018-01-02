@@ -3,6 +3,7 @@
     <CLASSES>
       <root url="jar://E:/Minecraft Lib/spigot-1.8.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/../Minecraft Lib/spigot-1.8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../spigot-1.8.8.jar!/" />
     </CLASSES>
     <JAVADOC>
       <root url="https://hub.spigotmc.org/javadocs/spigot/" />
@@ -10,6 +11,7 @@
     <SOURCES>
       <root url="jar://E:/Minecraft Lib/spigot-1.8.8.jar!/" />
       <root url="jar://$PROJECT_DIR$/../Minecraft Lib/spigot-1.8.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../spigot-1.8.8.jar!/" />
     </SOURCES>
   </library>
 </component>
