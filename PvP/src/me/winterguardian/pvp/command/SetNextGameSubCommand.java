@@ -6,6 +6,7 @@ import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPPlugin;
 import me.winterguardian.pvp.game.PvPMatch;
 import me.winterguardian.pvp.game.PvPVoteState;
+import me.winterguardian.pvp.game.solo.Brawl;
 import me.winterguardian.pvp.game.solo.FreeForAll;
 import me.winterguardian.pvp.game.solo.KingOfTheHill;
 import me.winterguardian.pvp.game.solo.OneInTheChamber;
@@ -50,6 +51,9 @@ public class SetNextGameSubCommand extends SubCommand
 
 		if(args[0].equalsIgnoreCase("swi"))
 			next = new Switch(PvPPlugin.getGame());
+
+		if(args[0].equalsIgnoreCase("brawl"))
+			next = new Brawl(PvPPlugin.getGame());
 
 		if(args[0].equalsIgnoreCase("tdm"))
 			next = new TeamDeathMatch(PvPPlugin.getGame(), Integer.parseInt(args[1]));
