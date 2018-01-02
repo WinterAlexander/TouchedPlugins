@@ -172,10 +172,16 @@ public class GameListener implements Listener
 		Player damager = (Player)((Projectile)event.getDamager()).getShooter();
 		PvPPlayerData damagerData = game.getPlayerData(damager);
 
+		if(damagerData == null)
+		{
+			event.setCancelled(true);
+			return;
+		}
+
 		if(damagerData.getPlayer() == playerData.getPlayer())
 			return;
 
-		if(!playerData.isPvpActive() || !game.areEnemies(playerData.getPlayer(), damager) || damagerData == null)
+		if(!playerData.isPvpActive() || !game.areEnemies(playerData.getPlayer(), damager))
 		{
 			event.setCancelled(true);
 			return;

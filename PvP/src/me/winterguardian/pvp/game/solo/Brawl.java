@@ -32,6 +32,7 @@ public class Brawl extends SoloGame
 	public Brawl(PvP game)
 	{
 		super(game);
+		this.timer = 180;
 
 		this.brawlStuff = new GameStuff("brawl");
 		this.brawlStuff.load();
@@ -87,7 +88,7 @@ public class Brawl extends SoloGame
 	@Override
 	public String getColoredName()
 	{
-		return "&c&l" + getName();
+		return "§c§l" + getName();
 	}
 
 	@Override
@@ -149,14 +150,17 @@ public class Brawl extends SoloGame
 			}
 		}
 
-		@EventHandler
+		@EventHandler(priority = EventPriority.MONITOR, ignoreCancelled = true)
 		public void onEntityDamage(EntityDamageEvent event)
 		{
 			if(!(event.getEntity() instanceof Player) || !getGame().contains((Player)event.getEntity()))
 				return;
 
+			Player player = (Player)event.getEntity();
+
 			event.setDamage(0);
-			((Player)event.getEntity()).setHealth(((Player)event.getEntity()).getMaxHealth());
+			player.setHealth(player.getMaxHealth());
+			getPlayerData(player).noDamage();
 		}
 
 		@EventHandler

@@ -332,6 +332,15 @@ public class PvPPlayerData extends PlayerData
 	{
 		damage(getLastFireDamager());
 	}
+
+	public void noDamage()
+	{
+		this.lastDamager = null;
+		this.secondDamager = null;
+		this.lastPoisonDamager = null;
+		this.lastWhiterDamager = null;
+		this.lastFireDamager = null;
+	}
 	
 	public TeamColor getTeam()
 	{

@@ -30,7 +30,7 @@ public abstract class PvPMatch implements State, Runnable
 	private Set<PvPPlayerData> playerDatas;
 	private List<Listener> listeners;
 	private int taskId;
-	private int timer;
+	protected int timer;
 
 	public abstract GameStuff getNewStuff(Player player);
 
