@@ -1,5 +1,0 @@
-name: JsonConverter
-main: me.winterguardian.jsonconverter.JsonConverterPlugin
-version: 1.0.6
-description: A tool for developers who wants to dynamically convert their minecraft text into json.
-author: WinterGuardian
