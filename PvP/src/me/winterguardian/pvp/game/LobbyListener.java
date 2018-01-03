@@ -23,7 +23,7 @@ import org.bukkit.event.player.PlayerInteractEvent;
  */
 public class LobbyListener implements Listener
 {
-	private PvP game;
+	private final PvP game;
 
 	public LobbyListener(PvP game)
 	{
@@ -36,7 +36,8 @@ public class LobbyListener implements Listener
 		if(!game.contains(event.getPlayer()))
 			return;
 
-		if(game.getState() instanceof PvPStandbyState || (game.getState() instanceof PvPVoteState && (((PvPVoteState)game.getState()).getNextGame() instanceof OneInTheChamber) || ((PvPVoteState)game.getState()).getNextGame() instanceof Switch))
+		if(game.getState() instanceof PvPStandbyState
+		|| (game.getState() instanceof PvPVoteState && !((PvPVoteState)game.getState()).getNextGame().canBuyInLobby()))
 		{
 			event.setErrorMessage(PvPMessage.PURCHASE_CANTBUYNOW);
 			event.setCancelled(true);

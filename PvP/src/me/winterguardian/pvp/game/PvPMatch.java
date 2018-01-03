@@ -25,12 +25,14 @@ import org.bukkit.event.Listener;
 
 public abstract class PvPMatch implements State, Runnable
 {
-	private PvP game;
-	private PvPArena arena;
-	private Set<PvPPlayerData> playerDatas;
-	private List<Listener> listeners;
+	private final PvP game;
+
+	private PvPArena arena = null;
+
+	private final Set<PvPPlayerData> playerDatas = new HashSet<>();
+	private final List<Listener> listeners = new ArrayList<>();
 	private int taskId;
-	protected int timer;
+	private int timer;
 
 	public abstract GameStuff getNewStuff(Player player);
 
@@ -48,11 +50,13 @@ public abstract class PvPMatch implements State, Runnable
 
 	protected PvPMatch(PvP game)
 	{
-		this.playerDatas = new HashSet<>();
+		this(game, 600);
+	}
+
+	protected PvPMatch(PvP game, int length)
+	{
 		this.game = game;
-		this.arena = null;
-		this.listeners = new ArrayList<>();
-		this.timer = 600;
+		this.timer = length;
 	}
 
 	@Override
@@ -202,7 +206,7 @@ public abstract class PvPMatch implements State, Runnable
 	protected void register(Listener listener)
 	{
 		Bukkit.getPluginManager().registerEvents(listener, this.game.getPlugin());
-		this.listeners.add(listener);
+		listeners.add(listener);
 	}
 
 	@Override
@@ -213,7 +217,7 @@ public abstract class PvPMatch implements State, Runnable
 
 	public PvPArena getArena()
 	{
-		return this.arena;
+		return arena;
 	}
 
 	public void setArena(PvPArena arena)
@@ -224,6 +228,11 @@ public abstract class PvPMatch implements State, Runnable
 	public int getVoteTimer()
 	{
 		return 90;
+	}
+
+	public boolean canBuyInLobby()
+	{
+		return true;
 	}
 
 	public PvPPlayerData getPlayerData(Player player)

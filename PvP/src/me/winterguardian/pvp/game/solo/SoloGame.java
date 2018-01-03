@@ -1,6 +1,5 @@
 package me.winterguardian.pvp.game.solo;
 
-import me.winterguardian.core.game.PlayerData;
 import me.winterguardian.core.scoreboard.ScoreboardUtil;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;
@@ -15,18 +14,25 @@ import org.bukkit.scoreboard.Team;
 
 import java.util.HashMap;
 
+import static me.winterguardian.core.scoreboard.ScoreboardUtil.rankedSidebarDisplay;
+import static org.bukkit.scoreboard.NameTagVisibility.HIDE_FOR_OTHER_TEAMS;
+
 /**
  *
  * Created by Alexander Winter on 2015-12-07.
  */
 public abstract class SoloGame extends PvPMatch
 {
-	private Scoreboard board;
+	private final Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
 
 	public SoloGame(PvP game)
 	{
 		super(game);
-		this.board = Bukkit.getScoreboardManager().getNewScoreboard();
+	}
+
+	public SoloGame(PvP game, int length)
+	{
+		super(game, length);
 	}
 
 	public abstract int getScore(PvPPlayerData data);
@@ -45,7 +51,7 @@ public abstract class SoloGame extends PvPMatch
 		player.setScoreboard(this.board);
 		Team team = this.board.registerNewTeam(player.getName());
 		team.setAllowFriendlyFire(false);
-		team.setNameTagVisibility(NameTagVisibility.HIDE_FOR_OTHER_TEAMS);
+		team.setNameTagVisibility(HIDE_FOR_OTHER_TEAMS);
 		team.addEntry(player.getName());
 	}
 
@@ -71,7 +77,6 @@ public abstract class SoloGame extends PvPMatch
 		PvPPlayerData winner = getPlayerData(1);
 
 		PvPMessage.GAME_SOLO_WIN.sayAll("<name>", winner.getPvPName(), "<score>", getScore(winner) + "", "<mode>", getName());
-
 	}
 
 	public PvPPlayerData getPlayerData(int position)
@@ -106,10 +111,10 @@ public abstract class SoloGame extends PvPMatch
 
 		for(Player player : getGame().getPlayers())
 		{
-			player.setScoreboard(this.board);
-			Team team = this.board.registerNewTeam(player.getName());
+			player.setScoreboard(board);
+			Team team = board.registerNewTeam(player.getName());
 			team.setAllowFriendlyFire(false);
-			team.setNameTagVisibility(NameTagVisibility.HIDE_FOR_OTHER_TEAMS);
+			team.setNameTagVisibility(HIDE_FOR_OTHER_TEAMS);
 			team.addEntry(player.getName());
 		}
 	}
@@ -122,6 +127,6 @@ public abstract class SoloGame extends PvPMatch
 		for(PvPPlayerData data : getPlayerDatas())
 			scores.put(data.getPvPName(), getScore(data));
 
-		ScoreboardUtil.rankedSidebarDisplay(getGame().getPlayers(), getColoredName(), scores, this.board);
+		rankedSidebarDisplay(getGame().getPlayers(), getColoredName(), scores, board);
 	}
 }

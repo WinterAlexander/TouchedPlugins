@@ -31,8 +31,7 @@ public class Brawl extends SoloGame
 
 	public Brawl(PvP game)
 	{
-		super(game);
-		this.timer = 180;
+		super(game, 180);
 
 		this.brawlStuff = new GameStuff("brawl");
 		this.brawlStuff.load();
@@ -106,6 +105,12 @@ public class Brawl extends SoloGame
 	public int getVoteTimer()
 	{
 		return 25;
+	}
+
+	@Override
+	public boolean canBuyInLobby()
+	{
+		return false;
 	}
 
 	private void increment(Player player)

@@ -137,6 +137,12 @@ public class Switch extends SoloGame
 	}
 
 	@Override
+	public boolean canBuyInLobby()
+	{
+		return false;
+	}
+
+	@Override
 	public void run()
 	{
 		super.run();

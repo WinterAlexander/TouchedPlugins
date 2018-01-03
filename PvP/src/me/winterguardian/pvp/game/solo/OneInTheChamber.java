@@ -54,6 +54,12 @@ public class OneInTheChamber extends SoloGame
 	}
 
 	@Override
+	public boolean canBuyInLobby()
+	{
+		return false;
+	}
+
+	@Override
 	public String getColoredName()
 	{
 		return "§a§l" + getName();
