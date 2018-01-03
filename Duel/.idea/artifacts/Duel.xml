@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" name="Duel">
-    <output-path>$USER_HOME$/Desktop</output-path>
-    <root id="archive" name="Duel.jar">
-      <element id="module-output" name="Duel" />
-      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
-    </root>
-  </artifact>
-</component>
