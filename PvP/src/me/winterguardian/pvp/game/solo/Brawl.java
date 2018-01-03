@@ -114,6 +114,12 @@ public class Brawl extends SoloGame
 		updateBoard = true;
 	}
 
+	private void decrement(Player player)
+	{
+		scores.put(player.getUniqueId(), getScore(getPlayerData(player)) - 1);
+		updateBoard = true;
+	}
+
 	public class BrawlListener implements Listener
 	{
 		@EventHandler
@@ -161,6 +167,7 @@ public class Brawl extends SoloGame
 			event.setDamage(0);
 			player.setHealth(player.getMaxHealth());
 			getPlayerData(player).noDamage();
+			decrement(player);
 		}
 
 		@EventHandler

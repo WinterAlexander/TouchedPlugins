@@ -17,7 +17,7 @@ import java.util.List;
 
 /**
  *
- * Created by 1541869 on 2015-12-08.
+ * Created by Alexander Winter on 2015-12-08.
  */
 public class VoteSubCommand extends SubCommand
 {

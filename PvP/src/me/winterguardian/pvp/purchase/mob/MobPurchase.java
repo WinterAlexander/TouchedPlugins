@@ -23,7 +23,7 @@ import java.util.Random;
 
 /**
  *
- * Created by 1541869 on 2015-12-15.
+ * Created by Alexander Winter on 2015-12-15.
  */
 public class MobPurchase implements PurchaseType
 {
