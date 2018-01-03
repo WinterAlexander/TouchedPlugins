@@ -20,12 +20,14 @@ import org.bukkit.event.player.PlayerRespawnEvent;
 
 import java.util.HashMap;
 
+import static me.winterguardian.core.util.AchievementUtil.flashShow;
+import static me.winterguardian.core.util.ActionBarUtil.sendActionMessage;
+
 
 public class GameListener implements Listener
 {
-	private HashMap<Player, Integer> headshots = new HashMap<Player, Integer>();
-	
-	
+	private final HashMap<Player, Integer> headshots = new HashMap<>();
+
 	@EventHandler
 	public void onPlayerDeath(PlayerDeathEvent event)
 	{
@@ -66,11 +68,12 @@ public class GameListener implements Listener
 		
 		if(Duel.getInstance().gameContains(e.getPlayer()))
 		{
-			String cmd = "";
-			if(e.getMessage().contains(" "))
-				cmd = e.getMessage().split(" ")[0].replaceFirst("/", "");
-			else
-				cmd = e.getMessage().replaceFirst("/", "");
+			String cmd = e.getMessage();
+
+			if(cmd.contains(" "))
+				cmd = e.getMessage().split(" ")[0];
+
+			cmd = cmd.replaceFirst("/", "");
 				
 			if(!Duel.getInstance().getSettings().getAllowedCommands().contains(cmd.toLowerCase()))
 			{
@@ -91,12 +94,12 @@ public class GameListener implements Listener
 	}
 	
 	@EventHandler(ignoreCancelled = true)
-	public void onPlayerHeadshot(final EntityDamageByEntityEvent event)
+	public void onPlayerHeadshot(EntityDamageByEntityEvent event)
 	{
 		if(!CombatUtil.isHeadshot(event))
 			return;
 
-		if(!(event.getDamager() instanceof Projectile) || !(((Projectile)event.getDamager()).getShooter() instanceof Player))
+		if(!(((Projectile)event.getDamager()).getShooter() instanceof Player))
 			return;
 
 		final Player shooter = (Player)((Projectile)event.getDamager()).getShooter();
@@ -106,26 +109,25 @@ public class GameListener implements Listener
 			if(headshots.containsKey(shooter))
 			{
 				headshots.put(shooter, headshots.get(shooter) + 1);
-				ActionBarUtil.sendActionMessage(shooter, "§e§lTir dans la tête ! x" + (headshots.get(shooter)));
+				sendActionMessage(shooter, "§e§lTir dans la tête ! x" + (headshots.get(shooter)));
 				if(headshots.get(shooter) == 5)
-					AchievementUtil.flashShow(shooter, Achievement.SNIPE_SKELETON, Duel.getInstance());
+					flashShow(shooter, Achievement.SNIPE_SKELETON, Duel.getInstance());
 			}
 			else
 			{
 				headshots.put(shooter, 1);
-				ActionBarUtil.sendActionMessage(shooter, "§e§lTir dans la tête !");
+				sendActionMessage(shooter, "§e§lTir dans la tête !");
 			}
 
 			Bukkit.getScheduler().runTaskLater(Duel.getInstance(), new Runnable()
 			{
-				private int i = headshots.get(shooter);
+				private int headshotCount = headshots.get(shooter);
 
 				@Override
 				public void run()
 				{
-					if(headshots != null)
-						if(headshots.get(shooter) == i)
-							headshots.remove(shooter);
+					if(headshots.get(shooter) == headshotCount) //if headshot count is still the same (NPE HERE)
+						headshots.remove(shooter); //no longer in headshot streak
 				}
 			}, 40);
 		}

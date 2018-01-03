@@ -1,6 +1,6 @@
 name: Duel
 main: me.winterguardian.duel.Duel
-version: 3.2.66
+version: 3.2.67
 description: Jeu de combats en 1 vs 1.
 author: Alexander Winter
 depend: [Core]
