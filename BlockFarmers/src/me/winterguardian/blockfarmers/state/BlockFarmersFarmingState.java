@@ -32,8 +32,8 @@ public class BlockFarmersFarmingState implements State, Runnable
 	
 	public BlockFarmersFarmingState(BlockFarmersGame game)
 	{
-		this.playerDatas = new ArrayList<BlockFarmersPlayerData>();
-		this.toRegen = new ArrayList<BlockState>();
+		this.playerDatas = new ArrayList<>();
+		this.toRegen = new ArrayList<>();
 		this.game = game;
 	}
 	
@@ -156,7 +156,7 @@ public class BlockFarmersFarmingState implements State, Runnable
 		
 		//égalité à gérer plus tard avec un sudden death
 		
-		HashMap<String, Integer> scores = new HashMap<String, Integer>();
+		HashMap<String, Integer> scores = new HashMap<>();
 		
 		for(BlockFarmersPlayerData data : playerDatas)
 		{
@@ -179,9 +179,23 @@ public class BlockFarmersFarmingState implements State, Runnable
 		game.setState(new BlockFarmersClappingState(game, winner));
 		game.getState().start();
 	}
+
+	public boolean allStarted()
+	{
+		for(BlockFarmersPlayerData data : playerDatas)
+			if(data.getLastFarm() == -1L)
+				return false;
+
+		return true;
+	}
 	
 	public BlockFarmersGame getGame()
 	{
 		return this.game;
+	}
+
+	public List<BlockFarmersPlayerData> getPlayerDatas()
+	{
+		return playerDatas;
 	}
 }
