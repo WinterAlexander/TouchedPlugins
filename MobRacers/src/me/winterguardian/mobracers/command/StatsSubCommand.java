@@ -1,18 +1,17 @@
 package me.winterguardian.mobracers.command;
 
-import java.util.Arrays;
-import java.util.UUID;
-
 import me.winterguardian.core.command.PlayerStatsAsyncSubCommand;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.stats.CourseStats;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+
+import java.util.Arrays;
+import java.util.UUID;
 
 public class StatsSubCommand extends PlayerStatsAsyncSubCommand
 {

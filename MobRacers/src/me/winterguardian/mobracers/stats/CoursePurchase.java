@@ -1,7 +1,5 @@
 package me.winterguardian.mobracers.stats;
 
-import java.io.File;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.util.TextUtil;
@@ -10,9 +8,10 @@ import me.winterguardian.mobracers.MobRacersConfig;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.music.CourseRecord;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+
+import java.io.File;
 
 public class CoursePurchase
 {

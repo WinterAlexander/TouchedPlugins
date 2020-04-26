@@ -1,7 +1,5 @@
 package me.winterguardian.pvp.game;
 
-import me.winterguardian.core.sorting.AntiRecursiveRandomSelector;
-import me.winterguardian.core.sorting.Selector;
 import me.winterguardian.core.util.CollectionsUtil;
 import me.winterguardian.core.world.Region;
 import me.winterguardian.pvp.TeamColor;
@@ -12,7 +10,6 @@ import org.bukkit.block.BlockState;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 /**
  *

@@ -1,16 +1,15 @@
 package me.winterguardian.pvp.command;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.pvp.GameStuff;
 import me.winterguardian.pvp.PvPPlugin;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Arrays;
+import java.util.List;
 /**
  * /pvp stuff help
  * /pvp stuff list

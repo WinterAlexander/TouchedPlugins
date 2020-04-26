@@ -6,7 +6,6 @@ import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
 import org.bukkit.command.CommandSender;
-import org.bukkit.permissions.Permission;
 
 import java.util.List;
 

@@ -1,10 +1,15 @@
 package me.winterguardian.core.entity.custom.rideable.v1_8_R3;
 
-import java.lang.reflect.Field;
-
 import me.winterguardian.core.entity.custom.rideable.RideableEntity;
-import net.minecraft.server.v1_8_R3.*;
+import net.minecraft.server.v1_8_R3.EntityHuman;
+import net.minecraft.server.v1_8_R3.EntityLiving;
+import net.minecraft.server.v1_8_R3.EntityRabbit;
+import net.minecraft.server.v1_8_R3.GenericAttributes;
+import net.minecraft.server.v1_8_R3.PathfinderGoalSelector;
+import net.minecraft.server.v1_8_R3.World;
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
+
+import java.lang.reflect.Field;
 
 public class RideableRabbit extends EntityRabbit implements RideableEntity
 {

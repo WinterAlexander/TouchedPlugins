@@ -1,17 +1,15 @@
 package ice.command;
 
-import ice.IceRunMessage;
 import ice.IceRun;
-
-import java.util.Arrays;
-import java.util.List;
-
+import ice.IceRunMessage;
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class JoinSubCommand extends SubCommand
 {

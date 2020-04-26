@@ -3,7 +3,6 @@ package me.winterguardian.mobracers.listener;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.stats.CoursePurchase;
-
 import org.bukkit.block.Sign;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

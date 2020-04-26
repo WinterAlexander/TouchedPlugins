@@ -1,18 +1,17 @@
 package me.winterguardian.core.game.state;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import me.winterguardian.core.command.CommandSplitter;
 import me.winterguardian.core.game.Game;
 import me.winterguardian.core.game.GameConfig;
 import me.winterguardian.core.game.GameManager;
-import me.winterguardian.core.listener.*;
+import me.winterguardian.core.listener.CommandBlockerListener;
+import me.winterguardian.core.listener.GameAutoJoinListener;
+import me.winterguardian.core.listener.GameSubCommandsBinder;
+import me.winterguardian.core.listener.GameTeleportJoinListener;
+import me.winterguardian.core.listener.PlayerProtectionListener;
+import me.winterguardian.core.listener.SimpleRegionProtectionListener;
 import me.winterguardian.core.message.Message;
 import me.winterguardian.core.world.Region;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -22,6 +21,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public abstract class StateGame implements Game
 {

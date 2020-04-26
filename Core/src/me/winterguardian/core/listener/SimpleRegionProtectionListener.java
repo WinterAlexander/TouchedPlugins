@@ -1,7 +1,6 @@
 package me.winterguardian.core.listener;
 
 import me.winterguardian.core.world.SerializableRegion;
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBurnEvent;

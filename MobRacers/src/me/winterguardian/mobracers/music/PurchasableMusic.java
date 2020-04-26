@@ -1,7 +1,6 @@
 package me.winterguardian.mobracers.music;
 
 import me.winterguardian.mobracers.stats.CoursePurchase;
-
 import org.bukkit.entity.Player;
 
 public class PurchasableMusic extends CourseMusic

@@ -1,25 +1,40 @@
 package me.winterguardian.core;
 
+import me.winterguardian.core.message.CoreMessage;
+import me.winterguardian.core.message.ErrorMessage;
+import me.winterguardian.core.message.Message;
+import me.winterguardian.core.shop.ItemPurchase;
+import me.winterguardian.core.shop.PlayerPurchaseEvent;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
+import org.bukkit.event.Listener;
+import org.bukkit.permissions.Permission;
+import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class SekaiCore extends JavaPlugin
+import java.io.File;
+import java.util.Random;
+
+public class CoreLauncher extends JavaPlugin
 {
 	@Override
 	public void onEnable()
 	{
+		CoreConfig config = new CoreConfig(new File(getDataFolder(), "config.yml"));
+		if(!config.load())
+			throw new RuntimeException("Could not load config for core!");
+
 		Core.getCustomEntityManager().enable(this);
 		Core.getBungeeMessager().enable(this);
 		Core.getBungeeMessager().setSafe(false);
 		Core.getGameplayManager().enable(this);
+		Core.getUserDatasManager().enableDB(this, "com.mysql.jdbc.Driver", config.getURL(), config.getUsername(), config.getPassword());
+		Core.getWand().enable(this, new Permission("HubCore.wand", "Donne accès à la sélection de terrain", PermissionDefault.OP), CoreMessage.WAND_POSITIONSET);
+		Core.getShop().enable(this);
 
-		Bukkit.getPluginManager().registerEvents(new CreativeListener(), this);
-
-		//Core.getUserDatasManager().enableDB(this, "com.mysql.jdbc.Driver", "jdbc:mysql://play.sekaimc.net:3306/sekaimc", "sekaimc", "<!DOCTYPO_htnl>");
-		//Core.getWand().enable(this, new Permission("HubCore.wand", "Donne accès à la sélection de terrain", PermissionDefault.OP), CoreMessage.WAND_POSITIONSET);
-		//Core.getShop().enable(this);
-		/*
 		final Permission createPermission = new Permission("HubCore.shop.create.item", "Permet de créer des panneaux d'achats d'items.", PermissionDefault.OP);
 		final Permission vipPermission = new Permission("HubCore.buy.vip", "Permet d'acheter des items vips.", PermissionDefault.OP);
 		final Permission elitePermission = new Permission("HubCore.buy.elite", "Permet d'avoir 25% de réduction sur tout.", PermissionDefault.OP);
@@ -34,7 +49,7 @@ public class SekaiCore extends JavaPlugin
 		if(Bukkit.getPluginManager().getPermission(elitePermission.getName()) == null)
 			Bukkit.getPluginManager().addPermission(elitePermission);
 
-		Core.getShop().registerPurchaseType(new ItemPurchase("[shop]", "§f§lSekai§6§lMC", "§e§lAchat Item")
+		Core.getShop().registerPurchaseType(new ItemPurchase("[shop]", "§f§lTouched§6§lCraft", "§e§lAchat Item")
 		{
 			@Override
 			public Permission getCreationPermission()
@@ -55,7 +70,7 @@ public class SekaiCore extends JavaPlugin
 			}
 		});
 
-		Core.getShop().registerPurchaseType(new ItemPurchase("[shopvip]", "§f§lSekai§6§lMC", "§e§lAchat Item §6§lVip")
+		Core.getShop().registerPurchaseType(new ItemPurchase("[shopvip]", "§f§lTouched§6§lCraft", "§e§lAchat Item §6§lVip")
 		{
 			@Override
 			public Permission getCreationPermission()
@@ -88,7 +103,7 @@ public class SekaiCore extends JavaPlugin
 
 		Bukkit.getPluginManager().registerEvents(new Listener()
 		{
-			@EventHandler(ignoreCancelled = true)
+			@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
 			public void onPlayerPurchase(PlayerPurchaseEvent event)
 			{
 				if(event.getPlayer().hasPermission(elitePermission))
@@ -101,7 +116,7 @@ public class SekaiCore extends JavaPlugin
 					event.getPlayer().sendMessage("§eDevenez §f§lÉlite §eet obtenez §625%§e de réduction sur §ltout§e en jeu !");
 				}
 			}
-		}, this);*/
+		}, this);
 	}
 	
 	@Override

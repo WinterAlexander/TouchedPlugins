@@ -1,12 +1,5 @@
 package me.winterguardian.mobracers.arena;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.LinkedList;
-import java.util.List;
-
 import me.winterguardian.core.sorting.AntiRecursiveRandomSelector;
 import me.winterguardian.core.sorting.OrderedSelector;
 import me.winterguardian.core.sorting.RandomSelector;
@@ -14,12 +7,18 @@ import me.winterguardian.core.sorting.Selector;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.core.world.SerializableRegion;
 import me.winterguardian.mobracers.MobRacersPlugin;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
 
 public class Arena
 {

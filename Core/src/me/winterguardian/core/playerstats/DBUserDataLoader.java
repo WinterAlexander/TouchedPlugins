@@ -1,5 +1,7 @@
 package me.winterguardian.core.playerstats;
 
+import me.winterguardian.core.util.TextUtil;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -14,9 +16,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.UUID;
 import java.util.regex.Pattern;
-
-import me.winterguardian.core.util.TextUtil;
-import org.bukkit.Bukkit;
 
 public class DBUserDataLoader implements UserDataLoader
 {

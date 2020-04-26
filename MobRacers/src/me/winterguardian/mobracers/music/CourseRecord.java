@@ -1,7 +1,6 @@
 package me.winterguardian.mobracers.music;
 
 import me.winterguardian.mobracers.CourseMessage;
-
 import org.bukkit.Material;
 
 public enum CourseRecord

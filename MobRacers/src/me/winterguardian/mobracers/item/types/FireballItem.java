@@ -7,7 +7,6 @@ import me.winterguardian.mobracers.item.ItemResult;
 import me.winterguardian.mobracers.item.ItemType;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Fireball;

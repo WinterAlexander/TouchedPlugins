@@ -1,7 +1,6 @@
 package me.winterguardian.core.game.state;
 
 import me.winterguardian.core.message.Message;
-
 import org.bukkit.entity.Player;
 
 public abstract class StandbyState extends LobbyState

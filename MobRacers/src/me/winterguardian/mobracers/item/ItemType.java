@@ -1,9 +1,5 @@
 package me.winterguardian.mobracers.item;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-
 import me.winterguardian.mobracers.item.rarity.EqualRarity;
 import me.winterguardian.mobracers.item.rarity.ExemptionRarity;
 import me.winterguardian.mobracers.item.rarity.IncreasingRarity;
@@ -20,6 +16,8 @@ import me.winterguardian.mobracers.item.types.ShieldItem;
 import me.winterguardian.mobracers.item.types.SpecialItem;
 import me.winterguardian.mobracers.item.types.SugarItem;
 import me.winterguardian.mobracers.item.types.WallItem;
+
+import java.util.Random;
 
 public enum ItemType
 {

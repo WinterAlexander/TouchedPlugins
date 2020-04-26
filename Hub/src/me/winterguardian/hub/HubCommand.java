@@ -1,19 +1,18 @@
 package me.winterguardian.hub;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.List;
-
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import me.winterguardian.core.game.GameManager;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
 
 public class HubCommand extends AutoRegistrationCommand
 {
@@ -28,12 +27,12 @@ public class HubCommand extends AutoRegistrationCommand
 				if(Hub.getPlugin().getHub() != null)
 				{
 					((Player)sender).teleport(Hub.getPlugin().getHub());
-					sender.sendMessage("§7Téléportation vers le hub de §f§lSekai§6§lMC§7...");
+					sender.sendMessage("§7Téléportation vers le hub de §f§lTouched§6§lCraft§7...");
 				}
 				else
 				{
 					((Player)sender).teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-					sender.sendMessage("§7Téléportation vers le spawn par défaut de §f§lSekai§6§lMC§7...");
+					sender.sendMessage("§7Téléportation vers le spawn par défaut de §f§lTouched§6§lCraft§7...");
 				}
 			}
 			else
@@ -48,12 +47,12 @@ public class HubCommand extends AutoRegistrationCommand
 				if(Hub.getPlugin().getHub() != null)
 				{
 					p.teleport(Hub.getPlugin().getHub());
-					p.sendMessage("§7Téléportation vers le hub de §f§lSekai§6§lMC§7...");
+					p.sendMessage("§7Téléportation vers le hub de §f§lTouched§6§lCraft§7...");
 				}
 				else
 				{
 					p.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-					p.sendMessage("§7Téléportation vers le spawn par défaut de §f§lSekai§6§lMC§7...");
+					p.sendMessage("§7Téléportation vers le spawn par défaut de §f§lTouched§6§lCraft§7...");
 				}
 			}
 			else

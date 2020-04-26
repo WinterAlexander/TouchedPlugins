@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.state.lobby;
 
-import java.util.*;
-
-import me.winterguardian.core.Core;
 import me.winterguardian.core.entity.EntityUtil;
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.game.state.StateGame;
@@ -36,14 +33,19 @@ import me.winterguardian.mobracers.vehicle.Vehicle;
 import me.winterguardian.mobracers.vehicle.VehicleType;
 import me.winterguardian.mobracers.vehicle.VipVehicle;
 import me.winterguardian.mobracers.vehicle.WinnableVehicle;
-
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.Sound;
+import org.bukkit.WeatherType;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Set;
 
 public class VehicleSelectionState extends WaitingState implements VehicleState
 {

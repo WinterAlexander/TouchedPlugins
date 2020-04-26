@@ -1,10 +1,5 @@
 package me.winterguardian.mobracers.item.types;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 import me.winterguardian.core.particle.ParticleType;
 import me.winterguardian.core.particle.ParticleUtil;
 import me.winterguardian.core.sorting.AntiRecursiveRandomSelector;
@@ -17,7 +12,6 @@ import me.winterguardian.mobracers.item.ItemResult;
 import me.winterguardian.mobracers.item.ItemType;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -26,6 +20,11 @@ import org.bukkit.block.BlockState;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class WallItem extends Item
 {	

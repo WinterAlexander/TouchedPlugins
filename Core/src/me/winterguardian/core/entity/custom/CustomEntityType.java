@@ -1,9 +1,9 @@
 package me.winterguardian.core.entity.custom;
 
+import me.winterguardian.core.util.ReflectionUtil;
+
 import java.lang.reflect.Field;
 import java.util.Map;
-
-import me.winterguardian.core.util.ReflectionUtil;
 
 public enum CustomEntityType
 {

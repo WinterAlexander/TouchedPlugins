@@ -1,9 +1,9 @@
 package me.winterguardian.core.scoreboard;
 
+import org.bukkit.entity.Player;
+
 import java.util.ArrayList;
 import java.util.HashMap;
-
-import org.bukkit.entity.Player;
 
 public class PagedBoard extends AutomaticBoard
 {

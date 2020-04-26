@@ -8,7 +8,6 @@ import me.winterguardian.core.playerstats.PlayerStats;
 import me.winterguardian.core.scoreboard.ScoreboardUtil;
 import me.winterguardian.core.util.TabUtil;
 import me.winterguardian.core.util.TextUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
@@ -21,23 +20,23 @@ public class ScoreboardAndTabTask implements Runnable
 		i = 0;
 	}
 	
-	public String getSekaiLogo()
+	public String getTouchedLogo()
 	{
 		switch(i / 5 % 2)
 		{
 		case 0:
-			return "§f§lSekai§6§lMC";
+			return "§f§lTouched§6§lCraft";
 		case 1:
-			return "§f§lSekai§e§lMC";
+			return "§f§lTouched§e§lCraft";
 			
 		default:
-			return "§f§lSekai§6§lMC";
+			return "§f§lTouched§6§lCraft";
 		}
 	}
 	
 	public String getTabHeader()
 	{
-		return JsonUtil.toJson("                              §6✦ §e✦ " + getSekaiLogo() + " §e✦ §6✦                               ");
+		return JsonUtil.toJson("                              §6✦ §e✦ " + getTouchedLogo() + " §e✦ §6✦                               ");
 	}
 
 	@Override
@@ -68,7 +67,7 @@ public class ScoreboardAndTabTask implements Runnable
 	public String[] getScoreboardPage1(Player p)
 	{
 		String[] elements = new String[16];
-		elements[0] = getSekaiLogo();
+		elements[0] = getTouchedLogo();
 		elements[1] = "§d§lJoueurs:";
 		elements[2] = "§f" + TextUtil.toString(Core.getBungeeMessager().getPlayerCount("ALL", Bukkit.getOnlinePlayers().size())) + " / 100";
 		elements[3] = "  ";
@@ -127,7 +126,7 @@ public class ScoreboardAndTabTask implements Runnable
 		elements[9] = " ";
 		elements[12] = "    ";
 		elements[13] = "§3§lSite:";
-		elements[14] = "§fsekaimc.net";
+		elements[14] = "§ftouchedcraft.fr";
 		elements[15] = "     ";
 		
 		return elements;
@@ -136,7 +135,7 @@ public class ScoreboardAndTabTask implements Runnable
 	public String[] getScoreboardPage2(Player p)
 	{
 		String[] elements = new String[16];
-		elements[0] = getSekaiLogo();
+		elements[0] = getTouchedLogo();
 		elements[1] = "§c§lRègles";
 		elements[2] = "§f Respect";
 		elements[3] = "§f Pas de spam";
@@ -204,7 +203,7 @@ public class ScoreboardAndTabTask implements Runnable
 		}
 		
 		String[] elements = new String[16];
-		elements[0] = getSekaiLogo();
+		elements[0] = getTouchedLogo();
 		elements[1] = "§4§lPvP";
 		elements[2] = "§2§f" + TextUtil.toString(pvpPlayers) + " joueur" + (pvpPlayers > 1 ? "s" : "");
 		elements[3] = " /pvp /duel";

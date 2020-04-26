@@ -4,7 +4,6 @@ import me.winterguardian.core.particle.ParticleType;
 import me.winterguardian.core.particle.ParticleUtil;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.DyeColor;
 import org.bukkit.Location;

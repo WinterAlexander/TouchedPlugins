@@ -1,6 +1,5 @@
 package me.winterguardian.pvp.game.solo;
 
-import me.winterguardian.core.scoreboard.ScoreboardUtil;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.TeamColor;
@@ -8,7 +7,6 @@ import me.winterguardian.pvp.game.PvPMatch;
 import me.winterguardian.pvp.game.PvPPlayerData;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
-import org.bukkit.scoreboard.NameTagVisibility;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 

@@ -1,13 +1,12 @@
 package me.winterguardian.core.particle;
 
-import java.util.Collection;
-import java.util.HashMap;
-
 import me.winterguardian.core.util.ReflectionUtil;
-
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
+
+import java.util.Collection;
+import java.util.HashMap;
 
 public class ParticleUtil
 {

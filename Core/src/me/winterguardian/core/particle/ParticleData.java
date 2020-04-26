@@ -1,9 +1,9 @@
 package me.winterguardian.core.particle;
 
-import java.util.Collection;
-
 import org.bukkit.Location;
 import org.bukkit.util.Vector;
+
+import java.util.Collection;
 
 public class ParticleData
 {

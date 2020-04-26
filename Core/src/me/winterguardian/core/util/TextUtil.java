@@ -93,7 +93,7 @@ public class TextUtil
 	public static String generateWelcomeMessage(String playerName, String exception)
 	{
 		String[][] messageParts = new String[][]{{"Bienvenue "},
-				{"", "à toi ", "parmi nous ", "sur SekaiMC ", "et bon jeu sur Sekai ", "", "sur ce serveur tout nouveau "},
+				{"", "à toi ", "parmi nous ", "sur Touched ", "et bon jeu sur Touched ", ""},
 				{playerName + " "},
 				{"! ", ""},
 				{":)", ":D", "=)", "=D", ""}};

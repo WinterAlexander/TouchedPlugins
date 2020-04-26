@@ -1,21 +1,16 @@
 package me.winterguardian.pvp.command;
 
-import java.util.Arrays;
-import java.util.List;
-
-import me.winterguardian.pvp.game.PvPMatch;
-import me.winterguardian.pvp.game.solo.FreeForAll;
-import me.winterguardian.pvp.game.solo.OneInTheChamber;
-import me.winterguardian.pvp.game.team.TeamDeathMatch;
-import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
-
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.pvp.PvPArena;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.PvPPlugin;
 import me.winterguardian.pvp.TeamColor;
+import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class ArenaSubCommand extends SubCommand
 {

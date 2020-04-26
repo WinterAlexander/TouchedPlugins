@@ -1,17 +1,16 @@
 package me.winterguardian.core.command;
 
+import me.winterguardian.core.message.ErrorMessage;
+import me.winterguardian.core.message.Message;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.permissions.Permission;
+
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-
-import me.winterguardian.core.message.ErrorMessage;
-import me.winterguardian.core.message.Message;
-
-import org.bukkit.command.Command;
-import org.bukkit.command.CommandSender;
-import org.bukkit.permissions.Permission;
 
 public abstract class CommandSplitter extends AutoRegistrationCommand
 {

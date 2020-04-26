@@ -2,7 +2,6 @@ package me.winterguardian.duel.game;
 
 import me.winterguardian.core.util.ActionBarUtil;
 import me.winterguardian.duel.Duel;
-
 import org.bukkit.entity.Player;
 
 public class DuelGameTask implements Runnable

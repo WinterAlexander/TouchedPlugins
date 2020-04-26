@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.item.types.special;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.item.ItemResult;
@@ -11,7 +8,6 @@ import me.winterguardian.mobracers.item.types.SpecialItem;
 import me.winterguardian.mobracers.state.game.GamePlayerData;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -24,6 +20,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ElderGuardianSpecialItem extends SpecialItem implements Listener
 {

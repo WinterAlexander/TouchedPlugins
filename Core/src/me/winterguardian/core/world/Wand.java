@@ -1,10 +1,7 @@
 package me.winterguardian.core.world;
 
-import java.util.HashMap;
-
 import me.winterguardian.core.DynamicComponent;
 import me.winterguardian.core.message.Message;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -15,6 +12,8 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
+
+import java.util.HashMap;
 
 public class Wand extends DynamicComponent implements Listener
 {

@@ -1,17 +1,16 @@
 package me.winterguardian.commandcenter.commands;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class RenameItemCommand extends AutoRegistrationCommand
 {

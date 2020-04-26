@@ -1,20 +1,19 @@
 package me.winterguardian.commandcenter.commands;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
 import me.winterguardian.commandcenter.CommandCenterMessage;
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.util.PlayerUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class ClearInventoryCommand extends AutoRegistrationCommand
 {

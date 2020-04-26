@@ -2,7 +2,6 @@ package me.winterguardian.blockfarmers.listener;
 
 import me.winterguardian.blockfarmers.BlockFarmersMessage;
 import me.winterguardian.blockfarmers.BlockFarmersPlugin;
-
 import org.bukkit.block.Sign;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

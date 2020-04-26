@@ -1,16 +1,15 @@
 package me.winterguardian.mobracers.command;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.game.state.StateGame;
 import me.winterguardian.core.message.Message;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.MobRacersPlugin;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.plugin.Plugin;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class ReloadSubCommand extends SubCommand
 {

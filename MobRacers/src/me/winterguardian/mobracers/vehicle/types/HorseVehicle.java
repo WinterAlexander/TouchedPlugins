@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.vehicle.types;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import me.winterguardian.core.sorting.AntiRecursiveRandomSelector;
 import me.winterguardian.core.sorting.RandomSelector;
 import me.winterguardian.core.util.SoundEffect;
@@ -16,7 +13,6 @@ import me.winterguardian.mobracers.item.types.special.HorseSpecialItem;
 import me.winterguardian.mobracers.vehicle.Vehicle;
 import me.winterguardian.mobracers.vehicle.VehicleGUIItem;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -27,6 +23,9 @@ import org.bukkit.entity.Horse.Style;
 import org.bukkit.entity.Horse.Variant;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class HorseVehicle extends Vehicle
 {

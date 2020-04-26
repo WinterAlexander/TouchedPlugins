@@ -8,7 +8,6 @@ import me.winterguardian.blockfarmers.FarmersColor;
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.TabUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

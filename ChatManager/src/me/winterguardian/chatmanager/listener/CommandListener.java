@@ -2,7 +2,6 @@ package me.winterguardian.chatmanager.listener;
 
 import me.winterguardian.chatmanager.ChatManager;
 import me.winterguardian.chatmanager.CommandRedirection;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

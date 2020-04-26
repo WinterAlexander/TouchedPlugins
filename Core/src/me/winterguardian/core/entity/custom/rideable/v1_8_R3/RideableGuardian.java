@@ -1,12 +1,7 @@
 package me.winterguardian.core.entity.custom.rideable.v1_8_R3;
 
-import java.lang.reflect.Field;
-import java.util.Iterator;
-import java.util.List;
-
 import me.winterguardian.core.entity.custom.rideable.RideableEntity;
 import net.minecraft.server.v1_8_R3.*;
-
 import org.bukkit.block.BlockFace;
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.craftbukkit.v1_8_R3.entity.CraftEntity;
@@ -14,6 +9,10 @@ import org.bukkit.craftbukkit.v1_8_R3.entity.CraftGuardian;
 import org.bukkit.entity.Vehicle;
 import org.bukkit.event.entity.EntityCombustEvent;
 import org.bukkit.event.vehicle.VehicleBlockCollisionEvent;
+
+import java.lang.reflect.Field;
+import java.util.Iterator;
+import java.util.List;
 
 public class RideableGuardian extends EntityGuardian implements RideableEntity
 {

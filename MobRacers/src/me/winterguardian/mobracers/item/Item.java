@@ -1,10 +1,9 @@
 package me.winterguardian.mobracers.item;
 
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public abstract class Item
 {

@@ -1,11 +1,5 @@
 package me.winterguardian.commandcenter.commands;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.UUID;
-
 import me.winterguardian.commandcenter.CommandCenterMessage;
 import me.winterguardian.core.Core;
 import me.winterguardian.core.command.AsyncCommand;
@@ -13,13 +7,18 @@ import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.playerstats.PlayerStats;
 import me.winterguardian.core.util.TextUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.Plugin;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.UUID;
 
 public class PointCommand extends AsyncCommand
 {

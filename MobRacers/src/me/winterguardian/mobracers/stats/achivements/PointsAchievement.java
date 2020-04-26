@@ -3,7 +3,6 @@ package me.winterguardian.mobracers.stats.achivements;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.stats.CourseAchievement;
 import me.winterguardian.mobracers.stats.CourseStats;
-
 import org.bukkit.entity.Player;
 
 public abstract class PointsAchievement extends CourseAchievement

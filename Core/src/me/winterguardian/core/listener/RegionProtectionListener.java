@@ -1,12 +1,11 @@
 package me.winterguardian.core.listener;
 
-import java.lang.reflect.Method;
-
 import me.winterguardian.core.world.SerializableRegion;
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.block.BlockPhysicsEvent;
+
+import java.lang.reflect.Method;
 
 @SuppressWarnings("unused")
 public abstract class RegionProtectionListener

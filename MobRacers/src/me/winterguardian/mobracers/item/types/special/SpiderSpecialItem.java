@@ -1,6 +1,5 @@
 package me.winterguardian.mobracers.item.types.special;
 
-import com.google.common.reflect.Reflection;
 import me.winterguardian.core.util.ReflectionUtil;
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.mobracers.CourseMessage;
@@ -9,7 +8,6 @@ import me.winterguardian.mobracers.item.ItemResult;
 import me.winterguardian.mobracers.item.types.SpecialItem;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;

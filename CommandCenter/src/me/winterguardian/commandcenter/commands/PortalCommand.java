@@ -1,11 +1,5 @@
 package me.winterguardian.commandcenter.commands;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
 import me.winterguardian.commandcenter.CommandCenter;
 import me.winterguardian.commandcenter.CommandCenterMessage;
 import me.winterguardian.core.Core;
@@ -18,7 +12,6 @@ import me.winterguardian.core.portal.LocationDestination;
 import me.winterguardian.core.portal.SerializableDestination;
 import me.winterguardian.core.portal.SerializablePortal;
 import me.winterguardian.core.world.SerializableRegion;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
@@ -28,6 +21,12 @@ import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.Plugin;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.List;
 
 public class PortalCommand extends AutoRegistrationCommand
 {
@@ -230,7 +229,7 @@ public class PortalCommand extends AutoRegistrationCommand
 	@Override
 	public List<String> getAliases()
 	{
-		return Arrays.asList("sekaiportal", "sekaiportail", "skp", "mvp", "sekaip", "portail", "portals", "portails");
+		return Arrays.asList("touchedportal", "touchedportail", "skp", "mvp", "touchedp", "portail", "portals", "portails");
 	}
 
 	@Override

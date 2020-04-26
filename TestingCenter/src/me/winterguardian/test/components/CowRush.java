@@ -1,13 +1,8 @@
 package me.winterguardian.test.components;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import me.winterguardian.core.entity.custom.rideable.RideableEntityUtil;
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.command.CommandSender;
@@ -18,6 +13,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class CowRush extends TestComponent
 {

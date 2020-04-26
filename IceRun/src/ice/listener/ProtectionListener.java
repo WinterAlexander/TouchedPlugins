@@ -1,8 +1,7 @@
 package ice.listener;
 
-import ice.IceRunMessage;
 import ice.IceRun;
-
+import ice.IceRunMessage;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

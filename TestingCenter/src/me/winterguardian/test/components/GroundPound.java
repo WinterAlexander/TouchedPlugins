@@ -1,11 +1,7 @@
 package me.winterguardian.test.components;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
@@ -14,6 +10,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GroundPound extends TestComponent
 {

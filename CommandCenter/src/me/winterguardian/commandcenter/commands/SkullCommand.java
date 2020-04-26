@@ -1,12 +1,8 @@
 package me.winterguardian.commandcenter.commands;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.commandcenter.CommandCenterMessage;
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -15,6 +11,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class SkullCommand extends AutoRegistrationCommand
 {

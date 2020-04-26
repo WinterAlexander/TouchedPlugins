@@ -1,14 +1,13 @@
 package me.winterguardian.mobracers.item.types;
 
-import org.bukkit.Material;
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-
 import me.winterguardian.mobracers.item.Item;
 import me.winterguardian.mobracers.item.ItemResult;
 import me.winterguardian.mobracers.item.ItemType;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 public class NullItem extends Item
 {

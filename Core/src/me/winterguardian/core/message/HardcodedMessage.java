@@ -40,7 +40,7 @@ public class HardcodedMessage extends Message
 	@Override
 	protected String getPrefix()
 	{
-		return "§f§lSekai§6§lMC §f§l>§7 ";
+		return "§f§lTouched§6§lCraft §f§l>§7 ";
 	}
 
 	@Override

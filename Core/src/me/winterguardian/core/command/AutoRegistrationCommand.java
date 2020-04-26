@@ -1,19 +1,21 @@
 package me.winterguardian.core.command;
 
+import me.winterguardian.core.message.ErrorMessage;
+import org.bukkit.Bukkit;
+import org.bukkit.command.Command;
+import org.bukkit.command.CommandExecutor;
+import org.bukkit.command.PluginCommand;
+import org.bukkit.command.SimpleCommandMap;
+import org.bukkit.command.TabCompleter;
+import org.bukkit.permissions.Permission;
+import org.bukkit.plugin.Plugin;
+
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
-
-import me.winterguardian.core.message.ErrorMessage;
-
-import me.winterguardian.core.message.HardcodedMessage;
-import org.bukkit.Bukkit;
-import org.bukkit.command.*;
-import org.bukkit.permissions.Permission;
-import org.bukkit.plugin.Plugin;
 
 public abstract class AutoRegistrationCommand implements CommandExecutor, TabCompleter, CommandData
 {

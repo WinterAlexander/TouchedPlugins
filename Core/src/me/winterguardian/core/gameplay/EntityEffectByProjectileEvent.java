@@ -1,6 +1,5 @@
 package me.winterguardian.core.gameplay;
 
-import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Projectile;
 import org.bukkit.event.Cancellable;

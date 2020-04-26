@@ -3,7 +3,6 @@ package me.winterguardian.test.components;
 import me.winterguardian.core.entity.custom.rideable.RideableEntityUtil;
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;

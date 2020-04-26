@@ -1,14 +1,12 @@
 package me.winterguardian.test.components;
 
+import com.google.common.io.ByteArrayDataOutput;
+import com.google.common.io.ByteStreams;
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
-
-import com.google.common.io.ByteArrayDataOutput;
-import com.google.common.io.ByteStreams;
 
 public class TestPluginMessageListener extends TestComponent implements PluginMessageListener
 {

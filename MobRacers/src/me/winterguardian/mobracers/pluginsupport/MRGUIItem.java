@@ -1,6 +1,5 @@
 package me.winterguardian.mobracers.pluginsupport;
 
-import me.winterguardian.core.game.Game;
 import me.winterguardian.core.inventorygui.GUIItem;
 import me.winterguardian.mobracers.MobRacersGame;
 import me.winterguardian.mobracers.state.game.GameState;
@@ -19,11 +18,11 @@ import java.util.List;
  *
  * Created by Alexander Winter on 2016-01-04.
  */
-public class SekaiHubItem extends GUIItem
+public class MRGUIItem extends GUIItem
 {
 	private MobRacersGame game;
 
-	public SekaiHubItem(MobRacersGame game)
+	public MRGUIItem(MobRacersGame game)
 	{
 		super(14);
 		this.game = game;

@@ -3,7 +3,6 @@ package ice;
 
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.util.PlayerUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;

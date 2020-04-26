@@ -5,7 +5,6 @@ import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.MobRacersConfig;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.command.VersionSubCommand;
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;

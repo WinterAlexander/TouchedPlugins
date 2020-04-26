@@ -1,17 +1,15 @@
 package me.winterguardian.blockfarmers.command;
 
-import java.util.UUID;
-
 import me.winterguardian.blockfarmers.BlockFarmersGame;
 import me.winterguardian.blockfarmers.BlockFarmersMessage;
 import me.winterguardian.blockfarmers.FarmersStats;
 import me.winterguardian.core.command.PlayerStatsAsyncSubCommand;
 import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.util.TextUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.Plugin;
+
+import java.util.UUID;
 
 public class StatsSubCommand extends PlayerStatsAsyncSubCommand
 {

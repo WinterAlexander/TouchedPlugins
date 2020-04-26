@@ -1,15 +1,14 @@
 package me.winterguardian.mobracers.command;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.MobRacersConfig;
 import me.winterguardian.mobracers.MobRacersGame;
 import me.winterguardian.mobracers.MobRacersPlugin;
-
 import org.bukkit.command.CommandSender;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class InfoSubCommand extends SubCommand
 {

@@ -1,13 +1,8 @@
 package me.winterguardian.commandcenter.commands;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map.Entry;
-
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.util.TextUtil;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.enchantments.Enchantment;
@@ -16,6 +11,10 @@ import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map.Entry;
 
 public class ItemInfoCommand extends AutoRegistrationCommand
 {

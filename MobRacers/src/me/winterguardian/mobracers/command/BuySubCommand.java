@@ -1,19 +1,17 @@
 package me.winterguardian.mobracers.command;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
-import me.winterguardian.core.Core;
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.stats.CoursePurchase;
-
 import me.winterguardian.mobracers.stats.CourseStats;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class BuySubCommand extends SubCommand
 {

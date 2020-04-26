@@ -1,10 +1,14 @@
 package me.winterguardian.core.playerstats;
 
-import java.io.File;
-import java.util.*;
-
 import me.winterguardian.core.util.TextUtil;
 import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.File;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
+import java.util.UUID;
 
 /**
  *

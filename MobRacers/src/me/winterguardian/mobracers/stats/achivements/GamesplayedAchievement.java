@@ -5,7 +5,6 @@ import me.winterguardian.mobracers.MobRacersConfig;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.stats.CourseAchievement;
 import me.winterguardian.mobracers.stats.CourseStats;
-
 import org.bukkit.entity.Player;
 
 public class GamesplayedAchievement extends PointsAchievement

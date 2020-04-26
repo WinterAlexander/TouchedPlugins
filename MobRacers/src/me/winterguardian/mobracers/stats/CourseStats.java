@@ -1,9 +1,5 @@
 package me.winterguardian.mobracers.stats;
 
-import java.util.HashMap;
-import java.util.Map.Entry;
-import java.util.Set;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.playerstats.PlayerStats;
@@ -13,13 +9,14 @@ import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.arena.Arena;
 import me.winterguardian.mobracers.vehicle.Vehicle;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
-import org.bukkit.configuration.ConfigurationSection;
-import org.bukkit.configuration.MemorySection;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+
+import java.util.HashMap;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class CourseStats extends PlayerStats
 {

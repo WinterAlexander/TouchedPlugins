@@ -1,16 +1,14 @@
 package me.winterguardian.mobracers.stats;
 
-import java.util.HashMap;
-import java.util.Set;
-import java.util.UUID;
-
 import me.winterguardian.core.Core;
-import me.winterguardian.core.userdata.UserData;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
+
+import java.util.HashMap;
+import java.util.Set;
+import java.util.UUID;
 
 public class ArenaStats
 {

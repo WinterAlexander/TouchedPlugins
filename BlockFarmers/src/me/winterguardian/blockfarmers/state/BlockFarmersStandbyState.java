@@ -8,7 +8,6 @@ import me.winterguardian.core.game.state.StateGame;
 import me.winterguardian.core.message.Message;
 import me.winterguardian.core.scoreboard.Board;
 import me.winterguardian.core.util.PlayerUtil;
-
 import org.bukkit.entity.Player;
 
 public class BlockFarmersStandbyState extends StandbyState

@@ -2,7 +2,10 @@ package me.winterguardian.pvp.game.team;
 
 import me.winterguardian.core.message.Message;
 import me.winterguardian.core.world.SerializableLocation;
-import me.winterguardian.pvp.*;
+import me.winterguardian.pvp.GameStuff;
+import me.winterguardian.pvp.PvP;
+import me.winterguardian.pvp.PvPMessage;
+import me.winterguardian.pvp.TeamColor;
 import me.winterguardian.pvp.game.PvPPlayerData;
 import me.winterguardian.pvp.game.Zone;
 import me.winterguardian.pvp.stats.Bonus;

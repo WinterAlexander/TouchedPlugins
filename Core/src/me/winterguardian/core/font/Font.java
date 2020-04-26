@@ -1,7 +1,5 @@
 package me.winterguardian.core.font;
 
-import java.util.HashMap;
-
 /**
  *
  * Created by Alexander Winter on 2016-02-03.

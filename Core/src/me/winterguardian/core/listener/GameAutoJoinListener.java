@@ -2,7 +2,6 @@ package me.winterguardian.core.listener;
 
 import me.winterguardian.core.game.Game;
 import me.winterguardian.core.message.Message;
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;

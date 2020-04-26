@@ -1,14 +1,13 @@
 package me.winterguardian.core.listener;
 
-import java.util.Collection;
-
 import me.winterguardian.core.message.Message;
-
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.permissions.Permission;
+
+import java.util.Collection;
 
 public abstract class CommandBlockerListener implements Listener
 {

@@ -1,9 +1,5 @@
 package me.winterguardian.blockfarmers.command;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
 import me.winterguardian.blockfarmers.BlockFarmersConfig;
 import me.winterguardian.blockfarmers.BlockFarmersGame;
 import me.winterguardian.blockfarmers.BlockFarmersMessage;
@@ -14,11 +10,14 @@ import me.winterguardian.core.command.CommandSplitter;
 import me.winterguardian.core.command.JoinGameSubCommand;
 import me.winterguardian.core.command.LeaveGameSubCommand;
 import me.winterguardian.core.command.OpenStateGameSubCommand;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class BlockFarmersCommand extends CommandSplitter
 {

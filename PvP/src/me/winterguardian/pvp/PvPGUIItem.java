@@ -43,7 +43,7 @@ public class PvPGUIItem extends GUIItem
 	{
 		ItemStack pvpItem = new ItemStack(Material.IRON_SWORD, 1);
 		ItemMeta pvpMeta = pvpItem.getItemMeta();
-		pvpMeta.setDisplayName("§f§lSekai§4§lPvP");
+		pvpMeta.setDisplayName("§f§lTouched§4§lPvP");
 		List<String> pvpLore = new ArrayList<>();
 
 		int pvpPlayers = game.getPlayers().size();

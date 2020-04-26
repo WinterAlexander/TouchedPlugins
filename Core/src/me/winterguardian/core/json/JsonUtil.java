@@ -1,12 +1,11 @@
 package me.winterguardian.core.json;
 
-import java.lang.reflect.Field;
-import java.util.ArrayList;
-
 import me.winterguardian.core.util.ColorUtil;
 import me.winterguardian.core.util.ReflectionUtil;
-
 import org.bukkit.entity.Player;
+
+import java.lang.reflect.Field;
+import java.util.ArrayList;
 
 public class JsonUtil
 {

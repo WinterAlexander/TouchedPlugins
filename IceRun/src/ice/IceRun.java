@@ -5,21 +5,14 @@ import ice.listener.GameListener;
 import ice.listener.JoinLeaveListener;
 import ice.listener.ProtectionListener;
 import ice.listener.SignListener;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import me.winterguardian.core.Core;
+import me.winterguardian.core.game.GUIItemGame;
 import me.winterguardian.core.game.GameManager;
-import me.winterguardian.core.game.SekaiGame;
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.inventorygui.GUIItem;
 import me.winterguardian.core.util.ActionBarUtil;
 import me.winterguardian.core.util.RecordUtil;
 import me.winterguardian.core.util.TabUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -30,7 +23,12 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class IceRun extends JavaPlugin implements SekaiGame
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
+public class IceRun extends JavaPlugin implements GUIItemGame
 {
 	public static Permission VIP = new Permission("IceRun.vip", "Accès aux permissions vip en icerun", PermissionDefault.OP);
 	public static Permission STAFF = new Permission("IceRun.staff", "Accès aux permissions staff en icerun", PermissionDefault.OP);

@@ -1,20 +1,19 @@
 package me.winterguardian.core.command;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Map.Entry;
-import java.util.UUID;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.message.Message;
 import me.winterguardian.core.playerstats.MappedData;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
+
+import java.util.Arrays;
+import java.util.List;
+import java.util.Map.Entry;
+import java.util.UUID;
 
 public abstract class PlayerStatsAsyncSubCommand extends AsyncSubCommand
 {

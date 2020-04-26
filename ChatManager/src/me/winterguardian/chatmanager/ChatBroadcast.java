@@ -1,13 +1,12 @@
 package me.winterguardian.chatmanager;
 
-import java.util.Arrays;
-
 import me.winterguardian.core.json.JsonUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.entity.Player;
+
+import java.util.Arrays;
 
 public class ChatBroadcast
 {

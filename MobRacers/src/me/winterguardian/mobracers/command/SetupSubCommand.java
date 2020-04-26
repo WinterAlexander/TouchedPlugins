@@ -1,9 +1,5 @@
 package me.winterguardian.mobracers.command;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.entity.EntityUtil;
@@ -18,13 +14,15 @@ import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.MobRacersSetup;
 import me.winterguardian.mobracers.vehicle.Vehicle;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Hanging;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class SetupSubCommand extends SubCommand
 {

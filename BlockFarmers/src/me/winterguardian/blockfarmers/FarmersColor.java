@@ -4,12 +4,10 @@ import me.winterguardian.core.message.Message;
 import me.winterguardian.core.sorting.AntiRecursiveRandomSelector;
 import me.winterguardian.core.sorting.Selector;
 import me.winterguardian.core.util.FireworkUtil;
-
 import org.bukkit.Color;
 import org.bukkit.FireworkEffect.Type;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.inventory.ItemStack;
 
 public enum FarmersColor
 {

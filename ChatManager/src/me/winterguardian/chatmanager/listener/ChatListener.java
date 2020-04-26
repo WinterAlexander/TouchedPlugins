@@ -2,7 +2,6 @@ package me.winterguardian.chatmanager.listener;
 
 import me.winterguardian.chatmanager.ChatManager;
 import me.winterguardian.core.util.TextUtil;
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;

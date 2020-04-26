@@ -16,16 +16,10 @@ import me.winterguardian.mobracers.MobRacersConfig;
 import me.winterguardian.mobracers.MobRacersGame;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.state.MobRacersState;
-
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-
-import java.util.Collections;
 
 public class StandbyState extends me.winterguardian.core.game.state.StandbyState implements MobRacersState
 {

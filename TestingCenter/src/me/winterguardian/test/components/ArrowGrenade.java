@@ -1,17 +1,16 @@
 package me.winterguardian.test.components;
 
-import java.util.List;
-
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
+
+import java.util.List;
 
 public class ArrowGrenade extends TestComponent
 {

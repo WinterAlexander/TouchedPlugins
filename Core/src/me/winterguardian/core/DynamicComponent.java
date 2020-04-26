@@ -1,9 +1,9 @@
 package me.winterguardian.core;
 
-import me.winterguardian.core.Component;
 import org.bukkit.plugin.Plugin;
 
-import java.util.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  *

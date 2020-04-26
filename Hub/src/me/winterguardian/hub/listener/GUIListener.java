@@ -1,8 +1,8 @@
 package me.winterguardian.hub.listener;
 
+import me.winterguardian.core.game.GUIItemGame;
 import me.winterguardian.core.game.Game;
 import me.winterguardian.core.game.GameManager;
-import me.winterguardian.core.game.SekaiGame;
 import me.winterguardian.core.inventorygui.InventoryGUI;
 import me.winterguardian.core.message.HardcodedMessage;
 import me.winterguardian.hub.Hub;
@@ -25,19 +25,15 @@ public class GUIListener implements Listener
 
 	public GUIListener(Hub hub)
 	{
-		this.gameSelection = new InventoryGUI("§f§lSekai§6§lMC §8§lMenu", 36);
+		this.gameSelection = new InventoryGUI("§8§lMenu §f§lTouched§6§lCraft", 36);
 
-		Bukkit.getScheduler().runTask(hub, new Runnable()
-		{
-			public void run()
-			{
-				for(Game game : GameManager.getGames())
-					if(game instanceof SekaiGame && ((SekaiGame)game).getGUIItem() != null)
-						gameSelection.getItems().add(((SekaiGame)game).getGUIItem());
+		Bukkit.getScheduler().runTask(hub, () -> {
+			for(Game game : GameManager.getGames())
+				if(game instanceof GUIItemGame && ((GUIItemGame)game).getGUIItem() != null)
+					gameSelection.getItems().add(((GUIItemGame)game).getGUIItem());
 
-				gameSelection.getItems().add(new CreaItem());
-				gameSelection.getItems().add(new FactionItem());
-			}
+			gameSelection.getItems().add(new CreaItem());
+			gameSelection.getItems().add(new FactionItem());
 		});
 
 		this.hub = hub;
@@ -66,11 +62,11 @@ public class GUIListener implements Listener
 				break;
 
 			case RED_ROSE:
-				new HardcodedMessage("Vote et tu recevras §a1000 §fpoints !\\n§b§nvote.sekaimc.net", true).say(event.getPlayer());
+				new HardcodedMessage("Vote et tu recevras §a1000 §fpoints !\\n§b§nvote.touchedcraft.fr", true).say(event.getPlayer());
 				break;
 
 			case CHEST:
-				new HardcodedMessage("Les gadgets arrivent bientôt sur Sekai !", true).say(event.getPlayer());
+				new HardcodedMessage("Les gadgets arriveront peut être un jour sur Touched", true).say(event.getPlayer());
 				break;
 
 			default:

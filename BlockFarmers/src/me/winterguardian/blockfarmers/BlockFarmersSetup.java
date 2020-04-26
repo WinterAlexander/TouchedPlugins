@@ -1,12 +1,11 @@
 package me.winterguardian.blockfarmers;
 
-import java.io.File;
-
 import me.winterguardian.core.game.state.StateGameSetup;
 import me.winterguardian.core.world.SerializableLocation;
-
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.File;
 
 public class BlockFarmersSetup extends StateGameSetup
 {

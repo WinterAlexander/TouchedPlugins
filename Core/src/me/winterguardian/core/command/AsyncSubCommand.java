@@ -1,12 +1,11 @@
 package me.winterguardian.core.command;
 
-import java.util.List;
-
-import me.winterguardian.core.Core;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
+
+import java.util.List;
 
 public abstract class AsyncSubCommand extends SubCommand
 {

@@ -1,13 +1,12 @@
 package me.winterguardian.test;
 
-import java.util.List;
-
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.event.Listener;
 import org.bukkit.permissions.Permission;
+
+import java.util.List;
 
 public abstract class TestComponent extends SubCommand implements Listener
 {

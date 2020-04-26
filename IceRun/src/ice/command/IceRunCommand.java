@@ -1,20 +1,18 @@
 package ice.command;
 
 import ice.IceRun;
-
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
 import me.winterguardian.core.command.CommandSplitter;
 import me.winterguardian.core.command.JoinGameSubCommand;
 import me.winterguardian.core.command.LeaveGameSubCommand;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class IceRunCommand extends CommandSplitter
 {

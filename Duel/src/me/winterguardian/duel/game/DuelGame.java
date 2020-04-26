@@ -1,9 +1,5 @@
 package me.winterguardian.duel.game;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.scoreboard.ScoreboardUtil;
 import me.winterguardian.core.util.AchievementUtil;
@@ -13,10 +9,13 @@ import me.winterguardian.core.util.TabUtil;
 import me.winterguardian.duel.Duel;
 import me.winterguardian.duel.DuelMessage;
 import me.winterguardian.duel.DuelStats;
-
 import org.bukkit.Achievement;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class DuelGame
 {

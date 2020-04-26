@@ -1,12 +1,10 @@
 package me.winterguardian.test.components;
 
-import me.winterguardian.test.TestComponent;
-import me.winterguardian.test.TestingCenter;
-
-import org.bukkit.command.CommandSender;
-
 import com.avaje.ebean.CallableSql;
 import com.avaje.ebean.EbeanServer;
+import me.winterguardian.test.TestComponent;
+import me.winterguardian.test.TestingCenter;
+import org.bukkit.command.CommandSender;
 
 public class DatabaseTest extends TestComponent
 {

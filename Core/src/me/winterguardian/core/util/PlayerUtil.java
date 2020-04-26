@@ -1,8 +1,5 @@
 package me.winterguardian.core.util;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -11,6 +8,9 @@ import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.potion.PotionEffect;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public class PlayerUtil
 {

@@ -1,9 +1,5 @@
 package me.winterguardian.mobracers.item.types.special;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import me.winterguardian.core.particle.ParticleData;
 import me.winterguardian.core.particle.ParticleType;
 import me.winterguardian.core.particle.ParticleUtil;
@@ -18,7 +14,6 @@ import me.winterguardian.mobracers.item.types.SpecialItem;
 import me.winterguardian.mobracers.state.game.GamePlayerData;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -32,6 +27,10 @@ import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class MushroomCowSpecialItem extends SpecialItem implements Listener
 {

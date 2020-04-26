@@ -3,7 +3,6 @@ package me.winterguardian.mobracers.listener;
 import me.winterguardian.mobracers.MobRacersGame;
 import me.winterguardian.mobracers.state.VehicleState;
 import me.winterguardian.mobracers.state.lobby.VehicleSelectionState;
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityCombustEvent;

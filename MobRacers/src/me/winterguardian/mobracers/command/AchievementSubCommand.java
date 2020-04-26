@@ -1,15 +1,14 @@
 package me.winterguardian.mobracers.command;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.stats.CourseAchievement;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class AchievementSubCommand extends SubCommand
 {

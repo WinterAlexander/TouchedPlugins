@@ -19,11 +19,11 @@ import java.util.List;
  *
  * Created by Alexander Winter on 2016-01-04.
  */
-public class SekaiHubItem extends GUIItem
+public class BFHubItem extends GUIItem
 {
 	private BlockFarmersGame game;
 
-	public SekaiHubItem(BlockFarmersGame game)
+	public BFHubItem(BlockFarmersGame game)
 	{
 		super(23);
 		this.game = game;

@@ -1,17 +1,16 @@
 package me.winterguardian.chatmanager.command;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.chatmanager.ChatManager;
 import me.winterguardian.chatmanager.ChatManagerMessage;
 import me.winterguardian.chatmanager.CommandRedirection;
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class RedirectCommand
   extends AutoRegistrationCommand

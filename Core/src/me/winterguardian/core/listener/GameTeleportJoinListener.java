@@ -3,7 +3,6 @@ package me.winterguardian.core.listener;
 
 import me.winterguardian.core.game.Game;
 import me.winterguardian.core.world.Region;
-
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;

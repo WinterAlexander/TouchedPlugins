@@ -1,19 +1,18 @@
 package me.winterguardian.core.message;
 
-import java.util.Collection;
-import java.util.regex.Pattern;
-
 import me.winterguardian.core.game.Game;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.util.ActionBarUtil;
 import me.winterguardian.core.util.TitleUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.World;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
+
+import java.util.Collection;
+import java.util.regex.Pattern;
 
 public abstract class Message
 {

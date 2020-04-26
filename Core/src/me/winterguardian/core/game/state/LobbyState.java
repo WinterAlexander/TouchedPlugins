@@ -4,7 +4,6 @@ import me.winterguardian.core.scoreboard.Board;
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.TabUtil;
 import me.winterguardian.core.util.Weather;
-
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 

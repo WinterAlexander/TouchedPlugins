@@ -1,18 +1,15 @@
 package me.winterguardian.pvp.game.team;
 
-import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.TeamColor;
 import me.winterguardian.pvp.game.PvPPlayerData;
 import me.winterguardian.pvp.stats.Bonus;
-import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.ItemStack;
 
 /**
  *

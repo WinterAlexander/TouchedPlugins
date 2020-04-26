@@ -1,7 +1,6 @@
 package me.winterguardian.mobracers.item.types.special;
 
 
-
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.item.ItemResult;
@@ -9,7 +8,6 @@ import me.winterguardian.mobracers.item.types.SpecialItem;
 import me.winterguardian.mobracers.state.game.GamePlayerData;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;

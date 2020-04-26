@@ -1,7 +1,6 @@
 package me.winterguardian.core.entity.custom;
 
 import me.winterguardian.core.DynamicComponent;
-import me.winterguardian.core.entity.custom.CustomEntityType;
 import org.bukkit.plugin.Plugin;
 
 /**

@@ -1,14 +1,10 @@
 package me.winterguardian.blockfarmers.listener;
 
-import java.util.Arrays;
-import java.util.Set;
-
 import me.winterguardian.blockfarmers.BlockFarmersConfig;
-import me.winterguardian.blockfarmers.BlockFarmersPlayerData;
 import me.winterguardian.blockfarmers.BlockFarmersGame;
+import me.winterguardian.blockfarmers.BlockFarmersPlayerData;
 import me.winterguardian.blockfarmers.state.BlockFarmersFarmingState;
 import me.winterguardian.core.util.SoundEffect;
-
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.block.BlockFace;
@@ -17,6 +13,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+
+import java.util.Arrays;
+import java.util.Set;
 
 public class BlockFarmersGameListener implements Listener
 {

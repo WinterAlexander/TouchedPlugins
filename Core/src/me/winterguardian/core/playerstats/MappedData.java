@@ -1,12 +1,11 @@
 package me.winterguardian.core.playerstats;
 
+import org.bukkit.configuration.file.YamlConfiguration;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
-import me.winterguardian.core.userdata.UserData;
-import org.bukkit.configuration.file.YamlConfiguration;
 
 public class MappedData
 {

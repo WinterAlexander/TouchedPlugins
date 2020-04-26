@@ -3,7 +3,6 @@ package me.winterguardian.blockfarmers;
 import me.winterguardian.blockfarmers.state.BlockFarmersFarmingState;
 import me.winterguardian.core.Core;
 import me.winterguardian.core.game.PlayerData;
-
 import org.bukkit.Material;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.block.Block;

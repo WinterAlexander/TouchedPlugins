@@ -1,14 +1,11 @@
 package me.winterguardian.pvp;
 
 import me.winterguardian.core.util.TextUtil;
-import me.winterguardian.pvp.PvPPlugin;
 import org.bukkit.block.Sign;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-
-import javax.swing.plaf.TextUI;
 
 /**
  *
@@ -27,7 +24,10 @@ public class SignListener implements Listener
 
 		Sign sign = (Sign)event.getClickedBlock().getState();
 
-		if(!sign.getLines()[0].equals("§f§lSekai§4§lPvP"))
+		if(sign.getLines()[0].equals("§f§lSekai§4§lPvP"))
+			sign.setLine(0, "§f§lTouched§4§lPvP");
+
+		if(!sign.getLines()[0].equals("§f§lTouched§4§lPvP"))
 			return;
 
 		if(sign.getLines()[1].equalsIgnoreCase("§e§lVote"))
@@ -58,7 +58,7 @@ public class SignListener implements Listener
 		if(!event.getLines()[0].equalsIgnoreCase("[pvp]"))
 			return;
 
-		event.setLine(0, "§f§lSekai§4§lPvP");
+		event.setLine(0, "§f§lTouched§4§lPvP");
 
 		if(event.getLines()[1].equalsIgnoreCase("vote"))
 		{

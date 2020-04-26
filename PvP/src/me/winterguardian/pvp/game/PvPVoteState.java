@@ -1,11 +1,15 @@
 package me.winterguardian.pvp.game;
 
-import java.util.*;
-import java.util.Map.Entry;
-
+import me.winterguardian.core.game.state.State;
+import me.winterguardian.core.json.JsonUtil;
+import me.winterguardian.core.scoreboard.ScoreboardUtil;
+import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.SoundEffect;
+import me.winterguardian.core.util.TabUtil;
+import me.winterguardian.pvp.PvP;
+import me.winterguardian.pvp.PvPArena;
+import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.PvPPlugin;
-import me.winterguardian.pvp.game.solo.Brawl;
 import me.winterguardian.pvp.game.solo.FreeForAll;
 import me.winterguardian.pvp.game.solo.KingOfTheHill;
 import me.winterguardian.pvp.game.solo.OneInTheChamber;
@@ -17,14 +21,11 @@ import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
-import me.winterguardian.core.game.state.State;
-import me.winterguardian.core.json.JsonUtil;
-import me.winterguardian.core.scoreboard.ScoreboardUtil;
-import me.winterguardian.core.util.PlayerUtil;
-import me.winterguardian.core.util.TabUtil;
-import me.winterguardian.pvp.PvP;
-import me.winterguardian.pvp.PvPArena;
-import me.winterguardian.pvp.PvPMessage;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Random;
 
 public class PvPVoteState implements State, Runnable
 {
@@ -399,7 +400,7 @@ public class PvPVoteState implements State, Runnable
 	private void prepare(Player player)
 	{
 		displayBoard(player);
-		TabUtil.sendInfos(player, JsonUtil.toJson("§f§lSekai§4§lPvP"), JsonUtil.toJson("§aUne partie de " + getNextGameName() + " va bientôt commencer."));
+		TabUtil.sendInfos(player, JsonUtil.toJson("§f§lTouched§4§lPvP"), JsonUtil.toJson("§aUne partie de " + getNextGameName() + " va bientôt commencer."));
 		PlayerUtil.prepare(player);
 		PlayerUtil.clearInventory(player);
 		PlayerUtil.heal(player);

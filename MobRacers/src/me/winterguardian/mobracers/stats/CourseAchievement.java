@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.stats;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.stats.achivements.BlockAchievement;
 import me.winterguardian.mobracers.stats.achivements.CaveSpiderAchievement;
@@ -17,8 +14,10 @@ import me.winterguardian.mobracers.stats.achivements.StalAchievement;
 import me.winterguardian.mobracers.stats.achivements.SuperSheepAchievement;
 import me.winterguardian.mobracers.stats.achivements.VictoriesAchievement;
 import me.winterguardian.mobracers.stats.achivements.WaitAchievement;
-
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class CourseAchievement
 {

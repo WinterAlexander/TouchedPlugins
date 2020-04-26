@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.vehicle.types;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.item.Item;
@@ -15,7 +12,6 @@ import me.winterguardian.mobracers.stats.CoursePurchase;
 import me.winterguardian.mobracers.vehicle.PurchasableVehicle;
 import me.winterguardian.mobracers.vehicle.VehicleGUIItem;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -24,6 +20,9 @@ import org.bukkit.entity.Horse;
 import org.bukkit.entity.Horse.Variant;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 
 public class UndeadHorseVehicle extends PurchasableVehicle

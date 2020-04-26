@@ -1,11 +1,11 @@
 package me.winterguardian.core.util;
 
-import java.lang.reflect.Field;
-import java.util.Collection;
-
 import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
+
+import java.lang.reflect.Field;
+import java.util.Collection;
 
 public class SoundEffect
 {

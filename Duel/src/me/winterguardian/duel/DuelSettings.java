@@ -1,19 +1,18 @@
 package me.winterguardian.duel;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.core.world.SerializableRegion;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class DuelSettings
 {

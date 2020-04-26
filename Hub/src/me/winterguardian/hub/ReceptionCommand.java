@@ -1,17 +1,16 @@
 package me.winterguardian.hub;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 public class ReceptionCommand extends AutoRegistrationCommand
 {
@@ -24,12 +23,12 @@ public class ReceptionCommand extends AutoRegistrationCommand
 				if(Hub.getPlugin().getNewPlayersSpawn() != null)
 				{
 					((Player)sender).teleport(Hub.getPlugin().getNewPlayersSpawn());
-					sender.sendMessage("§7Téléportation vers l'accueil de §f§lSekai§6§lMC§7...");
+					sender.sendMessage("§7Téléportation vers l'accueil de §f§lTouched§6§lMC§7...");
 				}
 				else
 				{
 					((Player)sender).teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-					sender.sendMessage("§7Téléportation vers le spawn par défaut de §f§lSekai§6§lMC§7...");
+					sender.sendMessage("§7Téléportation vers le spawn par défaut de §f§lTouched§6§lMC§7...");
 				}
 			}
 			else
@@ -41,12 +40,12 @@ public class ReceptionCommand extends AutoRegistrationCommand
 					if(Hub.getPlugin().getNewPlayersSpawn() != null)
 					{
 						p.teleport(Hub.getPlugin().getNewPlayersSpawn());
-						p.sendMessage("§7Téléportation vers l'accueil de §f§lSekai§6§lMC§7...");
+						p.sendMessage("§7Téléportation vers l'accueil de §f§lTouched§6§lMC§7...");
 					}
 					else
 					{
 						p.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-						p.sendMessage("§7Téléportation vers le spawn par défaut de §f§lSekai§6§lMC§7...");
+						p.sendMessage("§7Téléportation vers le spawn par défaut de §f§lTouched§6§lMC§7...");
 					}
 				else
 					ErrorMessage.COMMAND_INVALID_PLAYER.say(sender);
@@ -71,7 +70,7 @@ public class ReceptionCommand extends AutoRegistrationCommand
 	@Override
 	public String getDescription()
 	{
-		return "Téléporte à l'accueil de Sekai.";
+		return "Téléporte à l'accueil de Touched.";
 	}
 
 	@Override

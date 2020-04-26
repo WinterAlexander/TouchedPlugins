@@ -1,16 +1,12 @@
 package me.darkmoustache.jumpbox;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.Core;
+import me.winterguardian.core.game.GUIItemGame;
 import me.winterguardian.core.game.GameManager;
-import me.winterguardian.core.game.SekaiGame;
 import me.winterguardian.core.inventorygui.GUIItem;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.TabUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -23,7 +19,10 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class JumpBox extends JavaPlugin implements SekaiGame
+import java.util.ArrayList;
+import java.util.List;
+
+public class JumpBox extends JavaPlugin implements GUIItemGame
 {
 	public static final String DEFAULT_HEADER = JsonUtil.toJson("§f[§a§lJumpBox§f]");
 	public static final String DEFAULT_FOOTER = JsonUtil.toJson("§eBonne chance !");

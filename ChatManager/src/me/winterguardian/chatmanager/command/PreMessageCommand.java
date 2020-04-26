@@ -1,7 +1,5 @@
 package me.winterguardian.chatmanager.command;
 
-import java.util.*;
-
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.util.TextUtil;
@@ -11,6 +9,11 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.List;
 
 public class PreMessageCommand extends AutoRegistrationCommand
 {
@@ -25,7 +28,7 @@ public class PreMessageCommand extends AutoRegistrationCommand
 		messages.put("sens", "Merci d'envoyer des messages qui ont du sens.");
 		messages.put("majs", "Pour conserver une ambiance viable, merci de ne pas utiliser les majuscules.");
 		messages.put("provoc", "Afin de conserver une ambiance amicale et sans embrouilles, merci de ne pas provoquer les autres joueurs.");
-		messages.put("insulte", "Le respect mutuel est obligatoire sur SekaiMc, ici pas d'insultes.");
+		messages.put("insulte", "Le respect mutuel est obligatoire sur Touched, ici pas d'insultes.");
 
 		messages.put("spam!", "Cessez immédiatement d'envoyer autant de messages !");
 		messages.put("flood!", "Cessez d'envoyer des messages contenant du flood !");
@@ -36,20 +39,15 @@ public class PreMessageCommand extends AutoRegistrationCommand
 
 		messages.put("avertissement", "Ceci était votre dernier avertissement, arrêtez si vous ne voulez pas obtenir une sanction.");
 
-		messages.put("recrutement", "Pour obtenir un grade, vous devez faire une candidature sur le forum et être très présent sur le teamspeak. Il n'est pas conseillé d'harceler le staff/sous-staff pour obtenir un grade. Nous considérons que ceux qui souhaitent aider la communauté sont autonomes et n'ont pas besoin d'être encadrés comme des enfants. Merci de votre compréhension.");
-		messages.put("ip", "L'ip de notre serveur est play.sekaimc.net");
-		messages.put("site", "L'adresse de notre site est sekaimc.net");
-		messages.put("ts", "L'adresse de notre serveur TeamSpeak 3 est ts.sekaimc.net");
-		messages.put("boutique", "L'adresse de notre boutique est http://sekaimc.net/boutique");
+		messages.put("ip", "L'ip de notre serveur est play.touchedcraft.fr");
+		messages.put("site", "L'adresse de notre site est touchedcraft.fr");
+		messages.put("ts", "L'adresse de notre serveur discord est https://discord.gg/z26wVew");
 
 		messages.put("cheat", "Pour demander à quelqu'un d'être vérifié, envoyer un message privé à un Modo ou Admin.");
 		messages.put("accusation", "Accusez publiquement un autre joueur pour triche dans le chat est interdit.");
 		messages.put("accusation!", "Cessez vos accusations publiques si vous ne voulez pas devenir muet !");
 		messages.put("occupé", "Je suis occupé pour le moment, merci de demander à un guide ou à un autre membre du staff pour questions de tous genres.");
 		messages.put("occupé!", "Cessez de me harceler, je suis occupé !");
-
-		messages.put("wtfts", "TeamSpeak 3 est un service de communication vocale téléchargeable gratuitement sur Google.com");
-		messages.put("admin", "Pour devenir admin, vous devez commencer par entrer dans le sous-staff en faisant une candidature, exceller dans votre domaine jusqu'à devenir staff puis finalement obtenir le grade admin après que vous avez démontrer votre confiance et votre fiabilité dans le travail que vous apporter sur le serveur.");
 
 		messages.put("offres", "Le vip est 12 euros à vie et le Élite est 24 euros à vie.");
 		messages.put("paiement", "Le mode de paiement est via buycraft avec paypal ou carte de crédit.");

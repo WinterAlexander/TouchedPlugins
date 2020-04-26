@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.item.types.special;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.MobRacersPlugin;
@@ -11,7 +8,6 @@ import me.winterguardian.mobracers.item.types.ShieldItem;
 import me.winterguardian.mobracers.item.types.SpecialItem;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -29,6 +25,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CaveSpiderSpecialItem extends SpecialItem implements Runnable, Listener
 {

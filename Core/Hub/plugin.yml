@@ -1,5 +1,5 @@
 name: Core
 version: 1.0.0
-main: me.winterguardian.core.SekaiCore
+main: me.winterguardian.core.CoreLauncher
 author: WinterGuardian
 load: STARTUP

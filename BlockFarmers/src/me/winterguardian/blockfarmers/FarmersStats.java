@@ -1,6 +1,5 @@
 package me.winterguardian.blockfarmers;
 
-import me.winterguardian.core.Core;
 import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.playerstats.PlayerStats;
 import me.winterguardian.core.util.TextUtil;

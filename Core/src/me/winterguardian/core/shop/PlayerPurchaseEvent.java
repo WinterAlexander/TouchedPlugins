@@ -3,7 +3,6 @@ package me.winterguardian.core.shop;
 import me.winterguardian.core.message.Message;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
-import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.player.PlayerEvent;
 

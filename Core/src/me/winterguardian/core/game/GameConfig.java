@@ -1,8 +1,9 @@
 package me.winterguardian.core.game;
 
+import org.bukkit.configuration.file.YamlConfiguration;
+
 import java.io.File;
 import java.util.ArrayList;
-import org.bukkit.configuration.file.YamlConfiguration;
 
 public abstract class GameConfig extends Config
 {

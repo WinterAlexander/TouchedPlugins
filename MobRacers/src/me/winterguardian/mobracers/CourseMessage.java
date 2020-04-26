@@ -2,7 +2,6 @@ package me.winterguardian.mobracers;
 
 import me.winterguardian.core.message.LangMessage;
 import me.winterguardian.core.util.TextUtil;
-
 import org.bukkit.configuration.file.YamlConfiguration;
 
 

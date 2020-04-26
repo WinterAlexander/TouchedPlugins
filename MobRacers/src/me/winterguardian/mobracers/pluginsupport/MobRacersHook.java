@@ -3,7 +3,6 @@ package me.winterguardian.mobracers.pluginsupport;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.clip.placeholderapi.PlaceholderHook;
 import me.winterguardian.core.util.MathUtil;
-import me.winterguardian.mobracers.MobRacersConfig;
 import me.winterguardian.mobracers.MobRacersGame;
 import me.winterguardian.mobracers.arena.Arena;
 import me.winterguardian.mobracers.state.game.GamePlayerData;
@@ -12,7 +11,6 @@ import me.winterguardian.mobracers.stats.ArenaStats;
 import me.winterguardian.mobracers.stats.ArenaStats.PlayerArenaStats;
 import me.winterguardian.mobracers.stats.CourseStats;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 
@@ -48,10 +46,10 @@ public class MobRacersHook extends PlaceholderHook
 			return game.getMaxPlayers() + "";
 		
 		if(id.equalsIgnoreCase("pointcoeff"))
-			return ((MobRacersConfig) game.getConfig()).getPointCoefficient() + "";
+			return game.getConfig().getPointCoefficient() + "";
 		
 		if(id.equalsIgnoreCase("pointcoeffpercent"))
-			return MathUtil.round(((MobRacersConfig) game.getConfig()).getPointCoefficient() * 100, 2) + "%";
+			return MathUtil.round(game.getConfig().getPointCoefficient() * 100, 2) + "%";
 		
 		if(id.equalsIgnoreCase("status"))
 			return game.getStatus();
@@ -118,7 +116,7 @@ public class MobRacersHook extends PlaceholderHook
 			
 			if(id.split("_")[2].equalsIgnoreCase("ranking"))
 			{
-				if(!((MobRacersConfig) game.getConfig()).enableStats())
+				if(!game.getConfig().enableStats())
 					return "";
 				
 				ArenaStats stats = ArenaStats.getStats(arena.getName());

@@ -1,11 +1,5 @@
 package me.winterguardian.hub;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 import me.winterguardian.core.game.Game;
 import me.winterguardian.core.game.GameManager;
 import me.winterguardian.core.util.PlayerUtil;
@@ -16,7 +10,6 @@ import me.winterguardian.hub.listener.GUIListener;
 import me.winterguardian.hub.listener.JoinLeaveListener;
 import me.winterguardian.hub.listener.PlayerProtectionListener;
 import me.winterguardian.hub.listener.RegionProtectionListener;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -28,6 +21,10 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Hub extends JavaPlugin implements Game
 {
@@ -70,7 +67,7 @@ public class Hub extends JavaPlugin implements Game
 		if(Bukkit.getPluginManager().getPermission(RANK_STAFF.getName()) == null)
 			Bukkit.getPluginManager().addPermission(RANK_STAFF);
 		
-		this.tabMessage = "§7Bon jeu sur §f§lSekai§6§lMC §7$player !  §e✧  §7Il y a actuellement §c$onlines §7joueurs connectés en ce moment. §e✧  §7Visitez §b§nsekaimc.net§7 pour §7la §eboutique§7, §7les §avotes §7et le §dforum §7!  §e✧  §7Nous avons §cTeamSpeak3§7, Ip: §b§nts.sekaimc.net§f  §e✧  §7Tu souhaites devenir §6§lVip §7ou §f§lÉlite §7? Rends-toi sur la §eboutique §7pour voir nos offres !  §e✧  §7Envie d'intégrer le staff, direction §dforum §7pour les candidatures !  §e✧  §7Nous acceptons les §fYou§ctubers §7avec certaines conditions. Tu crois être à la hauteur ? Cliques sur l'onglet Partenaires de notre site.  §e✧  §7Nous avons spécialement besoin de §fvous §7! Envie de contribuer à SekaiMC ? Faites de belles constructions en créatif pour devenir ouvrier ou aidez les gens pour devenir guide et vous pourrez vous rendre plus loin dans le staff de §f§lSekai§6§lMC §7!  §e✧  ";
+		this.tabMessage = "§7Bon jeu sur §f§lTouched§6§lCraft §7$player !  §e✧  §7Il y a actuellement §c$onlines §7joueurs connectés en ce moment. §e✧  §7Visitez §b§ntouchedcraft.fr§7 pour §7la §eboutique§7, §7les §avotes §7et le §dforum §7!  §e✧  §7Nous avons §cDiscord§7, Ip: §b§ndiscord.touchedcraft.fr§f  §e✧  §7Tu souhaites devenir §6§lVip §7ou §f§lÉlite §7? Rends-toi sur la §eboutique §7pour voir nos offres !  §e✧  §7Envie d'intégrer le staff, direction §dforum §7pour les candidatures !  §e✧  §7Nous acceptons les §fYou§ctubers §7avec certaines conditions. Tu crois être à la hauteur ? Cliques sur l'onglet Partenaires de notre site.  §e✧  §7Nous avons spécialement besoin de §fvous §7! Envie de contribuer à TouchedCraft ? Faites de belles constructions en créatif pour devenir ouvrier ou aidez les gens pour devenir guide et vous pourrez vous rendre plus loin dans le staff de §f§lTouched§6§lCraft §7!  §e✧  ";
 		this.tabMessageWidth = 50;
 		
 		this.load();

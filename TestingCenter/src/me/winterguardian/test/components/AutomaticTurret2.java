@@ -1,12 +1,8 @@
 package me.winterguardian.test.components;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.command.CommandSender;
@@ -16,6 +12,9 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AutomaticTurret2 extends TestComponent
 {

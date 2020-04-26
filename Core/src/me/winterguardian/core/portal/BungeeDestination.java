@@ -1,7 +1,6 @@
 package me.winterguardian.core.portal;
 
 import me.winterguardian.core.Core;
-
 import org.bukkit.entity.Player;
 
 public class BungeeDestination extends SerializableDestination

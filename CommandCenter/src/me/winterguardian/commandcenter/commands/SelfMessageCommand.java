@@ -1,13 +1,12 @@
 package me.winterguardian.commandcenter.commands;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.AutoRegistrationCommand;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class SelfMessageCommand extends AutoRegistrationCommand
 {

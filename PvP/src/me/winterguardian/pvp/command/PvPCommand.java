@@ -1,8 +1,5 @@
 package me.winterguardian.pvp.command;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.CloseStateGameSubCommand;
 import me.winterguardian.core.command.CommandSplitter;
 import me.winterguardian.core.command.JoinGameSubCommand;
@@ -10,11 +7,13 @@ import me.winterguardian.core.command.LeaveGameSubCommand;
 import me.winterguardian.core.command.OpenStateGameSubCommand;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPPlugin;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class PvPCommand extends CommandSplitter
 {
@@ -42,7 +41,7 @@ public class PvPCommand extends CommandSplitter
 	@Override
 	public List<String> getAliases()
 	{
-		return Arrays.asList("pvp", "skpvp");
+		return Arrays.asList("pvp");
 	}
 	
 	@Override
@@ -54,7 +53,7 @@ public class PvPCommand extends CommandSplitter
 	@Override
 	public String getName()
 	{
-		return "sekaipvp";
+		return "touchedpvp";
 	}
 	
 	@Override

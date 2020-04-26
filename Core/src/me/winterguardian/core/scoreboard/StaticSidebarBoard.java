@@ -1,10 +1,9 @@
 package me.winterguardian.core.scoreboard;
 
-import java.util.HashMap;
-
 import me.winterguardian.core.util.PlayerUtil;
-
 import org.bukkit.entity.Player;
+
+import java.util.HashMap;
 
 public class StaticSidebarBoard extends Board
 {

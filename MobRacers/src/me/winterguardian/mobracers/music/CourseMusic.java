@@ -1,10 +1,5 @@
 package me.winterguardian.mobracers.music;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
 import me.winterguardian.core.util.RecordUtil;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.mobracers.CourseMessage;
@@ -13,11 +8,15 @@ import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.arena.Arena;
 import me.winterguardian.mobracers.stats.CourseAchievement;
 import me.winterguardian.mobracers.stats.CoursePurchase;
-
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class CourseMusic
 {

@@ -1,33 +1,6 @@
 package me.winterguardian.mobracers.vehicle;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import me.winterguardian.mobracers.vehicle.types.BabyCowVehicle;
-import me.winterguardian.mobracers.vehicle.types.BlockVehicle;
-import me.winterguardian.mobracers.vehicle.types.CaveSpiderVehicle;
-import me.winterguardian.mobracers.vehicle.types.ChickenVehicle;
-import me.winterguardian.mobracers.vehicle.types.CowVehicle;
-import me.winterguardian.mobracers.vehicle.types.DonkeyVehicle;
-import me.winterguardian.mobracers.vehicle.types.ElderGuardianVehicle;
-import me.winterguardian.mobracers.vehicle.types.GuardianVehicle;
-import me.winterguardian.mobracers.vehicle.types.HorseVehicle;
-import me.winterguardian.mobracers.vehicle.types.MagmaCubeVehicle;
-import me.winterguardian.mobracers.vehicle.types.MinecartVehicle;
-import me.winterguardian.mobracers.vehicle.types.MushroomCowVehicle;
-import me.winterguardian.mobracers.vehicle.types.OcelotVehicle;
-import me.winterguardian.mobracers.vehicle.types.PigVehicle;
-import me.winterguardian.mobracers.vehicle.types.RabbitVehicle;
-import me.winterguardian.mobracers.vehicle.types.SheepVehicle;
-import me.winterguardian.mobracers.vehicle.types.SilverfishVehicle;
-import me.winterguardian.mobracers.vehicle.types.SkeletonHorseVehicle;
-import me.winterguardian.mobracers.vehicle.types.SlimeVehicle;
-import me.winterguardian.mobracers.vehicle.types.SpiderVehicle;
-import me.winterguardian.mobracers.vehicle.types.SquidVehicle;
-import me.winterguardian.mobracers.vehicle.types.SuperSheepVehicle;
-import me.winterguardian.mobracers.vehicle.types.UndeadHorseVehicle;
-import me.winterguardian.mobracers.vehicle.types.WolfVehicle;
-
+import me.winterguardian.mobracers.vehicle.types.*;
 import org.bukkit.entity.Cow;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
@@ -35,6 +8,9 @@ import org.bukkit.entity.Guardian;
 import org.bukkit.entity.Horse;
 import org.bukkit.entity.Horse.Variant;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public enum VehicleType
 {

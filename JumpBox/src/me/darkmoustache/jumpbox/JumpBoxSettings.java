@@ -1,16 +1,15 @@
 package me.darkmoustache.jumpbox;
 
-import java.io.File;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.core.world.SerializableRegion;
-
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+
+import java.io.File;
 
 public class JumpBoxSettings
 {

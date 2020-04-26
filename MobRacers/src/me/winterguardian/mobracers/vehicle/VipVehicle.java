@@ -1,7 +1,6 @@
 package me.winterguardian.mobracers.vehicle;
 
 import me.winterguardian.mobracers.MobRacersPlugin;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;

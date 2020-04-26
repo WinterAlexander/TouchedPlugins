@@ -1,27 +1,29 @@
 package me.winterguardian.pvp.game;
 
-import java.util.*;
-
 import me.winterguardian.core.Core;
-import me.winterguardian.core.game.PlayerData;
-import me.winterguardian.core.game.state.GameState;
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.message.Message;
-import me.winterguardian.core.scoreboard.Board;
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.core.util.TabUtil;
-import me.winterguardian.pvp.*;
-
+import me.winterguardian.pvp.GameStuff;
+import me.winterguardian.pvp.PvP;
+import me.winterguardian.pvp.PvPArena;
+import me.winterguardian.pvp.PvPMessage;
+import me.winterguardian.pvp.TeamColor;
 import me.winterguardian.pvp.stats.PvPStats;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
+
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public abstract class PvPMatch implements State, Runnable
 {
@@ -89,7 +91,7 @@ public abstract class PvPMatch implements State, Runnable
 
 	private void displayTab(Player p)
 	{
-		TabUtil.sendInfos(p, JsonUtil.toJson("§f§lSekai§4§lPvP"), JsonUtil.toJson(PvPMessage.GAME_TABFOOTER.toString("<mode>", getName(), "<arena>", getArena().getName())));
+		TabUtil.sendInfos(p, JsonUtil.toJson("§f§lTouched§4§lPvP"), JsonUtil.toJson(PvPMessage.GAME_TABFOOTER.toString("<mode>", getName(), "<arena>", getArena().getName())));
 	}
 
 	public void skip()

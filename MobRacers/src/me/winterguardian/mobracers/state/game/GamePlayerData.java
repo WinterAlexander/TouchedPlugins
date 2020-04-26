@@ -1,9 +1,5 @@
 package me.winterguardian.mobracers.state.game;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.game.PlayerData;
 import me.winterguardian.core.util.PlayerUtil;
@@ -22,7 +18,6 @@ import me.winterguardian.mobracers.stats.CourseAchievement;
 import me.winterguardian.mobracers.stats.CourseStats;
 import me.winterguardian.mobracers.vehicle.Vehicle;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
@@ -34,6 +29,10 @@ import org.bukkit.block.BlockState;
 import org.bukkit.block.PistonMoveReaction;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class GamePlayerData extends PlayerData
 {

@@ -1,6 +1,5 @@
 package me.winterguardian.core.command;
 
-import me.winterguardian.core.Core;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;

@@ -1,8 +1,8 @@
 package me.winterguardian.mobracers;
 
 import me.winterguardian.core.command.CommandSplitter;
+import me.winterguardian.core.game.GUIItemGame;
 import me.winterguardian.core.game.GameConfig;
-import me.winterguardian.core.game.SekaiGame;
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.game.state.StateGame;
 import me.winterguardian.core.game.state.StateGameSetup;
@@ -14,8 +14,16 @@ import me.winterguardian.core.world.Region;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.mobracers.arena.Arena;
 import me.winterguardian.mobracers.command.MobRacersCommand;
-import me.winterguardian.mobracers.listener.*;
-import me.winterguardian.mobracers.pluginsupport.SekaiHubItem;
+import me.winterguardian.mobracers.listener.ArenaSelectionListener;
+import me.winterguardian.mobracers.listener.CommandSignListener;
+import me.winterguardian.mobracers.listener.GameListener;
+import me.winterguardian.mobracers.listener.RegionProtectionListener;
+import me.winterguardian.mobracers.listener.StandbyListener;
+import me.winterguardian.mobracers.listener.UpdateListener;
+import me.winterguardian.mobracers.listener.VanillaMessagesListener;
+import me.winterguardian.mobracers.listener.VehicleProtectionListener;
+import me.winterguardian.mobracers.listener.VehicleSelectionListener;
+import me.winterguardian.mobracers.pluginsupport.MRGUIItem;
 import me.winterguardian.mobracers.state.MobRacersState;
 import me.winterguardian.mobracers.state.lobby.StandbyState;
 import org.bukkit.Bukkit;
@@ -30,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MobRacersGame extends StateGame implements SekaiGame
+public class MobRacersGame extends StateGame implements GUIItemGame
 {
 	private MobRacersConfig baseConfig;
 	private List<PlayerState> playerStates;
@@ -313,7 +321,7 @@ public class MobRacersGame extends StateGame implements SekaiGame
 	@Override
 	public GUIItem getGUIItem()
 	{
-		return new SekaiHubItem(this);
+		return new MRGUIItem(this);
 	}
 
 	@Override

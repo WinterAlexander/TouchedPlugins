@@ -1,18 +1,13 @@
 package me.winterguardian.blockfarmers;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
-
 import me.winterguardian.blockfarmers.command.BlockFarmersCommand;
 import me.winterguardian.blockfarmers.listener.BlockFarmersGameListener;
 import me.winterguardian.blockfarmers.listener.CommandSignListener;
-import me.winterguardian.blockfarmers.pluginsupport.SekaiHubItem;
+import me.winterguardian.blockfarmers.pluginsupport.BFHubItem;
 import me.winterguardian.blockfarmers.state.BlockFarmersStandbyState;
 import me.winterguardian.core.command.CommandSplitter;
+import me.winterguardian.core.game.GUIItemGame;
 import me.winterguardian.core.game.GameConfig;
-import me.winterguardian.core.game.SekaiGame;
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.game.state.StateGame;
 import me.winterguardian.core.game.state.StateGameSetup;
@@ -20,16 +15,19 @@ import me.winterguardian.core.inventorygui.GUIItem;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.listener.ServerMOTDListener;
 import me.winterguardian.core.message.Message;
-
 import me.winterguardian.core.util.PlayerState;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.plugin.java.JavaPlugin;
 
-public class BlockFarmersGame extends StateGame implements SekaiGame
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
+
+public class BlockFarmersGame extends StateGame implements GUIItemGame
 {
 	private List<PlayerState> playerStates;
 
@@ -285,6 +283,6 @@ public class BlockFarmersGame extends StateGame implements SekaiGame
 	@Override
 	public GUIItem getGUIItem()
 	{
-		return new SekaiHubItem(this);
+		return new BFHubItem(this);
 	}
 }

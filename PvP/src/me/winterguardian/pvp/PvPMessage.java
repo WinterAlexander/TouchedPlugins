@@ -139,7 +139,7 @@ public class PvPMessage extends HardcodedMessage
 	@Override
 	protected String getPrefix()
 	{
-		return "§f§lSekai§4§lPvP §f§l> §7";
+		return "§f§lTouched§4§lPvP §f§l> §7";
 	}
 	
 	public void sayPlayers(String... replacements)

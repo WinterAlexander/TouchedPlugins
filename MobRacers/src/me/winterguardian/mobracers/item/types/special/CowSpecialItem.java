@@ -1,9 +1,13 @@
 package me.winterguardian.mobracers.item.types.special;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
+import me.winterguardian.mobracers.CourseMessage;
+import me.winterguardian.mobracers.MobRacersPlugin;
+import me.winterguardian.mobracers.item.ItemResult;
+import me.winterguardian.mobracers.item.types.ShieldItem;
+import me.winterguardian.mobracers.item.types.SpecialItem;
+import me.winterguardian.mobracers.state.game.GamePlayerData;
+import me.winterguardian.mobracers.state.game.GameState;
+import me.winterguardian.mobracers.vehicle.Vehicle;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -17,14 +21,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.util.Vector;
 
-import me.winterguardian.mobracers.CourseMessage;
-import me.winterguardian.mobracers.MobRacersPlugin;
-import me.winterguardian.mobracers.item.ItemResult;
-import me.winterguardian.mobracers.item.types.ShieldItem;
-import me.winterguardian.mobracers.item.types.SpecialItem;
-import me.winterguardian.mobracers.state.game.GamePlayerData;
-import me.winterguardian.mobracers.state.game.GameState;
-import me.winterguardian.mobracers.vehicle.Vehicle;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class CowSpecialItem extends SpecialItem implements Listener, Runnable
 {

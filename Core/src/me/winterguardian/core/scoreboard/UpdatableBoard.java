@@ -1,11 +1,10 @@
 package me.winterguardian.core.scoreboard;
 
+import me.winterguardian.core.util.PlayerUtil;
+import org.bukkit.entity.Player;
+
 import java.util.ArrayList;
 import java.util.List;
-
-import me.winterguardian.core.util.PlayerUtil;
-
-import org.bukkit.entity.Player;
 
 public abstract class UpdatableBoard extends Board
 {

@@ -1,7 +1,5 @@
 package me.winterguardian.core.util;
 
-import sun.net.www.protocol.http.HttpURLConnection;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;

@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.vehicle.types;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import me.winterguardian.core.entity.custom.rideable.RideableEntityUtil;
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.mobracers.CourseMessage;
@@ -17,11 +14,13 @@ import me.winterguardian.mobracers.item.types.special.MinecartSpecialItem;
 import me.winterguardian.mobracers.vehicle.Vehicle;
 import me.winterguardian.mobracers.vehicle.VehicleGUIItem;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class MinecartVehicle extends Vehicle
 {

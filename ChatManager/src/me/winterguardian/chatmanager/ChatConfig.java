@@ -1,16 +1,15 @@
 package me.winterguardian.chatmanager;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import me.winterguardian.core.json.JsonUtil;
-
 import org.bukkit.Sound;
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class ChatConfig
 {
@@ -19,9 +18,9 @@ public class ChatConfig
 	private ChatBroadcast[] broadcasts;
 	private long broadcastDelay;
 	private boolean broadcastActive;
-	private String welcomeTitle = "[{text:\"Sekai\",color:white, bold:true}, {text:\"MC\", color:gold, bold:true}]";
+	private String welcomeTitle = "[{text:\"Touched\",color:white, bold:true}, {text:\"Craft\", color:gold, bold:true}]";
 	private String welcomeSubTitle = "{text:'Amusez-vous bien !', color:yellow}";
-	private String joinTitle = "[{text:\"Sekai\",color:white, bold:true}, {text:\"MC\", color:gold, bold:true}]";
+	private String joinTitle = "[{text:\"Touched\",color:white, bold:true}, {text:\"Craft\", color:gold, bold:true}]";
 	private String joinSubTitle = "{text:'Amusez-vous bien !', color:yellow}";
 	private FileConfiguration helpSection;
 	private HashMap<Integer, String> chatFormats;
@@ -32,10 +31,10 @@ public class ChatConfig
 		broadcastDelay = 12000L;
 		broadcastActive = false;
 
-		insults = new ArrayList<String>();
-		redirections = new ArrayList<CommandRedirection>();
+		insults = new ArrayList<>();
+		redirections = new ArrayList<>();
 
-		chatFormats = new HashMap<Integer, String>();
+		chatFormats = new HashMap<>();
 	}
 
 	public void save()
@@ -116,12 +115,11 @@ public class ChatConfig
 		broadcastActive = config.getBoolean("broadcast-active");
 		if(config.isConfigurationSection("broadcast"))
 		{
-			List<ChatBroadcast> temp = new ArrayList<ChatBroadcast>();
+			List<ChatBroadcast> temp = new ArrayList<>();
 			for(String key : config.getConfigurationSection("broadcast").getKeys(false))
-			{
-				temp.add(new ChatBroadcast(config.getConfigurationSection("broadcast." + (String)key)));
-			}
-			broadcasts = ((ChatBroadcast[])temp.toArray(broadcasts));
+				temp.add(new ChatBroadcast(config.getConfigurationSection("broadcast." + key)));
+
+			broadcasts = temp.toArray(broadcasts);
 		}
 		if(config.isConfigurationSection("chat-format"))
 		{

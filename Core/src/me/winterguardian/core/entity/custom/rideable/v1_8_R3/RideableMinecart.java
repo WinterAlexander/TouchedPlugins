@@ -1,7 +1,5 @@
 package me.winterguardian.core.entity.custom.rideable.v1_8_R3;
 
-import java.lang.reflect.Field;
-
 import me.winterguardian.core.entity.custom.CustomNoAI;
 import me.winterguardian.core.entity.custom.rideable.RideableEntity;
 import net.minecraft.server.v1_8_R3.Block;
@@ -14,10 +12,11 @@ import net.minecraft.server.v1_8_R3.EntityLiving;
 import net.minecraft.server.v1_8_R3.EntityMinecartRideable;
 import net.minecraft.server.v1_8_R3.MathHelper;
 import net.minecraft.server.v1_8_R3.World;
-
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.craftbukkit.v1_8_R3.TrigMath;
 import org.bukkit.craftbukkit.v1_8_R3.event.CraftEventFactory;
+
+import java.lang.reflect.Field;
 
 public class RideableMinecart extends EntityMinecartRideable implements RideableEntity, CustomNoAI
 {

@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.item.types.special;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.particle.ParticleType;
 import me.winterguardian.core.particle.ParticleUtil;
 import me.winterguardian.core.util.SoundEffect;
@@ -14,7 +11,6 @@ import me.winterguardian.mobracers.item.types.SpecialItem;
 import me.winterguardian.mobracers.state.game.GamePlayerData;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -22,6 +18,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class GuardianSpecialItem extends SpecialItem
 {

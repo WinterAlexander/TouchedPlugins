@@ -5,10 +5,8 @@ import me.winterguardian.core.Core;
 import me.winterguardian.core.game.GameManager;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.playerstats.MappedData;
-import me.winterguardian.core.userdata.UserData;
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.TextUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

@@ -1,9 +1,5 @@
 package me.winterguardian.mobracers.command;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.mobracers.CourseMessage;
@@ -11,9 +7,12 @@ import me.winterguardian.mobracers.stats.ArenaStats;
 import me.winterguardian.mobracers.stats.ArenaStats.PlayerArenaStats;
 import me.winterguardian.mobracers.stats.CourseStats;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class RankingSubCommand extends SubCommand
 {

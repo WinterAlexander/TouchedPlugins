@@ -8,7 +8,6 @@ import me.winterguardian.mobracers.item.ItemResult;
 import me.winterguardian.mobracers.item.ItemType;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;

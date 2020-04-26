@@ -3,14 +3,12 @@ package me.winterguardian.pvp.command;
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.message.HardcodedMessage;
-import me.winterguardian.core.message.Message;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPArena;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.game.PvPVoteState;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import org.bukkit.permissions.Permission;
 
 import java.util.Arrays;
 import java.util.List;

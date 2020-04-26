@@ -6,12 +6,10 @@ import me.winterguardian.mobracers.MobRacersConfig;
 import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.item.Item;
 import me.winterguardian.mobracers.item.ItemType;
-
 import org.bukkit.Location;
 import org.bukkit.entity.Ageable;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.EntityType;
-import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 
 public abstract class Vehicle

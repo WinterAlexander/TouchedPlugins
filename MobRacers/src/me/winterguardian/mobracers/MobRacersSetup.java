@@ -1,15 +1,14 @@
 package me.winterguardian.mobracers;
 
-import java.io.File;
-import java.util.HashMap;
-
 import me.winterguardian.core.game.state.StateGameSetup;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.inventory.ItemStack;
+
+import java.io.File;
+import java.util.HashMap;
 
 public class MobRacersSetup extends StateGameSetup
 {

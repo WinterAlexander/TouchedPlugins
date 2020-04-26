@@ -1,16 +1,15 @@
 package me.winterguardian.duel.command;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.duel.Duel;
 import me.winterguardian.duel.DuelMessage;
-
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class QuitSubCommand extends SubCommand
 {

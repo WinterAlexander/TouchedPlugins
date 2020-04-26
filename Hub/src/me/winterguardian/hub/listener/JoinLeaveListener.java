@@ -1,11 +1,9 @@
 package me.winterguardian.hub.listener;
 
 import me.winterguardian.core.Core;
-import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.playerstats.PlayerStats;
 import me.winterguardian.core.util.FireworkUtil;
 import me.winterguardian.hub.Hub;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

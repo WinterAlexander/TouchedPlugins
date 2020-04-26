@@ -1,16 +1,12 @@
 package me.winterguardian.mobracers;
 
-import java.io.File;
-
 import me.winterguardian.core.Core;
-import me.winterguardian.core.world.Wand;
 import me.winterguardian.mobracers.command.VersionSubCommand;
 import me.winterguardian.mobracers.item.types.CloudItem;
 import me.winterguardian.mobracers.item.types.ShieldItem;
 import me.winterguardian.mobracers.pluginsupport.MobRacersHook;
 import me.winterguardian.mobracers.pluginsupport.VaultSupport;
 import me.winterguardian.mobracers.stats.ArenaStats;
-
 import me.winterguardian.mobracers.stats.CoursePurchase;
 import me.winterguardian.mobracers.stats.CourseStats;
 import org.bukkit.Bukkit;
@@ -20,6 +16,8 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.io.File;
 
 public class MobRacersPlugin extends JavaPlugin
 {
@@ -124,9 +122,9 @@ public class MobRacersPlugin extends JavaPlugin
 		VOTE.addParent(PLAY, true);
 		CMD_PROTECT_BYPASS.addParent(ADMIN, true);
 
-		if(((MobRacersConfig)game.getConfig()).enableStats())
+		if(game.getConfig().enableStats())
 		{
-			MobRacersConfig config = (MobRacersConfig)game.getConfig();
+			MobRacersConfig config = game.getConfig();
 			if(config.isSqlEnabled())
 				Core.getUserDatasManager().enableDB(this, config.getSqlDriver(), config.getSqlURL(), config.getSqlUser(), config.getSqlPassword(), CourseStats.getTables());
 			else

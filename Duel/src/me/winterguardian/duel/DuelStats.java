@@ -2,7 +2,6 @@ package me.winterguardian.duel;
 
 import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.playerstats.PlayerStats;
-import me.winterguardian.core.userdata.UserData;
 import me.winterguardian.core.util.TextUtil;
 
 import java.util.HashMap;

@@ -1,15 +1,10 @@
 package me.winterguardian.chatmanager.listener;
 
-import java.util.Random;
-
 import me.winterguardian.chatmanager.ChatManager;
 import me.winterguardian.core.Core;
-import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.playerstats.PlayerStats;
-import me.winterguardian.core.util.FireworkUtil;
 import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.core.util.TitleUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
@@ -18,6 +13,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+
+import java.util.Random;
 
 public class WelcomeListener implements Listener
 {
@@ -61,7 +58,7 @@ public class WelcomeListener implements Listener
 					for(Player player : Bukkit.getOnlinePlayers())
 					{
 						player.playSound(player.getLocation(), Sound.LEVEL_UP, 10.0F, 1.0F);
-						player.sendMessage("§aBienvenue §r" + event.getPlayer().getDisplayName() + " §asur §f§lSekai§6§lMC §a!");
+						player.sendMessage("§aBienvenue §r" + event.getPlayer().getDisplayName() + " §asur §f§lTouched§6§lCraft §a!");
 					}
 					TitleUtil.displayTitle(event.getPlayer(), ChatManager.getChatConfig().getWelcomeTitle(), ChatManager.getChatConfig().getWelcomeSubTitle(), 15, 60, 10);
 				}

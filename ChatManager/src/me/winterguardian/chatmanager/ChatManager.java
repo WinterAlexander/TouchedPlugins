@@ -1,8 +1,5 @@
 package me.winterguardian.chatmanager;
 
-import java.lang.reflect.Field;
-import java.util.Collection;
-
 import me.winterguardian.chatmanager.command.ClearChatCommand;
 import me.winterguardian.chatmanager.command.PreMessageCommand;
 import me.winterguardian.chatmanager.command.RedirectCommand;
@@ -10,13 +7,15 @@ import me.winterguardian.chatmanager.command.SayAllCommand;
 import me.winterguardian.chatmanager.listener.ChatListener;
 import me.winterguardian.chatmanager.listener.CommandListener;
 import me.winterguardian.chatmanager.listener.WelcomeListener;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
+
+import java.lang.reflect.Field;
+import java.util.Collection;
 
 public class ChatManager extends JavaPlugin
 {

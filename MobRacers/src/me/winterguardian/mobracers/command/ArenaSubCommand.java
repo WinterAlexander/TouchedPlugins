@@ -1,9 +1,5 @@
 package me.winterguardian.mobracers.command;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.util.ActionBarUtil;
@@ -17,12 +13,15 @@ import me.winterguardian.mobracers.arena.Arena;
 import me.winterguardian.mobracers.arena.Breakline;
 import me.winterguardian.mobracers.arena.RoadType;
 import me.winterguardian.mobracers.state.game.ItemBox;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class ArenaSubCommand extends SubCommand
 {

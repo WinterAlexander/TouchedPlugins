@@ -7,7 +7,6 @@ import me.winterguardian.mobracers.arena.Arena;
 import me.winterguardian.mobracers.stats.CourseAchievement;
 import me.winterguardian.mobracers.stats.CourseStats;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.entity.Player;
 
 public class SuperSheepAchievement extends CourseAchievement

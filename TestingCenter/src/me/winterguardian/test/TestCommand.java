@@ -1,16 +1,15 @@
 package me.winterguardian.test;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.List;
-
 import me.winterguardian.core.command.CommandSplitter;
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.message.ErrorMessage;
-
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
 
 
 public class TestCommand extends CommandSplitter

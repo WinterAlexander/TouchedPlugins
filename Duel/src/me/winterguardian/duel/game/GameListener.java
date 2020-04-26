@@ -1,7 +1,5 @@
 package me.winterguardian.duel.game;
 
-import me.winterguardian.core.util.AchievementUtil;
-import me.winterguardian.core.util.ActionBarUtil;
 import me.winterguardian.core.util.CombatUtil;
 import me.winterguardian.duel.Duel;
 import me.winterguardian.duel.DuelMessage;

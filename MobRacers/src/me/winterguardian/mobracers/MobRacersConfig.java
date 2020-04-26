@@ -1,16 +1,19 @@
 package me.winterguardian.mobracers;
 
-import java.io.File;
-import java.util.*;
-
 import me.winterguardian.core.game.GameConfig;
 import me.winterguardian.core.util.Weather;
-
 import org.bukkit.Bukkit;
 import org.bukkit.WeatherType;
 import org.bukkit.World;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class MobRacersConfig extends GameConfig
 {

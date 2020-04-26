@@ -7,7 +7,6 @@ import me.winterguardian.mobracers.state.game.GamePlayerData;
 import me.winterguardian.mobracers.state.game.GameSpectatorData;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.state.game.ItemBox;
-
 import org.bukkit.entity.Player;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.EventHandler;

@@ -1,8 +1,5 @@
 package ice;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.scoreboard.ScoreboardUtil;
@@ -10,7 +7,6 @@ import me.winterguardian.core.util.FireworkUtil;
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.core.world.LocationUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -18,6 +14,9 @@ import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class IceRunGame implements State
 {

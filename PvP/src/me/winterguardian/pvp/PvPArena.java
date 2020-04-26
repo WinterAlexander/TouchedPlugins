@@ -1,21 +1,14 @@
 package me.winterguardian.pvp;
 
-import java.io.File;
-import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import me.winterguardian.core.game.VotableArena;
 import me.winterguardian.core.world.LocationUtil;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.core.world.SerializableRegion;
+import me.winterguardian.pvp.game.PvPMatch;
 import me.winterguardian.pvp.game.solo.Brawl;
 import me.winterguardian.pvp.game.solo.FreeForAll;
 import me.winterguardian.pvp.game.solo.KingOfTheHill;
 import me.winterguardian.pvp.game.solo.OneInTheChamber;
-import me.winterguardian.pvp.game.PvPMatch;
-
 import me.winterguardian.pvp.game.solo.Switch;
 import me.winterguardian.pvp.game.team.CaptureTheFlag;
 import me.winterguardian.pvp.game.team.Domination;
@@ -25,6 +18,11 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class PvPArena extends VotableArena
 {

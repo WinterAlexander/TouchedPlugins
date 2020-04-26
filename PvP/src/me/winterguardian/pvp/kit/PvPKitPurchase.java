@@ -6,10 +6,8 @@ import me.winterguardian.core.shop.PurchaseType;
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.pvp.PvPPlugin;
-import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
 import org.bukkit.permissions.Permission;
 
 /**

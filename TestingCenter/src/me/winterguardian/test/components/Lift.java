@@ -3,7 +3,6 @@ package me.winterguardian.test.components;
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Entity;

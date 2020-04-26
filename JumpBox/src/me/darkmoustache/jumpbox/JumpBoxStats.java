@@ -2,10 +2,8 @@ package me.darkmoustache.jumpbox;
 
 import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.playerstats.PlayerStats;
-import me.winterguardian.core.userdata.UserData;
 import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.core.world.SerializableLocation;
-
 import org.bukkit.Location;
 import org.bukkit.OfflinePlayer;
 

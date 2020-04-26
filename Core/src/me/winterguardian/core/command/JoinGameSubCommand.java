@@ -1,15 +1,14 @@
 package me.winterguardian.core.command;
 
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.game.Game;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.message.Message;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class JoinGameSubCommand extends SubCommand
 {

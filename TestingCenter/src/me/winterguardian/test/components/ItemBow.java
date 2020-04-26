@@ -1,11 +1,8 @@
 package me.winterguardian.test.components;
 
 
-import java.util.ArrayList;
-
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Item;
@@ -14,6 +11,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.entity.EntityShootBowEvent;
 import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.inventory.ItemStack;
+
+import java.util.ArrayList;
 
 public class ItemBow extends TestComponent
 {

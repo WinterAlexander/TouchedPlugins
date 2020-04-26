@@ -3,7 +3,6 @@ package me.winterguardian.blockfarmers;
 import me.clip.placeholderapi.PlaceholderAPI;
 import me.clip.placeholderapi.PlaceholderHook;
 import me.winterguardian.core.Core;
-
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 

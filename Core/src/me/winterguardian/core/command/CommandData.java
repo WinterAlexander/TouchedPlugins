@@ -1,8 +1,8 @@
 package me.winterguardian.core.command;
 
-import java.util.List;
-
 import org.bukkit.permissions.Permission;
+
+import java.util.List;
 
 public interface CommandData
 {

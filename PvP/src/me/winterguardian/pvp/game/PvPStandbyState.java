@@ -7,7 +7,6 @@ import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.TabUtil;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;
-
 import org.bukkit.entity.Player;
 
 public class PvPStandbyState implements State
@@ -67,7 +66,7 @@ public class PvPStandbyState implements State
 	private void prepare(Player player)
 	{
 		String[] elements = new String[16];
-		elements[0] = "§f§lSekai§4§lPvP";
+		elements[0] = "§f§lTouched§4§lPvP";
 		elements[1] = " ";
 		elements[2] = "§cPas assez de";
 		elements[3] = "§cjoueurs pour";
@@ -76,7 +75,7 @@ public class PvPStandbyState implements State
 		
 		ScoreboardUtil.unrankedSidebarDisplay(player, elements);
 		
-		TabUtil.sendInfos(player, JsonUtil.toJson("§f§lSekai§4§lPvP"), JsonUtil.toJson("§cIl n'y a pas assez de joueurs pour commencer."));
+		TabUtil.sendInfos(player, JsonUtil.toJson("§f§lTouched§4§lPvP"), JsonUtil.toJson("§cIl n'y a pas assez de joueurs pour commencer."));
 		PlayerUtil.clearInventory(player);
 		PlayerUtil.heal(player);
 		PlayerUtil.prepare(player);

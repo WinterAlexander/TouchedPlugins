@@ -1,9 +1,7 @@
 package me.winterguardian.core.util;
 
 import me.winterguardian.core.sorting.AntiRecursiveRandomSelector;
-import me.winterguardian.core.sorting.Selector;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 

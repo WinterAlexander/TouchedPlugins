@@ -6,7 +6,6 @@ import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.arena.Arena;
 import me.winterguardian.mobracers.stats.CourseAchievement;
 import me.winterguardian.mobracers.stats.CourseStats;
-
 import org.bukkit.entity.Player;
 
 public class BlockAchievement extends CourseAchievement

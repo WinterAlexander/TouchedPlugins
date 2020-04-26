@@ -2,7 +2,6 @@ package me.winterguardian.test;
 
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.test.components.*;
-
 import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.permissions.Permission;

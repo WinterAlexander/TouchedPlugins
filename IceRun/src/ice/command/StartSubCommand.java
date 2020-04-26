@@ -1,17 +1,15 @@
 package ice.command;
 
-import ice.IceRunMessage;
 import ice.IceRun;
 import ice.IceRunGame;
+import ice.IceRunMessage;
 import ice.WaitingSession;
+import me.winterguardian.core.command.SubCommand;
+import me.winterguardian.core.message.ErrorMessage;
+import org.bukkit.command.CommandSender;
 
 import java.util.Arrays;
 import java.util.List;
-
-import me.winterguardian.core.command.SubCommand;
-import me.winterguardian.core.message.ErrorMessage;
-
-import org.bukkit.command.CommandSender;
 
 public class StartSubCommand extends SubCommand
 {

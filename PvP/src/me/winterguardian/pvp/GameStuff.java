@@ -1,15 +1,15 @@
 package me.winterguardian.pvp;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
 
 public class GameStuff
 {

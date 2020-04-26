@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.item.types.special;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.sorting.AntiRecursiveRandomSelector;
 import me.winterguardian.core.sorting.OrderedSelector;
 import me.winterguardian.core.sorting.Selector;
@@ -14,7 +11,6 @@ import me.winterguardian.mobracers.item.types.SpecialItem;
 import me.winterguardian.mobracers.state.game.GamePlayerData;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -29,6 +25,9 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class SuperSheepSpecialItem extends SpecialItem implements Runnable, Listener
 {

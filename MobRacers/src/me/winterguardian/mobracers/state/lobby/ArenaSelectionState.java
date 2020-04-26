@@ -1,7 +1,5 @@
 package me.winterguardian.mobracers.state.lobby;
 
-import java.util.*;
-
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.game.state.StateGame;
 import me.winterguardian.core.game.state.WaitingState;
@@ -15,20 +13,24 @@ import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.util.TabUtil;
 import me.winterguardian.core.util.Weather;
 import me.winterguardian.core.world.Region;
-import me.winterguardian.mobracers.*;
+import me.winterguardian.mobracers.CourseMessage;
+import me.winterguardian.mobracers.MobRacersConfig;
+import me.winterguardian.mobracers.MobRacersGame;
+import me.winterguardian.mobracers.MobRacersPlugin;
+import me.winterguardian.mobracers.MobRacersSetup;
 import me.winterguardian.mobracers.arena.Arena;
 import me.winterguardian.mobracers.arena.ArenaGUIItem;
-import me.winterguardian.mobracers.music.CourseMusic;
 import me.winterguardian.mobracers.state.MobRacersState;
-
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Random;
 
 public class ArenaSelectionState extends WaitingState implements MobRacersState
 {

@@ -2,8 +2,6 @@ package me.winterguardian.pvp.game.team;
 
 
 import me.winterguardian.core.message.Message;
-import me.winterguardian.core.scoreboard.ScoreboardUtil;
-import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.pvp.GameStuff;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;

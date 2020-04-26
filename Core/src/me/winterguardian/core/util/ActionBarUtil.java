@@ -1,11 +1,11 @@
 package me.winterguardian.core.util;
 
-import java.lang.reflect.Field;
-import java.util.HashMap;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
+
+import java.lang.reflect.Field;
+import java.util.HashMap;
 
 public class ActionBarUtil
 {

@@ -3,7 +3,6 @@ package me.winterguardian.hub.listener;
 
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.hub.Hub;
-
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;

@@ -3,7 +3,6 @@ package me.winterguardian.blockfarmers;
 
 import me.winterguardian.core.game.GameManager;
 import me.winterguardian.core.message.LangMessage;
-
 import org.bukkit.configuration.file.YamlConfiguration;
 
 public class BlockFarmersMessage extends LangMessage

@@ -4,7 +4,6 @@ import me.winterguardian.core.particle.ParticleData;
 import me.winterguardian.core.particle.ParticleType;
 import me.winterguardian.test.TestComponent;
 import me.winterguardian.test.TestingCenter;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 

@@ -1,13 +1,10 @@
 package me.winterguardian.core.game;
 
-import java.io.File;
-
 import me.winterguardian.core.util.Weather;
 import me.winterguardian.core.world.SerializableRegion;
-
-import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.entity.Player;
+
+import java.io.File;
 
 public abstract class Arena
 {

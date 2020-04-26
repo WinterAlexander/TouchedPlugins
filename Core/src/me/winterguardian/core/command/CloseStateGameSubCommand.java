@@ -1,16 +1,15 @@
 package me.winterguardian.core.command;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-
 import me.winterguardian.core.game.state.StateGame;
 import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.message.Message;
-
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class CloseStateGameSubCommand extends SubCommand
 {

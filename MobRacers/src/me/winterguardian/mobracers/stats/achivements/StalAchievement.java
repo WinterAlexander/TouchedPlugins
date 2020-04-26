@@ -6,7 +6,6 @@ import me.winterguardian.mobracers.MobRacersPlugin;
 import me.winterguardian.mobracers.stats.CourseAchievement;
 import me.winterguardian.mobracers.stats.CourseStats;
 import me.winterguardian.mobracers.vehicle.VehicleType;
-
 import org.bukkit.entity.Player;
 
 public class StalAchievement extends CourseAchievement

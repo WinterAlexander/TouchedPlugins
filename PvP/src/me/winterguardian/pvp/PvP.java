@@ -1,13 +1,9 @@
 package me.winterguardian.pvp;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.Core;
 import me.winterguardian.core.command.CommandSplitter;
+import me.winterguardian.core.game.GUIItemGame;
 import me.winterguardian.core.game.GameConfig;
-import me.winterguardian.core.game.SekaiGame;
 import me.winterguardian.core.game.state.State;
 import me.winterguardian.core.game.state.StateGame;
 import me.winterguardian.core.game.state.StateGameSetup;
@@ -21,13 +17,16 @@ import me.winterguardian.pvp.game.PvPStandbyState;
 import me.winterguardian.pvp.purchase.kit.PvPKitPurchase;
 import me.winterguardian.pvp.purchase.mob.MobPurchase;
 import me.winterguardian.pvp.stats.PvPStats;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
 
-public class PvP extends StateGame implements SekaiGame
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+public class PvP extends StateGame implements GUIItemGame
 {
 	public PvP(Plugin plugin)
 	{
@@ -42,8 +41,8 @@ public class PvP extends StateGame implements SekaiGame
 		Bukkit.getPluginManager().registerEvents(new SignListener(), getPlugin());
 		Bukkit.getPluginManager().registerEvents(new ChatListener(this), getPlugin());
 
-		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shop]", "§f§lSekai§4§lPvP", "§e§lAchat Kit"));
-		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shopvip]", "§f§lSekai§4§lPvP", "§e§lAchat Kit §6§lVip")
+		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shop]", "§f§lTouched§4§lPvP", "§e§lAchat Kit"));
+		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shopvip]", "§f§lTouched§4§lPvP", "§e§lAchat Kit §6§lVip")
 		{
 			@Override
 			public boolean canGive(Player player)
@@ -55,8 +54,8 @@ public class PvP extends StateGame implements SekaiGame
 				return false;
 			}
 		});
-		Core.getShop().registerPurchaseType(new MobPurchase("[shop]", "§f§lSekai§4§lPvP", "§e§lAchat Mob"));
-		Core.getShop().registerPurchaseType(new MobPurchase("[shopvip]", "§f§lSekai§4§lPvP", "§e§lAchat Mob §6§lVip")
+		Core.getShop().registerPurchaseType(new MobPurchase("[shop]", "§f§lTouched§4§lPvP", "§e§lAchat Mob"));
+		Core.getShop().registerPurchaseType(new MobPurchase("[shopvip]", "§f§lTouched§4§lPvP", "§e§lAchat Mob §6§lVip")
 		{
 			@Override
 			public boolean canGive(Player player)
@@ -73,7 +72,7 @@ public class PvP extends StateGame implements SekaiGame
 	@Override
 	public String getColoredName()
 	{
-		return "§f§lSekai§4§lPvP";
+		return "§f§lTouched§4§lPvP";
 	}
 
 	@Override
@@ -240,7 +239,10 @@ public class PvP extends StateGame implements SekaiGame
 	@Override
 	protected boolean isReady()
 	{
-		return getSetup().getLobby() != null && getSetup().getExit() != null && getSetup().getRegion() != null && PvPArena.getReadyArenaList().size() > 0;
+		return getSetup().getLobby() != null
+				&& getSetup().getExit() != null
+				&& getSetup().getRegion() != null
+				&& PvPArena.getReadyArenaList().size() > 0;
 	}
 
 	@Override

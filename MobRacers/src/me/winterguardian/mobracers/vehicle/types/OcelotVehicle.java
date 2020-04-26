@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.vehicle.types;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import me.winterguardian.core.sorting.AntiRecursiveRandomSelector;
 import me.winterguardian.core.sorting.RandomSelector;
 import me.winterguardian.core.util.SoundEffect;
@@ -16,7 +13,6 @@ import me.winterguardian.mobracers.item.types.special.OcelotSpecialItem;
 import me.winterguardian.mobracers.vehicle.VehicleGUIItem;
 import me.winterguardian.mobracers.vehicle.VehicleType;
 import me.winterguardian.mobracers.vehicle.VipVehicle;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -24,6 +20,9 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Ocelot;
 import org.bukkit.entity.Ocelot.Type;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class OcelotVehicle extends VipVehicle
 {

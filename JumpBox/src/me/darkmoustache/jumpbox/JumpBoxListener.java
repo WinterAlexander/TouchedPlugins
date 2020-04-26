@@ -5,7 +5,6 @@ import me.winterguardian.core.util.FireworkUtil;
 import me.winterguardian.core.util.PlayerUtil;
 import me.winterguardian.core.world.LocationUtil;
 import me.winterguardian.core.world.SerializableLocation;
-
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
 import org.bukkit.Location;

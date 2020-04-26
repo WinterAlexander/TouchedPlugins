@@ -1,7 +1,5 @@
 package me.winterguardian.core.entity.custom.rideable.v1_8_R3;
 
-import java.lang.reflect.Field;
-
 import me.winterguardian.core.entity.custom.BlockHolder;
 import me.winterguardian.core.entity.custom.CustomNoAI;
 import me.winterguardian.core.entity.custom.rideable.RideableEntity;
@@ -15,12 +13,13 @@ import net.minecraft.server.v1_8_R3.EntityHuman;
 import net.minecraft.server.v1_8_R3.EntityLiving;
 import net.minecraft.server.v1_8_R3.MathHelper;
 import net.minecraft.server.v1_8_R3.World;
-
 import org.bukkit.Material;
 import org.bukkit.craftbukkit.v1_8_R3.CraftWorld;
 import org.bukkit.craftbukkit.v1_8_R3.TrigMath;
 import org.bukkit.craftbukkit.v1_8_R3.event.CraftEventFactory;
 import org.bukkit.craftbukkit.v1_8_R3.util.CraftMagicNumbers;
+
+import java.lang.reflect.Field;
 
 public class RideableBlock extends EntityFallingBlock implements RideableEntity, BlockHolder, CustomNoAI
 {

@@ -1,12 +1,8 @@
 package me.winterguardian.duel;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.Core;
-import me.winterguardian.core.game.Game;
+import me.winterguardian.core.game.GUIItemGame;
 import me.winterguardian.core.game.GameManager;
-import me.winterguardian.core.game.SekaiGame;
 import me.winterguardian.core.inventorygui.GUIItem;
 import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.util.PlayerUtil;
@@ -14,7 +10,6 @@ import me.winterguardian.core.util.TabUtil;
 import me.winterguardian.duel.command.DuelCommand;
 import me.winterguardian.duel.game.DuelGame;
 import me.winterguardian.duel.game.GameListener;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -23,7 +18,10 @@ import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class Duel extends JavaPlugin implements SekaiGame
+import java.util.ArrayList;
+import java.util.List;
+
+public class Duel extends JavaPlugin implements GUIItemGame
 {
 	public static final String TAB_HEADER = "{\"text\":\"\",\"extra\":[{\"text\":\"[\",\"color\":\"white\"},{\"text\":\"Duel\",\"color\":\"gold\",\"bold\":\"true\"},{\"text\":\"]\",\"color\":\"white\"}]}";
 	

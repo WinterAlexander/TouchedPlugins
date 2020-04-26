@@ -1,7 +1,6 @@
 package me.winterguardian.core.portal;
 
 import me.winterguardian.core.world.SerializableLocation;
-
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 

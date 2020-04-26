@@ -10,7 +10,6 @@ import me.winterguardian.core.json.JsonUtil;
 import me.winterguardian.core.message.Message;
 import me.winterguardian.core.scoreboard.Board;
 import me.winterguardian.core.util.PlayerUtil;
-
 import org.bukkit.entity.Player;
 
 public class BlockFarmersWaitingState extends WaitingState

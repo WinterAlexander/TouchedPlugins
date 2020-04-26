@@ -3,13 +3,7 @@ package ice.listener;
 import ice.IceRun;
 import ice.IceRunGame;
 import ice.IceRunMessage;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import me.winterguardian.core.world.LocationUtil;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
@@ -23,11 +17,13 @@ import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.ProjectileHitEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.util.Vector;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class GameListener implements Listener
 {

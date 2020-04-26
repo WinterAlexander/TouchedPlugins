@@ -1,13 +1,12 @@
 package me.winterguardian.core.game.state;
 
-import java.io.File;
-
 import me.winterguardian.core.game.GameSetup;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.core.world.SerializableRegion;
-
 import org.bukkit.Location;
 import org.bukkit.configuration.file.YamlConfiguration;
+
+import java.io.File;
 
 public class StateGameSetup extends GameSetup
 {

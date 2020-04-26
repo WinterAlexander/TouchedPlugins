@@ -1,9 +1,7 @@
 package me.winterguardian.pvp.game;
 
 import me.winterguardian.pvp.PvP;
-import me.winterguardian.pvp.PvPPlugin;
 import me.winterguardian.pvp.stats.PvPStats;
-import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;

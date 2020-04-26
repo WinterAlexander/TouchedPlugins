@@ -1,9 +1,5 @@
 package me.winterguardian.mobracers.item.types;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import me.winterguardian.core.particle.ParticleData;
 import me.winterguardian.core.particle.ParticleType;
 import me.winterguardian.core.util.SoundEffect;
@@ -14,7 +10,6 @@ import me.winterguardian.mobracers.item.ItemResult;
 import me.winterguardian.mobracers.item.ItemType;
 import me.winterguardian.mobracers.state.game.GameState;
 import me.winterguardian.mobracers.vehicle.Vehicle;
-
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -24,6 +19,10 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.plugin.Plugin;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
 
 public class ShieldItem extends Item
 {

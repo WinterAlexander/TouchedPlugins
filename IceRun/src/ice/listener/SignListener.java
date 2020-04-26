@@ -1,7 +1,6 @@
 package ice.listener;
 
 import ice.IceRun;
-
 import org.bukkit.block.Sign;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

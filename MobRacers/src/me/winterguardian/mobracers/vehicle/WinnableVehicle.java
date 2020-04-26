@@ -1,8 +1,7 @@
 package me.winterguardian.mobracers.vehicle;
 
-import org.bukkit.entity.Player;
-
 import me.winterguardian.mobracers.stats.CourseAchievement;
+import org.bukkit.entity.Player;
 
 public abstract class WinnableVehicle extends Vehicle
 {

@@ -3,8 +3,6 @@ package me.winterguardian.pvp.game;
 import me.winterguardian.core.shop.PlayerPurchaseEvent;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;
-import me.winterguardian.pvp.game.solo.OneInTheChamber;
-import me.winterguardian.pvp.game.solo.Switch;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

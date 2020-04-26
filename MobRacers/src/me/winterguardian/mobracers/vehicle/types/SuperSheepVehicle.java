@@ -1,8 +1,5 @@
 package me.winterguardian.mobracers.vehicle.types;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.mobracers.CourseMessage;
 import me.winterguardian.mobracers.item.Item;
@@ -15,13 +12,15 @@ import me.winterguardian.mobracers.stats.CourseAchievement;
 import me.winterguardian.mobracers.vehicle.VehicleGUIItem;
 import me.winterguardian.mobracers.vehicle.VehicleType;
 import me.winterguardian.mobracers.vehicle.WinnableVehicle;
-
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Sound;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Sheep;
+
+import java.util.ArrayList;
+import java.util.Arrays;
 
 public class SuperSheepVehicle extends WinnableVehicle
 {

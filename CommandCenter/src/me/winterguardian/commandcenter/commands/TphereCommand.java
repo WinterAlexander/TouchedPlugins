@@ -1,8 +1,7 @@
 package me.winterguardian.commandcenter.commands;
 
-import java.util.Arrays;
-import java.util.List;
-
+import me.winterguardian.core.command.AutoRegistrationCommand;
+import me.winterguardian.core.message.ErrorMessage;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.block.BlockFace;
@@ -13,8 +12,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 
-import me.winterguardian.core.command.AutoRegistrationCommand;
-import me.winterguardian.core.message.ErrorMessage;
+import java.util.Arrays;
+import java.util.List;
 
 public class TphereCommand extends AutoRegistrationCommand
 {

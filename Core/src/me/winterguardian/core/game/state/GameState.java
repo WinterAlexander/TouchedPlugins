@@ -1,16 +1,15 @@
 package me.winterguardian.core.game.state;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import me.winterguardian.core.game.Arena;
 import me.winterguardian.core.game.PlayerData;
 import me.winterguardian.core.scoreboard.Board;
 import me.winterguardian.core.util.TabUtil;
 import me.winterguardian.core.util.Weather;
-
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public abstract class GameState implements State
 {

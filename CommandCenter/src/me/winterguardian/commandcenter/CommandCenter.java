@@ -2,7 +2,6 @@ package me.winterguardian.commandcenter;
 
 import me.winterguardian.commandcenter.commands.*;
 import me.winterguardian.core.Core;
-
 import me.winterguardian.core.command.AutoRegistrationCommand;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
