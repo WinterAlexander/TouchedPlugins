@@ -23,6 +23,8 @@ import org.bukkit.entity.Player;
 
 public class StandbyState extends me.winterguardian.core.game.state.StandbyState implements MobRacersState
 {
+	private boolean serverNameRequested = false;
+
 	public StandbyState(StateGame game)
 	{
 		super(game);
@@ -31,6 +33,12 @@ public class StandbyState extends me.winterguardian.core.game.state.StandbyState
 	@Override
 	public void join(Player player)
 	{
+		if(!serverNameRequested)
+		{
+			Core.getBungeeMessager().requestServerName();
+			serverNameRequested = true;
+		}
+
 		((MobRacersGame) getGame()).savePlayerState(player);
 		super.join(player);
 	
@@ -39,7 +47,6 @@ public class StandbyState extends me.winterguardian.core.game.state.StandbyState
 
 		if(getGame().getState() == this)
 			giveStuff(player);
-		
 	}
 	
 	@Override
@@ -62,21 +69,15 @@ public class StandbyState extends me.winterguardian.core.game.state.StandbyState
 	@Override
 	public void start()
 	{
-		Core.getBungeeMessager().requestServerName();
 		super.start();
 		try
 		{
-			Bukkit.getScheduler().runTaskLater(MobRacersPlugin.getPlugin(), new Runnable()
-			{
-				@Override
-				public void run()
-				{
-					if(MobRacersPlugin.getGame().getSetup().getRegion() != null)
-						for(Entity entity : MobRacersPlugin.getGame().getSetup().getRegion().getMinimum().getWorld().getEntities())
-							if(MobRacersPlugin.getGame().getSetup().getRegion().contains(entity.getLocation()))
-								if(!(entity instanceof Player) && entity instanceof LivingEntity)
-									entity.remove();
-				}
+			Bukkit.getScheduler().runTaskLater(MobRacersPlugin.getPlugin(), () -> {
+				if(MobRacersPlugin.getGame().getSetup().getRegion() != null)
+					for(Entity entity : MobRacersPlugin.getGame().getSetup().getRegion().getMinimum().getWorld().getEntities())
+						if(MobRacersPlugin.getGame().getSetup().getRegion().contains(entity.getLocation()))
+							if(!(entity instanceof Player) && entity instanceof LivingEntity)
+								entity.remove();
 			}, 20);
 		}
 		catch(Exception e){}
@@ -111,13 +112,17 @@ public class StandbyState extends me.winterguardian.core.game.state.StandbyState
 			@Override
 			protected void update(Player player)
 			{
-				String[] elements = new String[16];
+				String[] board = CourseMessage.STANDBY_BOARD.toString("<players>",
+						getGame().getPlayers().size() + "",
+						"<maxplayers>",
+						getGame().getMaxPlayers() + "",
+						"<server>",
+						Core.getBungeeMessager().getServerName()).split("\\n");
+
+				String[] elements = new String[board.length];
 				elements[0] = CourseMessage.STANDBY_BOARD_HEADER.toString();
 
-
-				String[] board = CourseMessage.STANDBY_BOARD.toString("<players>", getGame().getPlayers().size() + "", "<maxplayers>", getGame().getMaxPlayers() + "", "<server>", Core.getBungeeMessager().getServerName()).split("\\n");
-
-				for(int index = 1; index < Math.max(16, board.length); index++)
+				for(int index = 1; index < Math.min(16, board.length); index++)
 				{
 					String line = board[index - 1];
 
@@ -126,6 +131,9 @@ public class StandbyState extends me.winterguardian.core.game.state.StandbyState
 					{
 						for(String element : elements)
 						{
+							if(element == null)
+								break;
+
 							if(element.equals(line))
 							{
 								line += " ";
@@ -139,13 +147,15 @@ public class StandbyState extends me.winterguardian.core.game.state.StandbyState
 					elements[index] = line;
 				}
 
+				player.sendMessage(elements.length + "");
+				for(String line : elements)
+					player.sendMessage(line);
+
 				ScoreboardUtil.unrankedSidebarDisplay(player, elements);
 			}
 			
 		};
 	}
-
-	
 
 	@Override
 	public boolean keepScoreboardAndWeather()

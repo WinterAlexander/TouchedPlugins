@@ -4,7 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.event.HandlerList;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class CoreLauncher extends JavaPlugin
+public class CreaCorePlugin extends JavaPlugin
 {
 	@Override
 	public void onEnable()

@@ -18,7 +18,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
 import java.util.Random;
 
-public class CoreLauncher extends JavaPlugin
+public class HubCorePlugin extends JavaPlugin
 {
 	@Override
 	public void onEnable()

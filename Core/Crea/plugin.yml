@@ -1,5 +1,5 @@
 name: Core
-main: me.winterguardian.core.CoreLauncher
+main: me.winterguardian.core.CreaCorePlugin
 version: TOUCHED
 author: WinterGuardian
 load: STARTUP

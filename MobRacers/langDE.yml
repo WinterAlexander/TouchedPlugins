@@ -533,7 +533,6 @@ update-notification: '&aA new version is available ! Type &f/mr version &afor mo
   infos.'
 command-config-menu-notready-noexit: Your exit location is not set and you didn't configured the plugin for it to be in auto-join or to keep player states. /mr setup setexit
 join-gameclosed: '&cThe game is closed.'
-standby-notenoughtplayerstocontinue: '&cThere are not enough players to continue.'
 command-config-help7: '&eRemove a vehicle: &f/mr setup removevehicle'
 command-config-help8: '&eReset vehicles: &f/mr setup resetvehicles'
 command-config-help9: '&eSpawn the vehicles: &f/mr setup testvehicles'

@@ -38,14 +38,7 @@ public class MobRacersPlugin extends JavaPlugin
 	
 	public void onEnable()
 	{
-		Bukkit.getScheduler().runTaskAsynchronously(this, new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				Bukkit.getLogger().info("[MobRacers] " + lookForUpdates());
-			}
-		});
+		Bukkit.getScheduler().runTaskAsynchronously(this, () -> Bukkit.getLogger().info("[MobRacers] " + lookForUpdates()));
 
 
 		try
@@ -132,7 +125,7 @@ public class MobRacersPlugin extends JavaPlugin
 
 			ArenaStats.init();
 
-			if(((MobRacersConfig) game.getConfig()).enableVault() && getServer().getPluginManager().getPlugin("Vault") != null)
+			if(game.getConfig().enableVault() && getServer().getPluginManager().getPlugin("Vault") != null)
 			{
 				vault = new VaultSupport();
 				if(vault.isEnabled())
