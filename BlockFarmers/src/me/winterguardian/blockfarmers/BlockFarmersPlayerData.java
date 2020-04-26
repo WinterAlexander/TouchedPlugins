@@ -152,11 +152,9 @@ public class BlockFarmersPlayerData extends PlayerData
 					if(((BlockFarmersConfig)state.getGame().getConfig()).canFarm(newPoint.getBlock()))
 						nextLayer.add(newPoint);
 					else
-					{
 						for(BlockFarmersPlayerData playerData : state.getPlayerDatas())
-							if(playerData.getColor().getBlock().match(newPoint.getBlock()))
+							if(playerData.getColor().getBlock().match(newPoint.getBlock()) && playerData != this)
 								return;
-					}
 
 				}
 			}
