@@ -519,9 +519,6 @@ public class PvPPlayerData extends PlayerData
 
 	public void end(PvPStats stats)
 	{
-		if(!(game instanceof TeamGame) && !(game instanceof SoloGame))
-			return;
-
 		this.playTime += System.currentTimeMillis() - this.begin;
 
 		stats.gameSummary(game.getOutcome(getPlayer()),

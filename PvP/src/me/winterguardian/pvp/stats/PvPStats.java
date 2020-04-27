@@ -143,7 +143,7 @@ public class PvPStats extends PlayerStats
 	
 	public void gameSummary(GameOutcome outcome, int kills, int deaths, int assists, long playTime, int capturedFlags, int capturedZones, int killingSpree, List<Bonus> bonus)
 	{
-		if(playTime < 500000 && kills == 0 && deaths == 0 && assists == 0 && capturedFlags == 0 && capturedZones == 0)
+		if(playTime < 500000 && kills == 0 && deaths == 0 && assists == 0 && capturedFlags == 0 && capturedZones == 0 && outcome.isBad())
 			return;
 
 		Player player = this.getPlayer().getPlayer();

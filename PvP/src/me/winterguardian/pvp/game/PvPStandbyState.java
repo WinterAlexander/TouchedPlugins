@@ -75,7 +75,9 @@ public class PvPStandbyState implements State, LobbyState
 		
 		ScoreboardUtil.unrankedSidebarDisplay(player, elements);
 		
-		TabUtil.sendInfos(player, JsonUtil.toJson("§f§lTouched§4§lPvP"), JsonUtil.toJson("§cIl n'y a pas assez de joueurs pour commencer."));
+		TabUtil.sendInfos(player,
+				JsonUtil.toJson("§f§lTouched§4§lPvP"),
+				JsonUtil.toJson("§cIl n'y a pas assez de joueurs pour commencer."));
 		PlayerUtil.clearInventory(player);
 		PlayerUtil.heal(player);
 		PlayerUtil.prepare(player);

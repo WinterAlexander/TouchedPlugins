@@ -60,10 +60,11 @@ public class PvPMessage extends HardcodedMessage
 	GAME_KILL = new PvPMessage("<player> §ea tué §e<victim>§e.", false),
 	GAME_SUICIDE = new PvPMessage("<player> §es'est suicidé.", false),
 
-	GAME_INF_INFECT = new PvPMessage("<player> §c a infecté §e<victim>§e.", false),
-	GAME_INF_SELFINFECT = new PvPMessage("<player> §c s'est infecté.", false),
+	GAME_INF_INFECT = new PvPMessage("<player> §ca infecté §e<victim>§e.", false),
+	GAME_INF_SELFINFECT = new PvPMessage("<player> §cs'est infecté.", false),
 
 	GAME_INF_FIRSTINFECTED = new PvPMessage("<player> &eest le premier infecté!", false),
+	GAME_INF_REFUND = new PvPMessage("§eVous avez été remboursé sur vos achats. §a+# points", false),
 
 	GAME_START_FFA = new PvPMessage("§eQue la mêlée commence ! Bonne chance à tous.", true),
 	GAME_START_OITC = new PvPMessage("§eLa balle chargée prend place. À vos marques, tirez !", true),
@@ -78,7 +79,7 @@ public class PvPMessage extends HardcodedMessage
 	GAME_GUIDE_FFA = new PvPMessage("<mode>§f - Le but du jeu est de faire le plus de meurtres pour soi même. Il n'y a pas d'équipes ou d'alliances. §4§lALLIANCES = BAN", false),
 	GAME_GUIDE_OITC = new PvPMessage("<mode>§f - Le but du jeu est de faire le plus de meurtres pour soi même. Toutefois, les flèches tuent en un coup et les achats sont désactivés. Vous obtenez une flèche si vous arrivez à faire un meurtre. Il n'y a pas d'équipes ou d'alliances. §4§lALLIANCES = BAN", false),
 	GAME_GUIDE_KOTH = new PvPMessage("<mode>§f - Le but du jeu est d'être le plus longtemps possible sur la zone de l'arène. Cette zone est facile à repérer puisqu'elle a un beacon. Le rayon du beacon est blanc s'il est inutilisé, jaune si un joueur se fait des points avec et rouge des plusieurs joueurs se battent dessus.  §4§lALLIANCES = BAN", false),
-	GAME_GUIDE_SWI = new PvPMessage("<mode>§f -  Le but du jeu est de faire le plus de meurtres pour soi même. Les armes sont aléatoires (mêmes pour tout le monde) et changent à tout les 30 secondes !s §4§lALLIANCES = BAN", false),
+	GAME_GUIDE_SWI = new PvPMessage("<mode>§f -  Le but du jeu est de faire le plus de meurtres pour soi même. Les armes sont aléatoires (mêmes pour tout le monde) et changent à tout les 30 secondes ! §4§lALLIANCES = BAN", false),
 	GAME_GUIDE_TDM = new PvPMessage("<mode>§f - Le but du jeu est de faire le plus de meurtes pour son équipe. L'équipe qui gagne est celle qui a réussi a faire le plus de meurtes. Évitez de mourir pour ne pas céder des points aux autres équipes.", false),
 	GAME_GUIDE_CTF = new PvPMessage("<mode>§f - Le but du jeu est de prendre des drapeaux et de les ramener à sa base en équipes. L'équipe gagnante est celle qui a capturée le plus de drapeaux. Attention, vous ne pouvez pas capturer un drapeau si votre drapeau n'est pas à sa base. Protégez-le porteur du drapeau et défendez votre drapeau pour ne pas donner de points aux autres équipes !", false),
 	GAME_GUIDE_DOM = new PvPMessage("<mode>§f - Le but du jeu est de capturer des zones pour accumuler des points ! Ce jeu se joue en équipe. Restez sur une zone jusqu'elle obtienne la couleur de votre équipe et défendez vos zones. Plus vous aurez de zones, plus les points de votre équipe augmenteront.", false),

@@ -51,14 +51,7 @@ public class Purchase
 	    newStats.removePoints(getPrice());
 	    points = newStats.getPoints();
 
-	    Bukkit.getScheduler().runTask(Core.getShop().getPlugin(), new Runnable()
-	    {
-		    @Override
-		    public void run()
-		    {
-			    type.give(sign, player);
-		    }
-	    });
+	    Bukkit.getScheduler().runTask(Core.getShop().getPlugin(), () -> type.give(sign, player));
 
         event.getSuccessMessage().say(player, "<price>", "" + getPrice(), "<bal>", "" + points);
         return true;

@@ -13,6 +13,7 @@ import me.winterguardian.core.message.Message;
 import me.winterguardian.pvp.command.PvPCommand;
 import me.winterguardian.pvp.game.ChatListener;
 import me.winterguardian.pvp.game.LobbyListener;
+import me.winterguardian.pvp.game.PvPPurchaseHistory;
 import me.winterguardian.pvp.game.PvPStandbyState;
 import me.winterguardian.pvp.purchase.kit.PvPKitPurchase;
 import me.winterguardian.pvp.purchase.mob.MobPurchase;
@@ -28,6 +29,8 @@ import java.util.List;
 
 public class PvP extends StateGame implements GUIItemGame
 {
+	private final PvPPurchaseHistory purchaseHistory = new PvPPurchaseHistory();
+
 	public PvP(Plugin plugin)
 	{
 		super(plugin);
@@ -40,6 +43,7 @@ public class PvP extends StateGame implements GUIItemGame
 		Bukkit.getPluginManager().registerEvents(new LobbyListener(this), getPlugin());
 		Bukkit.getPluginManager().registerEvents(new SignListener(), getPlugin());
 		Bukkit.getPluginManager().registerEvents(new ChatListener(this), getPlugin());
+		Bukkit.getPluginManager().registerEvents(purchaseHistory, getPlugin());
 
 		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shop]", "§f§lTouched", "§e§lAchat Kit"));
 		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shopvip]", "§f§lTouched", "§e§lAchat Kit §6§lVip")
@@ -93,6 +97,7 @@ public class PvP extends StateGame implements GUIItemGame
 			return;
 		}
 
+		purchaseHistory.join(player);
 		super.join(player);
 
 		if(contains(player))
@@ -111,6 +116,7 @@ public class PvP extends StateGame implements GUIItemGame
 		List<Player> players = new ArrayList<>(getPlayers());
 
 		super.leave(player);
+		purchaseHistory.leave(player);
 
 		if(!contains(player))
 			PvPMessage.LEAVE.say(players, "<player>", PvPStats.get(player.getUniqueId()).getPvPName());
@@ -249,5 +255,10 @@ public class PvP extends StateGame implements GUIItemGame
 	public GUIItem getGUIItem()
 	{
 		return new PvPGUIItem(this);
+	}
+
+	public PvPPurchaseHistory getPurchaseHistory()
+	{
+		return purchaseHistory;
 	}
 }

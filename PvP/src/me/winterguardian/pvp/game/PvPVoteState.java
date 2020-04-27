@@ -77,6 +77,7 @@ public class PvPVoteState implements State, Runnable, LobbyState
 	@Override
 	public void start()
 	{
+		game.getPurchaseHistory().reset();
 		this.nextState = getNewGameState(game);
 		this.timer = this.nextState.getVoteTimer();
 		PvPMessage.VOTE_START.say(game.getPlayers(), "<type>", getNextGameName());

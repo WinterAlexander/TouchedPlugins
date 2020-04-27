@@ -19,5 +19,14 @@ public enum GameOutcome
 
 	WON_AS_HUMAN,
 	LOST_AS_HUMAN,
-	WON_AS_INFECTED
+	WON_AS_INFECTED,
+	LOST_AS_INFECTED
+
+
+	;
+
+	public boolean isBad()
+	{
+		return this == LOWER || this == TEAM_LOSE || this == LOST_AS_HUMAN || this == LOST_AS_INFECTED;
+	}
 }

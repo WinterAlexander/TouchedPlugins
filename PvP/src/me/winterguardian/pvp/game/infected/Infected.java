@@ -10,6 +10,7 @@ import me.winterguardian.pvp.game.GameOutcome;
 import me.winterguardian.pvp.game.PvPMatch;
 import me.winterguardian.pvp.game.PvPPlayerData;
 import me.winterguardian.pvp.game.PvPVoteState;
+import me.winterguardian.pvp.stats.PvPStats;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
@@ -160,6 +161,11 @@ public class Infected extends PvPMatch
 		firstInfecteds.add(toInfect);
 
 		PvPMessage.GAME_INF_FIRSTINFECTED.sayPlayers("<player>", getPlayerData(toInfect).getPvPName());
+
+		int refund = getGame().getPurchaseHistory().getAmount(toInfect);
+
+		PvPMessage.GAME_INF_REFUND.say(toInfect, "#", refund + "");
+		PvPStats.get(getPlayerData(toInfect).getUUID()).addPoints(refund);
 	}
 
 	public void infect(Player player, boolean first)
@@ -288,8 +294,8 @@ public class Infected extends PvPMatch
 		String[] content = new String[5];
 		content[0] = "§c§lInfecté";
 		content[1] = " ";
-		content[2] = TeamColor.HUMAN.getBukkitColor() + humanCount + " humains";
-		content[3] = TeamColor.INFECTED.getBukkitColor() + infectedCount + " infectés";
+		content[2] = TeamColor.HUMAN.getBukkitColor() + humanCount + " humain" + (humanCount > 1 ? "s" : "");
+		content[3] = TeamColor.INFECTED.getBukkitColor() + infectedCount + " infecté" + (infectedCount > 1 ? "s" : "");
 		content[4] = "  ";
 
 		unrankedSidebarDisplay(getGame().getPlayers(), content, board);
@@ -300,7 +306,11 @@ public class Infected extends PvPMatch
 	{
 		if(getPlayerData(player).getTeam() == TeamColor.HUMAN)
 			return GameOutcome.WON_AS_HUMAN;
-		else if(firstInfecteds.contains(player))
+
+		if(countHumans() > 0)
+			return GameOutcome.LOST_AS_INFECTED;
+
+		if(firstInfecteds.contains(player))
 			return GameOutcome.WON_AS_INFECTED;
 
 		return GameOutcome.LOST_AS_HUMAN;
