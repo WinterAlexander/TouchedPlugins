@@ -71,7 +71,7 @@ public abstract class PvPMatch implements State, Runnable
 		{
 			this.playerDatas.add(new PvPPlayerData(p, this));
 			getPlayerData(p).setTeam(getNewTeam(p, false));
-			p.teleport(this.arena.getSpawnPoint(getPlayerData(p).getTeam()));
+			p.teleport(getSpawnPoint(getPlayerData(p)));
 			displayTab(p);
 			PlayerUtil.prepare(p);
 			PlayerUtil.heal(p);
@@ -82,7 +82,7 @@ public abstract class PvPMatch implements State, Runnable
 		}
 		else
 		{
-			p.teleport(this.arena.getSpawnPoint(getPlayerData(p).getTeam()));
+			p.teleport(getSpawnPoint(getPlayerData(p)));
 			displayTab(p);
 			PlayerUtil.prepare(p);
 			PlayerUtil.heal(p);
@@ -140,7 +140,7 @@ public abstract class PvPMatch implements State, Runnable
 			this.playerDatas.add(new PvPPlayerData(player, this));
 			getPlayerData(player).setTeam(getNewTeam(player, true));
 			getPlayerData(player).start();
-			player.teleport(this.arena.getSpawnPoint(getPlayerData(player).getTeam()));
+			player.teleport(getSpawnPoint(getPlayerData(player)));
 			displayTab(player);
 		}
 
@@ -158,7 +158,8 @@ public abstract class PvPMatch implements State, Runnable
 
 
 		for(Player player : game.getPlayers())
-			player.teleport(game.getSetup().getLobby());
+			if(!player.isDead())
+				player.teleport(game.getSetup().getLobby());
 
 
 		for(Listener listener : this.listeners)
@@ -174,15 +175,10 @@ public abstract class PvPMatch implements State, Runnable
 			if(playerData.getPlayer() != null)
 				playerData.end(PvPStats.get(playerData.getUUID()));
 			else
-				Bukkit.getScheduler().runTaskAsynchronously(game.getPlugin(), new Runnable()
-				{
-					@Override
-					public void run()
-					{
-						PvPStats stats = PvPStats.get(playerData.getUUID());
-						playerData.end(stats);
-						Core.getUserDatasManager().saveUserData(playerData.getUUID(), stats.getContent());
-					}
+				Bukkit.getScheduler().runTaskAsynchronously(game.getPlugin(), () -> {
+					PvPStats stats = PvPStats.get(playerData.getUUID());
+					playerData.end(stats);
+					Core.getUserDatasManager().saveUserData(playerData.getUUID(), stats.getContent());
 				});
 		}
 		new SoundEffect(Sound.NOTE_PLING, 1f, 1f).play(game.getPlayers());
@@ -197,7 +193,7 @@ public abstract class PvPMatch implements State, Runnable
 
 		PvPMessage.GAME_TIMER.sayPlayers("<time>", time);
 
-		if(--timer == 0)
+		if(--timer == -1)
 		{
 			end();
 			finish();

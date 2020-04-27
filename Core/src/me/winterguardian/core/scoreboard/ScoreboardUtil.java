@@ -165,7 +165,6 @@ public class ScoreboardUtil
 				board.getObjective(objName).setDisplaySlot(DisplaySlot.SIDEBAR);
 			}
 
-
 			board.getObjective(DisplaySlot.SIDEBAR).setDisplayName(elements[0]);
 
 			for(int i = 1; i < elements.length; i++)

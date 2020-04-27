@@ -36,6 +36,7 @@ public class PvPCommand extends CommandSplitter
 		this.getSubCommands().add(new VoteSubCommand(game));
 		this.getSubCommands().add(new StartSubCommand(game));
 		this.getSubCommands().add(new SetNextGameSubCommand(game));
+		this.getSubCommands().add(new DebugSubCommand(game));
 	}
 
 	@Override

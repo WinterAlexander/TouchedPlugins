@@ -31,6 +31,7 @@ public class PvPMessage extends HardcodedMessage
 	COMMAND_ARENA_RESET = new PvPMessage("§aLes <type>(s) de couleur <color> a été réinitialisés.", true),
 	COMMAND_ARENA_CREATE = new PvPMessage("§aL'arène a été crée.", true),
 	COMMAND_ARENA_LIST = new PvPMessage("§eListe des arènes:", true),
+	COMMAND_ARENA_TEST = new PvPMessage("§aLes <type>(s) de couleur <color> ont été marqués avec des moutons.", true),
 	
 	COMMAND_STATS_HEADER = new PvPMessage("§f§lStatistiques de jeu : §4§l<player>", true),
 	COMMAND_STATS_LEVELEXPRATIO = new PvPMessage("&6Niveau: &f<level> | &eExp: &f<exp> | &3Ratio: &f<ratio>", false),
@@ -62,6 +63,8 @@ public class PvPMessage extends HardcodedMessage
 	GAME_INF_INFECT = new PvPMessage("<player> §c a infecté §e<victim>§e.", false),
 	GAME_INF_SELFINFECT = new PvPMessage("<player> §c s'est infecté.", false),
 
+	GAME_INF_FIRSTINFECTED = new PvPMessage("<player> &eest le premier infecté!", false),
+
 	GAME_START_FFA = new PvPMessage("§eQue la mêlée commence ! Bonne chance à tous.", true),
 	GAME_START_OITC = new PvPMessage("§eLa balle chargée prend place. À vos marques, tirez !", true),
 	GAME_START_TDM = new PvPMessage("§eLe match à mort est commencé ! Bonne chance aux équipes.", true),
@@ -88,7 +91,7 @@ public class PvPMessage extends HardcodedMessage
 	GAME_TEAM2_WIN = new PvPMessage("§fLes <team>§f gagnent contre les <second>§f en <mode>§f ! (<score> vs <score_second>)", true),
 	GAME_TEAMMORE_WIN = new PvPMessage("§fLes <team>§f gagnent la partie parmi <team_count> équipes en <mode> !", true),
 	GAME_INF_HUMAN_WIN = new PvPMessage("§fLes humains ont gagné contre l'invasion d'infectés!", true),
-	GAME_INF_HUMAN_LOSE = new PvPMessage("§fLes humains n'ont pas pu survivre à l'invasion d'infectés...", true),
+	GAME_INF_HUMAN_LOSE = new PvPMessage("§eLes humains n'ont pas pu survivre à l'invasion d'infectés...", true),
 
 	GAME_TIMER = new PvPMessage("§7Il reste <time> avant la fin de la partie.", false, MessageType.ACTIONBAR),
 

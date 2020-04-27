@@ -13,10 +13,13 @@ import me.winterguardian.pvp.game.PvPVoteState;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.NameTagVisibility;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import static me.winterguardian.core.scoreboard.ScoreboardUtil.unrankedSidebarDisplay;
@@ -34,13 +37,15 @@ public class Infected extends PvPMatch
 	private Team humanTeam, infectedTeam;
 	private final Random random = new Random();
 
-	private Player firstInfected = null;
+	private ArrayList<Player> firstInfecteds = new ArrayList<>();
+
+	private boolean ended = false;
 
 	private GameStuff humanStuff, infectedStuff, firstInfectedStuff;
 
 	public Infected(PvP game)
 	{
-		super(game);
+		super(game, 8 * 60);
 
 		this.humanStuff = new GameStuff("human");
 		this.humanStuff.load();
@@ -104,7 +109,7 @@ public class Infected extends PvPMatch
 	{
 		super.finish();
 
-		if(countHumans() == 0)
+		if(countHumans() > 0)
 			PvPMessage.GAME_INF_HUMAN_WIN.sayAll();
 		else
 			PvPMessage.GAME_INF_HUMAN_LOSE.sayAll();
@@ -113,7 +118,11 @@ public class Infected extends PvPMatch
 	@Override
 	public void join(Player p)
 	{
+		if(getPlayerData(p) != null)
+			getPlayerData(p).setStuff(infectedStuff);
+
 		super.join(p);
+		p.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, Integer.MAX_VALUE, 0, true, false));
 		p.setScoreboard(this.board);
 		infectedTeam.addEntry(p.getName());
 	}
@@ -132,27 +141,25 @@ public class Infected extends PvPMatch
 			if(countInfected() == 0)
 				infectRandom();
 			else if(countHumans() == 0)
-			{
-				end();
-				finish();
-				getGame().setState(new PvPVoteState(this.getGame()));
-				getGame().getState().start();
-			}
+				endSoon();
 		}
+		else
+			ended = true;
 	}
 
 	private void infectRandom()
 	{
-		boolean first = firstInfected == null;
 		Player toInfect = getGame().getPlayers().get(random.nextInt(getGame().getPlayers().size()));
 
-		infect(toInfect, first);
+		infect(toInfect, true);
 		PlayerUtil.heal(toInfect);
 		PlayerUtil.clearInventory(toInfect);
 		getPlayerData(toInfect).getStuff().give(toInfect);
+		toInfect.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, Integer.MAX_VALUE, 0, true, false));
 
-		if(first)
-			firstInfected = toInfect;
+		firstInfecteds.add(toInfect);
+
+		PvPMessage.GAME_INF_FIRSTINFECTED.sayPlayers("<player>", getPlayerData(toInfect).getPvPName());
 	}
 
 	public void infect(Player player, boolean first)
@@ -164,16 +171,32 @@ public class Infected extends PvPMatch
 			playerData.getFriend().remove();
 
 		playerData.setTeam(TeamColor.INFECTED);
-		humanTeam.removeEntry(player.getName());
-		infectedTeam.addEntry(player.getName());
+		Bukkit.getScheduler().runTaskLater(getGame().getPlugin(), () -> {
+
+			humanTeam.removeEntry(player.getName());
+			infectedTeam.addEntry(player.getName());
+			updateBoard();
+		}, 10);
 
 		if(countHumans() == 0)
-		{
+			endSoon();
+	}
+
+	private void endSoon()
+	{
+		if(ended)
+			return;
+
+		Bukkit.getScheduler().runTaskLater(getGame().getPlugin(), () -> {
+			if(ended)
+				return;
+
 			end();
 			finish();
 			getGame().setState(new PvPVoteState(this.getGame()));
 			getGame().getState().start();
-		}
+			ended = true;
+		}, 3 * 20);
 	}
 
 	public void announceKill(PvPPlayerData killer, PvPPlayerData killed)
@@ -240,7 +263,7 @@ public class Infected extends PvPMatch
 		int humanCount = 0;
 
 		for(PvPPlayerData playerData : getPlayerDatas())
-			if(playerData.getTeam() == TeamColor.HUMAN)
+			if(playerData.isPlaying() && playerData.getTeam() == TeamColor.HUMAN)
 				humanCount++;
 
 		return humanCount;
@@ -251,7 +274,7 @@ public class Infected extends PvPMatch
 		int infectedCount = 0;
 
 		for(PvPPlayerData playerData : getPlayerDatas())
-			if(playerData.getTeam() == TeamColor.INFECTED)
+			if(playerData.isPlaying() && playerData.getTeam() == TeamColor.INFECTED)
 				infectedCount++;
 
 		return infectedCount;
@@ -260,13 +283,7 @@ public class Infected extends PvPMatch
 	@Override
 	public void updateBoard()
 	{
-		int humanCount = 0, infectedCount = 0;
-
-		for(PvPPlayerData playerData : getPlayerDatas())
-			if(playerData.getTeam() == TeamColor.HUMAN)
-				humanCount++;
-			else if(playerData.getTeam() == TeamColor.INFECTED)
-				infectedCount++;
+		int humanCount = countHumans(), infectedCount = countInfected();
 
 		String[] content = new String[5];
 		content[0] = "§c§lInfecté";
@@ -283,7 +300,7 @@ public class Infected extends PvPMatch
 	{
 		if(getPlayerData(player).getTeam() == TeamColor.HUMAN)
 			return GameOutcome.WON_AS_HUMAN;
-		else if(firstInfected == player)
+		else if(firstInfecteds.contains(player))
 			return GameOutcome.WON_AS_INFECTED;
 
 		return GameOutcome.LOST_AS_HUMAN;

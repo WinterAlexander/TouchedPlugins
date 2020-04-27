@@ -82,7 +82,7 @@ public class GameListener implements Listener
 	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
 	public void onPlayerDamageByMob(EntityDamageByEntityEvent event)
 	{
-		if(!(event.getDamager() instanceof LivingEntity))
+		if(!(event.getDamager() instanceof LivingEntity) || !(event.getEntity() instanceof Player))
 			return;
 
 		PvPPlayerData playerData = game.getPlayerData((Player)event.getEntity());
@@ -387,10 +387,13 @@ public class GameListener implements Listener
 			event.setCancelled(true);
 	}
 
-	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.NORMAL, ignoreCancelled = true)
 	public void onPlayerRespawn(PlayerRespawnEvent event)
 	{
 		if(!game.getGame().contains(event.getPlayer()))
+			return;
+
+		if(game.getGame().getState() != game)
 			return;
 
 		event.getPlayer().setCanPickupItems(true);

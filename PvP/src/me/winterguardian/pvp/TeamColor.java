@@ -5,7 +5,7 @@ public enum TeamColor
 	NONE("neutre", "neutres", "§7", "§f[§7N§f]§7 ", (byte)0),
 
 	HUMAN("humain", "humains", "§e", "§f[§6H§f]§e ", (byte)4),
-	INFECTED("infecté", "infectés", "§c", "§f[§3I§f]§e ", (byte)14),
+	INFECTED("infecté", "infectés", "§c", "§f[§4I§f]§c ", (byte)14),
 
 	RED("rouge", "rouges", "§c", "§f[§4R§f]§c ", (byte)14),
 	BLUE("bleue", "bleus", "§9", "§f[§1B§f]§9 ", (byte)11),

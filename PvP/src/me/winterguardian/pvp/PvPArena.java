@@ -24,6 +24,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class PvPArena extends VotableArena
 {
@@ -76,6 +77,16 @@ public class PvPArena extends VotableArena
 	{
 		this.spawnPoints.clear();
 	}
+
+	public List<SerializableLocation> getPoints(TeamColor color)
+	{
+		return this.spawnPoints.get(color);
+	}
+
+	public List<SerializableLocation> getPoints()
+	{
+		return this.spawnPoints.values().stream().flatMap(List::stream).collect(Collectors.toList());
+	}
 	
 	public void resetFlags(TeamColor color)
 	{
@@ -85,6 +96,16 @@ public class PvPArena extends VotableArena
 	public void resetFlags()
 	{
 		this.flags.clear();
+	}
+
+	public List<SerializableLocation> getFlags(TeamColor color)
+	{
+		return this.flags.get(color);
+	}
+
+	public List<SerializableLocation> getFlags()
+	{
+		return this.flags.values().stream().flatMap(List::stream).collect(Collectors.toList());
 	}
 	
 	public void resetZones()

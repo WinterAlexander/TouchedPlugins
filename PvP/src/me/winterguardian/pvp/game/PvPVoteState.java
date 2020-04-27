@@ -27,7 +27,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Random;
 
-public class PvPVoteState implements State, Runnable
+public class PvPVoteState implements State, Runnable, LobbyState
 {
 	private static Class<? extends PvPMatch> previous = null;
 	public static PvPMatch definedNext = null;
@@ -54,7 +54,6 @@ public class PvPVoteState implements State, Runnable
 	{
 		p.teleport(game.getSetup().getLobby());
 		prepare(p);
-		this.nextState.getNewStuff(p, true).give(p);
 		PvPMessage.VOTE_START.say(p, "<type>", getNextGameName());
 	}
 
@@ -84,8 +83,10 @@ public class PvPVoteState implements State, Runnable
 
 		for(Player player : game.getPlayers())
 		{
+			if(player.isDead())
+				continue;
+
 			prepare(player);
-			this.nextState.getNewStuff(player, true).give(player);
 		}
 
 		this.taskId = Bukkit.getScheduler().runTaskTimer(game.getPlugin(), this, 0, 20).getTaskId();
@@ -221,8 +222,6 @@ public class PvPVoteState implements State, Runnable
 
 	private static PvPMatch getNewGameState(PvP game)
 	{
-
-
 		if(definedNext != null)
 		{
 			PvPMatch next = definedNext;
@@ -397,13 +396,14 @@ public class PvPVoteState implements State, Runnable
 		ScoreboardUtil.rankedSidebarDisplay(player, this.nextState.getColoredName(), map);
 	}
 
-	private void prepare(Player player)
+	@Override
+	public void prepare(Player player)
 	{
 		displayBoard(player);
 		TabUtil.sendInfos(player, JsonUtil.toJson("§f§lTouched§4§lPvP"), JsonUtil.toJson("§aUne partie de " + getNextGameName() + " va bientôt commencer."));
 		PlayerUtil.prepare(player);
 		PlayerUtil.clearInventory(player);
 		PlayerUtil.heal(player);
+		this.nextState.getNewStuff(player, true).give(player);
 	}
-
 }

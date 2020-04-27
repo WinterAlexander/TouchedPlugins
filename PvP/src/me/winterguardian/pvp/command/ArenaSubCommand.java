@@ -2,12 +2,17 @@ package me.winterguardian.pvp.command;
 
 import me.winterguardian.core.command.SubCommand;
 import me.winterguardian.core.message.ErrorMessage;
+import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.pvp.PvPArena;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.PvPPlugin;
 import me.winterguardian.pvp.TeamColor;
+import org.bukkit.Bukkit;
+import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.ArmorStand;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 
 import java.util.Arrays;
 import java.util.List;
@@ -134,6 +139,96 @@ public class ArenaSubCommand extends SubCommand
 				arena.resetZones();
 				arena.save();
 				PvPMessage.COMMAND_ARENA_RESET.say(sender, "<type>", "zone", "<color>", args[3]);
+				return true;
+			}
+		}
+
+		if(args[0].equalsIgnoreCase("test"))
+		{
+			if(args[2].equalsIgnoreCase("point"))
+			{
+				if(args[3].equalsIgnoreCase("*") || args[3].equalsIgnoreCase("all"))
+				{
+					for(TeamColor col : TeamColor.values())
+					{
+						for(SerializableLocation loc : arena.getPoints())
+						{
+							ArmorStand as = (ArmorStand) loc.getWorld().spawn(loc.getLocation(), ArmorStand.class);
+
+							as.setGravity(false);
+							as.setCanPickupItems(false);
+							as.setCustomNameVisible(true);
+							as.setVisible(true);
+							as.setHelmet(new ItemStack(Material.WOOL, 1, (short)0, col.getWoolColor()));
+						}
+					}
+				}
+				else
+				{
+					for(SerializableLocation loc : arena.getPoints(color))
+					{
+						ArmorStand as = (ArmorStand) loc.getWorld().spawn(loc.getLocation(), ArmorStand.class);
+
+						as.setGravity(false);
+						as.setCanPickupItems(false);
+						as.setCustomNameVisible(true);
+						as.setVisible(true);
+						as.setHelmet(new ItemStack(Material.WOOL, 1, (short)0, color.getWoolColor()));
+					}
+				}
+				PvPMessage.COMMAND_ARENA_TEST.say(sender, "<type>", "point de spawn", "<color>", args[3]);
+				return true;
+			}
+
+			if(args[2].equalsIgnoreCase("flag"))
+			{
+				if(args[3].equalsIgnoreCase("*") || args[3].equalsIgnoreCase("all"))
+				{
+					for(TeamColor col : TeamColor.values())
+					{
+						for(SerializableLocation loc : arena.getFlags())
+						{
+							ArmorStand as = (ArmorStand) loc.getWorld().spawn(loc.getLocation(), ArmorStand.class);
+
+							as.setGravity(false);
+							as.setCanPickupItems(false);
+							as.setCustomNameVisible(true);
+							as.setVisible(true);
+							as.setHelmet(new ItemStack(Material.WOOL, 1, (short)0, col.getWoolColor()));
+						}
+					}
+				}
+				else
+				{
+					for(SerializableLocation loc : arena.getFlags(color))
+					{
+						ArmorStand as = (ArmorStand) loc.getWorld().spawn(loc.getLocation(), ArmorStand.class);
+
+						as.setGravity(false);
+						as.setCanPickupItems(false);
+						as.setCustomNameVisible(true);
+						as.setVisible(true);
+						as.setHelmet(new ItemStack(Material.WOOL, 1, (short)0, color.getWoolColor()));
+					}
+				}
+
+				PvPMessage.COMMAND_ARENA_TEST.say(sender, "<type>", "drapeau", "<color>", args[3]);
+				return true;
+			}
+
+			if(args[2].equalsIgnoreCase("zone"))
+			{
+				for(SerializableLocation loc : arena.getZones())
+				{
+					ArmorStand as = (ArmorStand) loc.getWorld().spawn(loc.getLocation(), ArmorStand.class);
+
+					as.setGravity(false);
+					as.setCanPickupItems(false);
+					as.setCustomNameVisible(true);
+					as.setVisible(true);
+					as.setHelmet(new ItemStack(Material.WOOL));
+				}
+				PvPMessage.COMMAND_ARENA_TEST.say(sender, "<type>", "zone", "<color>", args[3]);
 				return true;
 			}
 		}

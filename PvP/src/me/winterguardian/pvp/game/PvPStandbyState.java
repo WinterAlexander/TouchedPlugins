@@ -9,7 +9,7 @@ import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;
 import org.bukkit.entity.Player;
 
-public class PvPStandbyState implements State
+public class PvPStandbyState implements State, LobbyState
 {
 	private PvP game;
 	
@@ -61,9 +61,9 @@ public class PvPStandbyState implements State
 		game.setState(new PvPVoteState(game));
 		game.getState().start();
 	}
-	
-	
-	private void prepare(Player player)
+
+	@Override
+	public void prepare(Player player)
 	{
 		String[] elements = new String[16];
 		elements[0] = "§f§lTouched§4§lPvP";

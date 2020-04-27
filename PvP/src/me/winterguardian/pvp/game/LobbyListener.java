@@ -14,6 +14,7 @@ import org.bukkit.event.player.PlayerDropItemEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.event.player.PlayerInteractEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
+import org.bukkit.event.player.PlayerRespawnEvent;
 
 /**
  *
@@ -48,19 +49,12 @@ public class LobbyListener implements Listener
 		if(!game.contains(event.getPlayer()))
 			return;
 
-		if(!(game.getState() instanceof PvPStandbyState) && !(game.getState() instanceof PvPVoteState))
+		if(!(game.getState() instanceof LobbyState))
 			return;
 
 
 		event.getItemDrop().setPickupDelay(Integer.MAX_VALUE);
-		Bukkit.getScheduler().runTask(game.getPlugin(), new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				event.getItemDrop().remove();
-			}
-		});
+		Bukkit.getScheduler().runTask(game.getPlugin(), () -> event.getItemDrop().remove());
 	}
 
 	@EventHandler
@@ -69,7 +63,7 @@ public class LobbyListener implements Listener
 		if(!game.contains(event.getPlayer()))
 			return;
 
-		if(!(game.getState() instanceof PvPStandbyState) && !(game.getState() instanceof PvPVoteState))
+		if(!(game.getState() instanceof LobbyState))
 			return;
 
 		event.setCancelled(true);
@@ -81,7 +75,7 @@ public class LobbyListener implements Listener
 		if(!game.contains(event.getPlayer()))
 			return;
 
-		if(!(game.getState() instanceof PvPStandbyState) && !(game.getState() instanceof PvPVoteState))
+		if(!(game.getState() instanceof LobbyState))
 			return;
 
 		event.setCancelled(true);
@@ -93,7 +87,7 @@ public class LobbyListener implements Listener
 		if(!game.contains(event.getPlayer()))
 			return;
 
-		if(!(game.getState() instanceof PvPStandbyState) && !(game.getState() instanceof PvPVoteState))
+		if(!(game.getState() instanceof LobbyState))
 			return;
 
 		event.setCancelled(true);
@@ -108,7 +102,7 @@ public class LobbyListener implements Listener
 		if(!game.contains((Player)event.getRemover()))
 			return;
 
-		if(!(game.getState() instanceof PvPStandbyState) && !(game.getState() instanceof PvPVoteState))
+		if(!(game.getState() instanceof LobbyState))
 			return;
 
 		event.setCancelled(true);
@@ -118,5 +112,21 @@ public class LobbyListener implements Listener
 	public void onEntityExplode(EntityExplodeEvent event)
 	{
 		event.blockList().clear();
+	}
+
+
+
+	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
+	public void onPlayerRespawn(PlayerRespawnEvent event)
+	{
+		if(!game.contains(event.getPlayer()))
+			return;
+
+		if(game.getState() instanceof LobbyState)
+		{
+			event.getPlayer().setCanPickupItems(true);
+			event.setRespawnLocation(game.getSetup().getLobby());
+			((LobbyState)game.getState()).prepare(event.getPlayer());
+		}
 	}
 }

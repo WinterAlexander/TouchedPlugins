@@ -2,6 +2,7 @@ package me.winterguardian.pvp.game.infected;
 
 import me.winterguardian.core.shop.PlayerPurchaseEvent;
 import me.winterguardian.pvp.TeamColor;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
@@ -67,15 +68,22 @@ public class InfectedListener implements Listener
 		if(!infected.getGame().contains(event.getPlayer()))
 			return;
 
-		if(justInfected.get(event.getPlayer()) == Boolean.TRUE)
+		if(infected.getGame().getState() != infected)
+			return;
+
+		Player player = event.getPlayer();
+
+		if(justInfected.get(player) == Boolean.TRUE)
 		{
 			event.setRespawnLocation(event.getPlayer().getLocation());
-			justInfected.put(event.getPlayer(), false);
+			justInfected.put(player, false);
 		}
 
-		if(infected.getPlayerData(event.getPlayer()).getTeam() == TeamColor.INFECTED)
+		if(infected.getPlayerData(player).getTeam() == TeamColor.INFECTED)
 		{
-			event.getPlayer().addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, Integer.MAX_VALUE, 1, true, false));
+			Bukkit.getScheduler().runTask(infected.getGame().getPlugin(), () -> {
+				player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, Integer.MAX_VALUE, 0, true, false));
+			});
 		}
 	}
 
@@ -114,8 +122,8 @@ public class InfectedListener implements Listener
 
 		if(infected.getPlayerData(damager).getTeam() == TeamColor.INFECTED)
 		{
-			damager.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10, 2, false, true));
-			damager.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5, 2, false, true));
+			damager.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10 * 20, 1, false, true));
+			damager.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5 * 20, 1, false, true));
 		}
 	}
 
