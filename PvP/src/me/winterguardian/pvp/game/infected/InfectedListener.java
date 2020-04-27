@@ -1,8 +1,6 @@
 package me.winterguardian.pvp.game.infected;
 
-import me.winterguardian.core.game.PlayerData;
 import me.winterguardian.pvp.TeamColor;
-import me.winterguardian.pvp.game.PvPPlayerData;
 import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
@@ -10,10 +8,9 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.event.player.PlayerInventoryEvent;
-import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -119,5 +116,20 @@ public class InfectedListener implements Listener
 			damager.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10, 2, false, true));
 			damager.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5, 2, false, true));
 		}
+	}
+
+	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+	public void onHumanHunger(FoodLevelChangeEvent event)
+	{
+		if(!(event.getEntity() instanceof Player))
+			return;
+
+		Player player = (Player)event.getEntity();
+
+		if(!infected.getGame().contains(player))
+			return;
+
+		if(infected.getPlayerData(player).getTeam() == TeamColor.HUMAN)
+			event.setFoodLevel(20);
 	}
 }

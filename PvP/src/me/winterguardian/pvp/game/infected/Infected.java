@@ -55,6 +55,8 @@ public class Infected extends PvPMatch
 		super.start();
 		register(new InfectedListener(this));
 
+		getGame().getPlayerListener().setCancelHunger(false);
+
 		humanTeam = this.board.registerNewTeam(TeamColor.HUMAN.name());
 		humanTeam.setAllowFriendlyFire(false);
 		humanTeam.setDisplayName(TeamColor.HUMAN.toString());
@@ -84,6 +86,8 @@ public class Infected extends PvPMatch
 	@Override
 	public void end()
 	{
+		getGame().getPlayerListener().setCancelHunger(true);
+
 		for(Player p : getGame().getPlayers())
 			if(getPlayerData(p).getTeam() == TeamColor.HUMAN)
 				humanTeam.removeEntry(p.getName());
