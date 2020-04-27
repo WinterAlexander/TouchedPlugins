@@ -11,6 +11,7 @@ import me.winterguardian.pvp.game.PvPMatch;
 import me.winterguardian.pvp.game.PvPPlayerData;
 import me.winterguardian.pvp.game.PvPVoteState;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.NameTagVisibility;
 import org.bukkit.scoreboard.Scoreboard;
@@ -173,6 +174,23 @@ public class Infected extends PvPMatch
 			getGame().setState(new PvPVoteState(this.getGame()));
 			getGame().getState().start();
 		}
+	}
+
+	public void announceKill(PvPPlayerData killer, PvPPlayerData killed)
+	{
+		if(killed.getTeam() == TeamColor.HUMAN)
+			PvPMessage.GAME_INF_INFECT.sayPlayers("<player>", killer.getPvPName(), "<victim>", killed.getPvPName());
+	}
+
+	public void announceSuicide(PvPPlayerData player)
+	{
+		if(player.getTeam() == TeamColor.HUMAN)
+			PvPMessage.GAME_INF_SELFINFECT.sayPlayers("<player>", player.getPvPName());
+	}
+
+	public Location getSpawnPoint(PvPPlayerData playerData)
+	{
+		return getArena().getSpawnPoint(TeamColor.NONE);
 	}
 
 	@Override

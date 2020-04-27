@@ -58,6 +58,10 @@ public class PvPMessage extends HardcodedMessage
 
 	GAME_KILL = new PvPMessage("<player> §ea tué §e<victim>§e.", false),
 	GAME_SUICIDE = new PvPMessage("<player> §es'est suicidé.", false),
+
+	GAME_INF_INFECT = new PvPMessage("<player> §c a infecté §e<victim>§e.", false),
+	GAME_INF_SELFINFECT = new PvPMessage("<player> §c s'est infecté.", false),
+
 	GAME_START_FFA = new PvPMessage("§eQue la mêlée commence ! Bonne chance à tous.", true),
 	GAME_START_OITC = new PvPMessage("§eLa balle chargée prend place. À vos marques, tirez !", true),
 	GAME_START_TDM = new PvPMessage("§eLe match à mort est commencé ! Bonne chance aux équipes.", true),

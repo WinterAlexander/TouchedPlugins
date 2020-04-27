@@ -52,6 +52,7 @@ public class TestingCenter extends JavaPlugin
 			this.testCommand.getSubCommands().add(new PlayerTest());
 			this.testCommand.getSubCommands().add(new EventTest());
 			this.testCommand.getSubCommands().add(new AutoJump());
+			//this.testCommand.getSubCommands().add(new SignTest());
 
 			this.testCommand.register(this);
 			

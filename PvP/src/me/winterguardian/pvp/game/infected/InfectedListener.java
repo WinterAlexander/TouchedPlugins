@@ -1,5 +1,6 @@
 package me.winterguardian.pvp.game.infected;
 
+import me.winterguardian.core.shop.PlayerPurchaseEvent;
 import me.winterguardian.pvp.TeamColor;
 import org.bukkit.Material;
 import org.bukkit.entity.HumanEntity;
@@ -131,5 +132,14 @@ public class InfectedListener implements Listener
 
 		if(infected.getPlayerData(player).getTeam() == TeamColor.HUMAN)
 			event.setFoodLevel(20);
+	}
+
+	@EventHandler
+	public void onInfectedPurchase(PlayerPurchaseEvent event)
+	{
+		Player player = event.getPlayer();
+
+		if(infected.getGame().contains(player) && infected.getPlayerData(player).getTeam() == TeamColor.INFECTED)
+			event.setCancelled(true);
 	}
 }

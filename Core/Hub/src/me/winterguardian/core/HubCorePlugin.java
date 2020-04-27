@@ -49,7 +49,7 @@ public class HubCorePlugin extends JavaPlugin
 		if(Bukkit.getPluginManager().getPermission(elitePermission.getName()) == null)
 			Bukkit.getPluginManager().addPermission(elitePermission);
 
-		Core.getShop().registerPurchaseType(new ItemPurchase("[shop]", "§f§lTouched§6§lCraft", "§e§lAchat Item")
+		Core.getShop().registerPurchaseType(new ItemPurchase("[shop]", "§f§lTouched", "§e§lAchat Item")
 		{
 			@Override
 			public Permission getCreationPermission()
@@ -70,7 +70,7 @@ public class HubCorePlugin extends JavaPlugin
 			}
 		});
 
-		Core.getShop().registerPurchaseType(new ItemPurchase("[shopvip]", "§f§lTouched§6§lCraft", "§e§lAchat Item §6§lVip")
+		Core.getShop().registerPurchaseType(new ItemPurchase("[shopvip]", "§f§lTouched", "§e§lAchat Item §6§lVip")
 		{
 			@Override
 			public Permission getCreationPermission()

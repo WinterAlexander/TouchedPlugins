@@ -469,13 +469,13 @@ public class PvPPlayerData extends PlayerData
 					assistPlayerData.setAssists(assistPlayerData.getAssists() + 1);
 				}
 
-				PvPMessage.GAME_KILL.sayPlayers("<player>", killerPlayerData.getPvPName(), "<victim>", getPvPName());
+				game.announceKill(killerPlayerData, this);
 			}
 			else
-				PvPMessage.GAME_SUICIDE.sayPlayers("<player>", getPvPName());
+				game.announceSuicide(this);
 		}
 		else
-			PvPMessage.GAME_SUICIDE.sayPlayers("<player>", getPvPName());
+			game.announceSuicide(this);
 		
 		this.lastDamager = null;
 		this.secondDamager = null;

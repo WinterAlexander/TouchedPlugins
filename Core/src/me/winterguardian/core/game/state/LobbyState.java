@@ -43,9 +43,10 @@ public abstract class LobbyState implements State
 		this.prepare(p, true);
 		if(this.getBoard() != null)
 			this.getBoard().startDisplay(p);
-		
+
 		if(this.game.getConfig().isColorInTab())
-			TabUtil.sendInfos(p, getTabHeader(p), getTabFooter(p));
+			for(Player player : game.getPlayers())
+				TabUtil.sendInfos(player, getTabHeader(player), getTabFooter(player));
 	}
 
 	@Override
@@ -56,8 +57,14 @@ public abstract class LobbyState implements State
 		this.prepare(p, false);
 		if(this.getBoard() != null)
 			this.getBoard().stopDisplay(p);
+
 		if(this.game.getConfig().isColorInTab())
+		{
+			for(Player player : game.getPlayers())
+				if(player != p)
+					TabUtil.sendInfos(player, getTabHeader(player), getTabFooter(player));
 			TabUtil.resetTab(p);
+		}
 		
 		if(getExit(p) != null)
 			p.teleport(getExit(p));

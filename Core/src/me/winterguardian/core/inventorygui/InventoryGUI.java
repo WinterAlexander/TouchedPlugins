@@ -22,7 +22,7 @@ public class InventoryGUI implements Listener
 
     public InventoryGUI(String name, int size)
     {
-        this(name, size, new ArrayList<GUIItem>());
+        this(name, size, new ArrayList<>());
     }
 
     public InventoryGUI(String name, int size, List<GUIItem> items)

@@ -21,10 +21,6 @@ public class ChatListener implements Listener
 
 		e.setMessage(e.getMessage().replaceAll("(.)(\\1{3,})", "$1$1$1"));
 
-		e.setMessage(e.getMessage().replaceAll("([tT])+([oOôÔòÒöÖ])+([uUûÛùÙüÜ])+([cCçÇ(])+([hH])+([eEêÊéÉèÈëË])+([dD])+(([ -+=])*([cCçÇ])+([rR])+([aAâÂàÀäÄ])+([fF])+([tT])+)?", "touchedcrap"));
-		e.setMessage(e.getMessage().replaceAll("([eEêÊéÉèÈëË])+([pP])+([iIîÎïÏìÌ|1])+([ -+=])*([cCçÇ(])+([uUûÛùÙüÜ])+([bB])+([eEêÊéÉèÈëË])*", "épicul"));
-		e.setMessage(e.getMessage().replaceAll("[sS$]+[aâäàAÂÄÀ4]+[mM]+[aâäàAÂÄÀ4]+(\\s)*[gG][aâäàAÂÄÀ4]+[mM]+[eêèëéEÊÈËÉ3]+[sS$]*", "samacaca"));
-		e.setMessage(e.getMessage().replaceAll("[kK]+[oOôÔòÒöÖ]+[hH]+[iIîÎïÏìÌ]+", "prout"));
 		e.setMessage(e.getMessage().replaceAll("(^|[ ])(([eEêÊéÉèÈëË])+([zZ])+)+(?!\\S)", "$1<3"));
 
 

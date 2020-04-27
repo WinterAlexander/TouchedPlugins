@@ -14,6 +14,7 @@ import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.TeamColor;
 import me.winterguardian.pvp.stats.PvPStats;
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.Sound;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
@@ -258,6 +259,16 @@ public abstract class PvPMatch implements State, Runnable
 		return null;
 	}
 
+	public void announceKill(PvPPlayerData killer, PvPPlayerData killed)
+	{
+		PvPMessage.GAME_KILL.sayPlayers("<player>", killer.getPvPName(), "<victim>", killed.getPvPName());
+	}
+
+	public void announceSuicide(PvPPlayerData player)
+	{
+		PvPMessage.GAME_SUICIDE.sayPlayers("<player>", player.getPvPName());
+	}
+
 	public Set<PvPPlayerData> getPlayerDatas()
 	{
 		return playerDatas;
@@ -276,5 +287,10 @@ public abstract class PvPMatch implements State, Runnable
 	public int getTimer()
 	{
 		return timer;
+	}
+
+	public Location getSpawnPoint(PvPPlayerData playerData)
+	{
+		return getArena().getSpawnPoint(playerData.getTeam());
 	}
 }

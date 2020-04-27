@@ -34,6 +34,10 @@ public class ArenaSubCommand extends SubCommand
 		if(args[0].equalsIgnoreCase("list"))
 		{
 			PvPMessage.COMMAND_ARENA_LIST.say(sender);
+
+			for(String arenaName : PvPArena.getArenaList())
+				sender.sendMessage("  " + arenaName);
+
 			return true;
 		}
 		

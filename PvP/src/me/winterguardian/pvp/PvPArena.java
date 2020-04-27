@@ -5,6 +5,7 @@ import me.winterguardian.core.world.LocationUtil;
 import me.winterguardian.core.world.SerializableLocation;
 import me.winterguardian.core.world.SerializableRegion;
 import me.winterguardian.pvp.game.PvPMatch;
+import me.winterguardian.pvp.game.infected.Infected;
 import me.winterguardian.pvp.game.solo.Brawl;
 import me.winterguardian.pvp.game.solo.FreeForAll;
 import me.winterguardian.pvp.game.solo.KingOfTheHill;
@@ -186,7 +187,7 @@ public class PvPArena extends VotableArena
 
 	public boolean isCompatible(PvPMatch type)
 	{
-		if(type instanceof FreeForAll || type instanceof OneInTheChamber || type instanceof Switch || type instanceof Brawl)
+		if(type instanceof FreeForAll || type instanceof OneInTheChamber || type instanceof Switch || type instanceof Brawl || type instanceof Infected)
 			return this.spawnPoints.get(TeamColor.NONE) != null && this.spawnPoints.get(TeamColor.NONE).size() > 0;
 
 		if(type instanceof KingOfTheHill)

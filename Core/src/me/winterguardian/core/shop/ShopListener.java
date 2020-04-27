@@ -1,5 +1,6 @@
 package me.winterguardian.core.shop;
 
+import org.bukkit.Bukkit;
 import org.bukkit.block.Sign;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
@@ -54,16 +55,11 @@ public class ShopListener implements Listener
 		Sign sign = ((Sign)event.getClickedBlock().getState());
 		String[] lines = sign.getLines();
 
-		if(lines[0].equals("§f§lSekai§6§lMC"))
+		if(lines[0].equals("§f§lSekai§6§lMC") || lines[0].equals("§f§lSekai§4§lPvP"))
 		{
-			sign.setLine(0, "§f§lTouched§6§lCraft");
-			lines[0] = "§f§lTouched§6§lCraft";
-		}
-
-		if(lines[0].equals("§f§lSekai§6§lPvP"))
-		{
-			sign.setLine(0, "§f§lTouched§6§lPvP");
-			lines[0] = "§f§lTouched§6§lPvP";
+			sign.setLine(0, "§f§lTouched");
+			sign.update();
+			lines[0] = "§f§lTouched";
 		}
 
 		shop.executePurchase(event.getPlayer(), lines);

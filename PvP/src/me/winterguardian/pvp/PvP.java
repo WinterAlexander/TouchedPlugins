@@ -41,8 +41,8 @@ public class PvP extends StateGame implements GUIItemGame
 		Bukkit.getPluginManager().registerEvents(new SignListener(), getPlugin());
 		Bukkit.getPluginManager().registerEvents(new ChatListener(this), getPlugin());
 
-		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shop]", "§f§lTouched§4§lPvP", "§e§lAchat Kit"));
-		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shopvip]", "§f§lTouched§4§lPvP", "§e§lAchat Kit §6§lVip")
+		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shop]", "§f§lTouched", "§e§lAchat Kit"));
+		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shopvip]", "§f§lTouched", "§e§lAchat Kit §6§lVip")
 		{
 			@Override
 			public boolean canGive(Player player)
@@ -54,8 +54,8 @@ public class PvP extends StateGame implements GUIItemGame
 				return false;
 			}
 		});
-		Core.getShop().registerPurchaseType(new MobPurchase("[shop]", "§f§lTouched§4§lPvP", "§e§lAchat Mob"));
-		Core.getShop().registerPurchaseType(new MobPurchase("[shopvip]", "§f§lTouched§4§lPvP", "§e§lAchat Mob §6§lVip")
+		Core.getShop().registerPurchaseType(new MobPurchase("[shop]", "§f§lTouched", "§e§lAchat Mob"));
+		Core.getShop().registerPurchaseType(new MobPurchase("[shopvip]", "§f§lTouched", "§e§lAchat Mob §6§lVip")
 		{
 			@Override
 			public boolean canGive(Player player)

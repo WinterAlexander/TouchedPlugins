@@ -400,7 +400,7 @@ public class GameListener implements Listener
 		if(playerData == null || !playerData.isPlaying())
 			return;
 
-		event.setRespawnLocation(game.getArena().getSpawnPoint(playerData.getTeam()));
+		event.setRespawnLocation(game.getSpawnPoint(playerData));
 		playerData.respawn();
 	}
 
