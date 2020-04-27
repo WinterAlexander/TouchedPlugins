@@ -58,7 +58,7 @@ public class ScoreboardAndTabTask implements Runnable
 			{
 				Core.getBungeeMessager().requestPlayerCount("ALL");
 				Core.getBungeeMessager().requestPlayerCount("crea");
-				Core.getBungeeMessager().requestPlayerCount("faction");
+				//Core.getBungeeMessager().requestPlayerCount("faction");
 			}
 		}
 		i++;
@@ -202,7 +202,7 @@ public class ScoreboardAndTabTask implements Runnable
 			}
 		}
 		
-		String[] elements = new String[16];
+		String[] elements = new String[13];
 		elements[0] = getTouchedLogo();
 		elements[1] = "§4§lPvP";
 		elements[2] = "§2§f" + TextUtil.toString(pvpPlayers) + " joueur" + (pvpPlayers > 1 ? "s" : "");
@@ -216,9 +216,9 @@ public class ScoreboardAndTabTask implements Runnable
 		elements[10] = "§4§f" + TextUtil.toString(creaPlayers) + " joueur" + (creaPlayers > 1 ? "s" : "");
 		elements[11] = " /crea";
 		elements[12] = " ";
-		elements[13] = "§2§lFactions";
-		elements[14] = "§1§f" + TextUtil.toString(facPlayers) + " joueur" + (facPlayers > 1 ? "s" : "");
-		elements[15] = " /fac";
+		//elements[13] = "§2§lFactions";
+		//elements[14] = "§1§f" + TextUtil.toString(facPlayers) + " joueur" + (facPlayers > 1 ? "s" : "");
+		//elements[15] = " /fac";
 
 		
 		return elements;

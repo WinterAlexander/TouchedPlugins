@@ -18,14 +18,16 @@ public class BlockAchievement extends CourseAchievement
 	@Override
 	public boolean isComplete(Player p)
 	{
-		if(!((MobRacersConfig)MobRacersPlugin.getGame().getConfig()).enableStats())
+		if(!MobRacersPlugin.getGame().getConfig().enableStats())
 			return true;
-		
-		if(CourseStats.get(p).isAchievementComplete("achievement.block"))
+
+		CourseStats stats = CourseStats.get(p);
+
+		if(stats.isAchievementComplete("achievement.block"))
 			return true; 
 		
 		for(Arena arena : Arena.getArenaList())
-			if(arena.getAuthor().equalsIgnoreCase(p.getName()) && CourseStats.get(p).getArenaGamesPlayed(arena.getName()) >= 1)
+			if(arena.getAuthor().equalsIgnoreCase(p.getName()) && stats.getArenaGamesPlayed(arena.getName()) >= 1)
 				return true;
 		
 		return false;

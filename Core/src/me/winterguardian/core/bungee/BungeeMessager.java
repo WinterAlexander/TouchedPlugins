@@ -10,6 +10,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
+import java.io.EOFException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -64,31 +65,35 @@ public class BungeeMessager extends DynamicComponent implements PluginMessageLis
 		if(!channel.equals("BungeeCord"))
 			return;
 
-		ByteArrayDataInput in = ByteStreams.newDataInput(bytes);
-		String subChannel = in.readUTF();
-		
-		if(subChannel.equals("ExecuteConsole") && !safe)
+		try
 		{
-			Bukkit.dispatchCommand(Bukkit.getConsoleSender(), in.readUTF());
-			return;
-		}
+			ByteArrayDataInput in = ByteStreams.newDataInput(bytes);
+			String subChannel = in.readUTF();
 
-		if(subChannel.equals("PlayerCount"))
-		{
-			playerCount.put(in.readUTF(), in.readInt());
-			return;
+			if(subChannel.equals("ExecuteConsole") && !safe)
+			{
+				Bukkit.dispatchCommand(Bukkit.getConsoleSender(), in.readUTF());
+				return;
+			}
+
+			if(subChannel.equals("PlayerCount"))
+			{
+				playerCount.put(in.readUTF(), in.readInt());
+				return;
+			}
+
+			if(subChannel.equals("GetServer"))
+			{
+				serverName = in.readUTF();
+				return;
+			}
+
+			if(subChannel.equals("GetServers"))
+			{
+				servers = Arrays.asList(in.readUTF().split(", "));
+			}
 		}
-		
-		if(subChannel.equals("GetServer"))
-		{
-			serverName = in.readUTF();
-			return;
-		}
-		
-		if(subChannel.equals("GetServers"))
-		{
-			servers = Arrays.asList(in.readUTF().split(", "));
-		}
+		catch(IllegalStateException ignored) {}
 	}
 
 	public void sendToServer(Player player, String server)

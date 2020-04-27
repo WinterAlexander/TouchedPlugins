@@ -147,10 +147,6 @@ public class StandbyState extends me.winterguardian.core.game.state.StandbyState
 					elements[index] = line;
 				}
 
-				player.sendMessage(elements.length + "");
-				for(String line : elements)
-					player.sendMessage(line);
-
 				ScoreboardUtil.unrankedSidebarDisplay(player, elements);
 			}
 			

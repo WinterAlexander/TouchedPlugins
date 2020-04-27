@@ -166,6 +166,7 @@ public class BlockFarmersPlayerData extends PlayerData
 
 		for(List<Location> layer : layers)
 			for(Location point : layer)
-				farm_inner(point.getBlock());
+				if(!point.equals(source))
+					farm_inner(point.getBlock());
 	}
 }

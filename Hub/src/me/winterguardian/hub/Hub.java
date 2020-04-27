@@ -316,13 +316,13 @@ public class Hub extends JavaPlugin implements Game
 		player.getInventory().setItem(0, compass);
 
 
-		ItemStack chest = new ItemStack(Material.CHEST, 1, (short)0);
+		//ItemStack chest = new ItemStack(Material.CHEST, 1, (short)0);
 
-		ItemMeta chestMeta = compass.getItemMeta();
-		chestMeta.setDisplayName("§c§lGadgets");
+		//ItemMeta chestMeta = compass.getItemMeta();
+		//chestMeta.setDisplayName("§c§lGadgets");
 
-		chest.setItemMeta(chestMeta);
-		player.getInventory().setItem(4, chest);
+		//chest.setItemMeta(chestMeta);
+		//player.getInventory().setItem(4, chest);
 
 		ItemStack flower = new ItemStack(Material.RED_ROSE, 1, (short)0);
 
