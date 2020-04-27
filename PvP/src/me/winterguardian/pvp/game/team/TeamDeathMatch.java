@@ -65,7 +65,7 @@ public class TeamDeathMatch extends TeamGame
 	}
 
 	@Override
-	public GameStuff getNewStuff(Player player)
+	public GameStuff getNewStuff(Player player, boolean gameStart)
 	{
 		return this.stuff;
 	}

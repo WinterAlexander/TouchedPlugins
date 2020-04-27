@@ -24,7 +24,7 @@ public class FreeForAll extends SoloGame
 	}
 
 	@Override
-	public GameStuff getNewStuff(Player player)
+	public GameStuff getNewStuff(Player player, boolean gameStart)
 	{
 		return ffaStuff;
 	}

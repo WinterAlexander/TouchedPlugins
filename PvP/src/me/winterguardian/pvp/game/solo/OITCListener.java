@@ -64,7 +64,7 @@ public class OITCListener implements Listener
 	public void onPlayerRespawn(PlayerRespawnEvent event)
 	{
 		if(game.getGame().contains(event.getPlayer()))
-			game.getNewStuff(event.getPlayer()).give(event.getPlayer());
+			game.getNewStuff(event.getPlayer(), false).give(event.getPlayer());
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST)

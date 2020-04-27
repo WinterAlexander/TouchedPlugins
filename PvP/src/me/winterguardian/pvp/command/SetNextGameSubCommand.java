@@ -6,6 +6,7 @@ import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPPlugin;
 import me.winterguardian.pvp.game.PvPMatch;
 import me.winterguardian.pvp.game.PvPVoteState;
+import me.winterguardian.pvp.game.infected.Infected;
 import me.winterguardian.pvp.game.solo.Brawl;
 import me.winterguardian.pvp.game.solo.FreeForAll;
 import me.winterguardian.pvp.game.solo.KingOfTheHill;
@@ -63,6 +64,9 @@ public class SetNextGameSubCommand extends SubCommand
 
 		if(args[0].equalsIgnoreCase("dom"))
 			next = new Domination(PvPPlugin.getGame(), Integer.parseInt(args[1]));
+
+		if(args[0].equalsIgnoreCase("inf"))
+			next = new Infected(PvPPlugin.getGame());
 
 		if(next == null)
 			return false;

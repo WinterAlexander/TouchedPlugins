@@ -377,7 +377,7 @@ public class PvPPlayerData extends PlayerData
 				if(getPlayer().isOnline() && PvPPlugin.getGame().getConfig().useDisplaynames())
 					killerName = killerPlayerData.getPlayer().getDisplayName();
 
-				boolean firstKill = true; //patern sans nom fait par moi même
+				boolean firstKill = true;
 
 				for(PlayerData data : game.getPlayerDatas()) //dans tout les datas
 					if(((PvPPlayerData)data).getKills() != 0) //si un seul a fait un kill
@@ -524,7 +524,7 @@ public class PvPPlayerData extends PlayerData
 
 		this.playTime += System.currentTimeMillis() - this.begin;
 
-		stats.gameSummary(game instanceof TeamGame ? ((((TeamGame)game).getTeam(1)) == getTeam() ? -1 : -2) : ((SoloGame)game).getPosition(this),
+		stats.gameSummary(game.getOutcome(getPlayer()),
 				getKills(),
 				getDeaths(),
 				getAssists(),

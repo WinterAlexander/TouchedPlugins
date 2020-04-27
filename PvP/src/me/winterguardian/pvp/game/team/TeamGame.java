@@ -5,6 +5,7 @@ import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.TeamColor;
+import me.winterguardian.pvp.game.GameOutcome;
 import me.winterguardian.pvp.game.PvPMatch;
 import me.winterguardian.pvp.game.PvPPlayerData;
 import me.winterguardian.pvp.stats.PvPStats;
@@ -56,8 +57,6 @@ public abstract class TeamGame extends PvPMatch
 		this.boardTeams.get(getPlayerData(p).getTeam()).removeEntry(p.getName());
 
 		super.leave(p);
-
-		//lookForTeamChanges ?
 	}
 
 	@Override
@@ -109,7 +108,7 @@ public abstract class TeamGame extends PvPMatch
 
 
 	@Override
-	public TeamColor getNewTeam(Player player)
+	public TeamColor getNewTeam(Player player, boolean gameStart)
 	{
 		List<TeamColor> potentials = new ArrayList<>();
 
@@ -248,5 +247,11 @@ public abstract class TeamGame extends PvPMatch
 	public int getMinimum()
 	{
 		return getTeamCount();
+	}
+
+	@Override
+	public GameOutcome getOutcome(Player player)
+	{
+		return getTeam(1) == getPlayerData(player).getTeam() ? GameOutcome.TEAM_WIN : GameOutcome.TEAM_LOSE;
 	}
 }

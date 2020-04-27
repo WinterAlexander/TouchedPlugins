@@ -3,8 +3,10 @@ package me.winterguardian.pvp.game.solo;
 import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.TeamColor;
+import me.winterguardian.pvp.game.GameOutcome;
 import me.winterguardian.pvp.game.PvPMatch;
 import me.winterguardian.pvp.game.PvPPlayerData;
+import me.winterguardian.pvp.game.team.TeamGame;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scoreboard.Scoreboard;
@@ -37,7 +39,7 @@ public abstract class SoloGame extends PvPMatch
 	public abstract int getSecondFactor(PvPPlayerData data);
 
 	@Override
-	public TeamColor getNewTeam(Player player)
+	public TeamColor getNewTeam(Player player, boolean gameStart)
 	{
 		return TeamColor.NONE;
 	}
@@ -126,5 +128,21 @@ public abstract class SoloGame extends PvPMatch
 			scores.put(data.getPvPName(), getScore(data));
 
 		rankedSidebarDisplay(getGame().getPlayers(), getColoredName(), scores, board);
+	}
+
+	@Override
+	public GameOutcome getOutcome(Player player)
+	{
+		switch(getPosition(getPlayerData(player)))
+		{
+			case 1:
+				return GameOutcome.FIRST;
+			case 2:
+				return GameOutcome.SECOND;
+			case 3:
+				return GameOutcome.THIRD;
+			default:
+				return GameOutcome.LOWER;
+		}
 	}
 }

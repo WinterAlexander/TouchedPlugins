@@ -7,6 +7,7 @@ import me.winterguardian.core.util.MathUtil;
 import me.winterguardian.core.util.TextUtil;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.PvPPlugin;
+import me.winterguardian.pvp.game.GameOutcome;
 import org.bukkit.Bukkit;
 import org.bukkit.OfflinePlayer;
 import org.bukkit.entity.Player;
@@ -140,7 +141,7 @@ public class PvPStats extends PlayerStats
 		getContent().set("pvp.score", score);
 	}
 	
-	public void gameSummary(int position, int kills, int deaths, int assists, long playTime, int capturedFlags, int capturedZones, int killingSpree, List<Bonus> bonus)
+	public void gameSummary(GameOutcome outcome, int kills, int deaths, int assists, long playTime, int capturedFlags, int capturedZones, int killingSpree, List<Bonus> bonus)
 	{
 		if(playTime < 500000 && kills == 0 && deaths == 0 && assists == 0 && capturedFlags == 0 && capturedZones == 0)
 			return;
@@ -153,32 +154,44 @@ public class PvPStats extends PlayerStats
 		PvPMessage.STATS_SUMMARY_SEPARATOR.sayIfOnline(getPlayer());
 		PvPMessage.STATS_SUMMARY_TITLE.sayIfOnline(getPlayer());
 			
-		if(position == 1)
+		if(outcome == GameOutcome.FIRST)
 		{
 			PvPMessage.STATS_SUMMARY_FIRSTPLACE.sayIfOnline(getPlayer(), "#", "500");
 			points += 500;
 			setVictories(getVictories() + 1);
 		}
-		else if(position == 2)
+		else if(outcome == GameOutcome.SECOND)
 		{
 			PvPMessage.STATS_SUMMARY_SECONDPLACE.sayIfOnline(getPlayer(), "#", "250");
 			points += 250;
 		}
-		else if(position == 3)
+		else if(outcome == GameOutcome.THIRD)
 		{
 			PvPMessage.STATS_SUMMARY_THIRDPLACE.sayIfOnline(getPlayer(), "#", "50");
 			points += 50;
 		}
-		else if(position == -1)
+		else if(outcome == GameOutcome.TEAM_WIN)
 		{
 			PvPMessage.STATS_SUMMARY_TEAMVICTORY.sayIfOnline(player, "#", "400");
 			points += 400;
 			setVictories(getVictories() + 1);
 		}
-		else if(position == -2)
+		else if(outcome == GameOutcome.TEAM_LOSE)
 		{
 			PvPMessage.STATS_SUMMARY_TEAMLOSE.sayIfOnline(player, "#", "-100");
 			points -= 100;
+		}
+		else if(outcome == GameOutcome.WON_AS_HUMAN)
+		{
+			PvPMessage.STATS_SUMMARY_INFWONASHUMAN.sayIfOnline(player, "#", "400");
+			points += 400;
+			setVictories(getVictories() + 1);
+		}
+		else if(outcome == GameOutcome.WON_AS_INFECTED)
+		{
+			PvPMessage.STATS_SUMMARY_INFWONASINFECTED.sayIfOnline(player, "#", "500");
+			points += 500;
+			setVictories(getVictories() + 1);
 		}
 
 		setGamesPlayed(getGamesPlayed() + 1);

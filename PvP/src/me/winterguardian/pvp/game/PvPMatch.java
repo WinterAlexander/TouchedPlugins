@@ -36,9 +36,9 @@ public abstract class PvPMatch implements State, Runnable
 	private int taskId;
 	private int timer;
 
-	public abstract GameStuff getNewStuff(Player player);
+	public abstract GameStuff getNewStuff(Player player, boolean gameStart);
 
-	public abstract TeamColor getNewTeam(Player player);
+	public abstract TeamColor getNewTeam(Player player, boolean gameStart);
 
 	public abstract boolean areEnemies(Player p1, Player p2);
 
@@ -49,6 +49,8 @@ public abstract class PvPMatch implements State, Runnable
 	public abstract Message getGuide();
 
 	public abstract void updateBoard();
+
+	public abstract GameOutcome getOutcome(Player player);
 
 	protected PvPMatch(PvP game)
 	{
@@ -67,14 +69,14 @@ public abstract class PvPMatch implements State, Runnable
 		if(getPlayerData(p) == null)
 		{
 			this.playerDatas.add(new PvPPlayerData(p, this));
-			getPlayerData(p).setTeam(getNewTeam(p));
+			getPlayerData(p).setTeam(getNewTeam(p, false));
 			p.teleport(this.arena.getSpawnPoint(getPlayerData(p).getTeam()));
 			displayTab(p);
 			PlayerUtil.prepare(p);
 			PlayerUtil.heal(p);
 			PlayerUtil.clearBoard(p);
 			PlayerUtil.clearInventory(p);
-			getNewStuff(p).give(p);
+			getNewStuff(p, false).give(p);
 			getPlayerData(p).start();
 		}
 		else
@@ -135,7 +137,7 @@ public abstract class PvPMatch implements State, Runnable
 		{
 			PlayerUtil.clearBoard(player);
 			this.playerDatas.add(new PvPPlayerData(player, this));
-			getPlayerData(player).setTeam(getNewTeam(player));
+			getPlayerData(player).setTeam(getNewTeam(player, true));
 			getPlayerData(player).start();
 			player.teleport(this.arena.getSpawnPoint(getPlayerData(player).getTeam()));
 			displayTab(player);

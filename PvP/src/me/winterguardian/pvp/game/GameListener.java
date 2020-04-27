@@ -361,14 +361,9 @@ public class GameListener implements Listener
 		event.getDrops().clear();
 		event.setDeathMessage(null);
 
-		Bukkit.getScheduler().runTaskLater(game.getGame().getPlugin(), new Runnable()
-		{
-			@Override
-			public void run()
-			{
-				event.getEntity().setCanPickupItems(false);
-				event.getEntity().spigot().respawn();
-			}
+		Bukkit.getScheduler().runTaskLater(game.getGame().getPlugin(), () -> {
+			event.getEntity().setCanPickupItems(false);
+			event.getEntity().spigot().respawn();
 		}, 5);
 	}
 
@@ -392,7 +387,7 @@ public class GameListener implements Listener
 			event.setCancelled(true);
 	}
 
-	@EventHandler(priority = EventPriority.HIGHEST, ignoreCancelled = true)
+	@EventHandler(priority = EventPriority.HIGH, ignoreCancelled = true)
 	public void onPlayerRespawn(PlayerRespawnEvent event)
 	{
 		if(!game.getGame().contains(event.getPlayer()))

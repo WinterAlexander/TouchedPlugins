@@ -47,7 +47,7 @@ public class PvPArena extends VotableArena
 	public void addSpawnPoint(Location point, TeamColor color)
 	{
 		if(!spawnPoints.containsKey(color))
-			spawnPoints.put(color, new ArrayList<SerializableLocation>());
+			spawnPoints.put(color, new ArrayList<>());
 		
 		spawnPoints.get(color).add(new SerializableLocation(point));
 	}

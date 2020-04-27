@@ -66,7 +66,7 @@ public class Switch extends SoloGame
 			public void onPlayerRespawn(PlayerRespawnEvent event)
 			{
 				if(getGame().contains(event.getPlayer()))
-					getNewStuff(event.getPlayer()).give(event.getPlayer());
+					getNewStuff(event.getPlayer(), false).give(event.getPlayer());
 			}
 
 			@EventHandler(priority = EventPriority.HIGHEST)
@@ -101,7 +101,7 @@ public class Switch extends SoloGame
 	}
 
 	@Override
-	public GameStuff getNewStuff(Player player)
+	public GameStuff getNewStuff(Player player, boolean gameStart)
 	{
 		return this.currentStuff;
 	}

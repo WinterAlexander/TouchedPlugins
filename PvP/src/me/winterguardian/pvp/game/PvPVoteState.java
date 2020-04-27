@@ -54,7 +54,7 @@ public class PvPVoteState implements State, Runnable
 	{
 		p.teleport(game.getSetup().getLobby());
 		prepare(p);
-		this.nextState.getNewStuff(p).give(p);
+		this.nextState.getNewStuff(p, true).give(p);
 		PvPMessage.VOTE_START.say(p, "<type>", getNextGameName());
 	}
 
@@ -85,7 +85,7 @@ public class PvPVoteState implements State, Runnable
 		for(Player player : game.getPlayers())
 		{
 			prepare(player);
-			this.nextState.getNewStuff(player).give(player);
+			this.nextState.getNewStuff(player, true).give(player);
 		}
 
 		this.taskId = Bukkit.getScheduler().runTaskTimer(game.getPlugin(), this, 0, 20).getTaskId();
@@ -97,7 +97,7 @@ public class PvPVoteState implements State, Runnable
 	{
 		--timer;
 
-		if(timer <=5 && timer > 0)
+		if(timer <= 5 && timer > 0)
 			new SoundEffect(Sound.NOTE_BASS, 1f, 1f).play(game.getPlayers());
 
 		if(timer == 15 && nextState.getGuide() != null)
