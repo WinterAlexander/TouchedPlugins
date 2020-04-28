@@ -41,6 +41,9 @@ public class PvPMessage extends HardcodedMessage
 	COMMAND_STATS_BESTSTREAKBESTGAME = new PvPMessage("&7Top série de victimes: &f<killstreak> | &fTop meutres en une partie: &f<kills>", false),
 	COMMAND_STATS_SCOREPOINTSTIME = new PvPMessage("&eScore: &f<score> | &bTemps de jeu: &f<time>", false),
 
+	COMMAND_ARENA_GETEFFECTS = new PvPMessage("§eVous avez obtenus les effets de la map.", false),
+	COMMAND_ARENA_SETEFFECTS = new PvPMessage("§eEffets de la map mis à jour.", false),
+
 	COMMAND_VOTE_BADSTATE = new PvPMessage("§cVous ne pouvez pas votez pour une arène maintenant.", true),
 	COMMAND_VOTE_LIST = new PvPMessage("§aVoici la liste des arènes compatibles:", true),
 

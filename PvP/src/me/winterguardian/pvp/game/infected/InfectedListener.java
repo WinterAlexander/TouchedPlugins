@@ -13,6 +13,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.FoodLevelChangeEvent;
 import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.event.player.PlayerPickupItemEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
@@ -48,6 +49,10 @@ public class InfectedListener implements Listener
 		{
 			infected.infect(event.getPlayer(), false);
 			justInfected.put(event.getPlayer(), true);
+		}
+		else
+		{
+			infected.resetStuff(event.getPlayer());
 		}
 	}
 
@@ -122,6 +127,7 @@ public class InfectedListener implements Listener
 
 		if(infected.getPlayerData(damager).getTeam() == TeamColor.INFECTED)
 		{
+			damager.setFoodLevel(damager.getFoodLevel() + 2);
 			damager.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 10 * 20, 1, false, true));
 			damager.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 5 * 20, 1, false, true));
 		}
@@ -148,6 +154,20 @@ public class InfectedListener implements Listener
 		Player player = event.getPlayer();
 
 		if(infected.getGame().contains(player) && infected.getPlayerData(player).getTeam() == TeamColor.INFECTED)
+			event.setCancelled(true);
+	}
+
+	@EventHandler
+	public void onPlayerPickup(PlayerPickupItemEvent event)
+	{
+		Player player = event.getPlayer();
+
+		if(!infected.getGame().contains(player))
+			return;
+
+		if(infected.getPlayerData(player).getTeam() == TeamColor.HUMAN && event.getItem().getItemStack().getType() == Material.ROTTEN_FLESH)
+			event.setCancelled(true);
+		else if(infected.getPlayerData(player).getTeam() == TeamColor.INFECTED && event.getItem().getItemStack().getType() != Material.ROTTEN_FLESH)
 			event.setCancelled(true);
 	}
 }

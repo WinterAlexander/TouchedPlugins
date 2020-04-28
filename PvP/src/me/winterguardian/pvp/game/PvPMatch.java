@@ -79,6 +79,7 @@ public abstract class PvPMatch implements State, Runnable
 			PlayerUtil.clearInventory(p);
 			getNewStuff(p, false).give(p);
 			getPlayerData(p).start();
+			p.addPotionEffects(getArena().getEffects());
 		}
 		else
 		{
@@ -142,6 +143,7 @@ public abstract class PvPMatch implements State, Runnable
 			getPlayerData(player).start();
 			player.teleport(getSpawnPoint(getPlayerData(player)));
 			displayTab(player);
+			player.addPotionEffects(getArena().getEffects());
 		}
 
 		getStartMessage().say(game.getPlayers(), "<game>", getName());

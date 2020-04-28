@@ -315,4 +315,12 @@ public class Infected extends PvPMatch
 
 		return GameOutcome.LOST_AS_HUMAN;
 	}
+
+	public void resetStuff(Player player)
+	{
+		if(firstInfecteds.contains(player))
+			getPlayerData(player).setStuff(firstInfectedStuff);
+		else
+			getPlayerData(player).setStuff(infectedStuff);
+	}
 }

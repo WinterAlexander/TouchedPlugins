@@ -405,6 +405,12 @@ public class GameListener implements Listener
 
 		event.setRespawnLocation(game.getSpawnPoint(playerData));
 		playerData.respawn();
+
+		Player player = event.getPlayer();
+
+		Bukkit.getScheduler().runTask(game.getGame().getPlugin(), () -> {
+			player.addPotionEffects(game.getArena().getEffects());
+		});
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST)

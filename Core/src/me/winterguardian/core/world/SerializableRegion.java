@@ -68,6 +68,14 @@ public class SerializableRegion extends Region
 				Math.max(loc1.getLocation().getBlockZ(), loc2.getLocation().getBlockZ()) + 1);
 	}
 
+	public Location getCenter()
+	{
+		return new Location(getMaximum().getWorld(),
+				(getMinimum().getX() + getMaximum().getX()) / 2.0,
+				(getMinimum().getY() + getMaximum().getY()) / 2.0,
+				(getMinimum().getZ() + getMaximum().getZ()) / 2.0);
+	}
+
 	public void expand(BlockFace direction, int count)
 	{
 		switch(direction)

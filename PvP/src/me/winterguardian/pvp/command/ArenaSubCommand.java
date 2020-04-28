@@ -74,6 +74,36 @@ public class ArenaSubCommand extends SubCommand
 			sender.sendMessage("Zones: " + arena.getZones().size());
 			return true;
 		}
+
+		if(args[0].equalsIgnoreCase("warp") && sender instanceof Player)
+		{
+			if(arena.getRegion() == null)
+			{
+				PvPMessage.COMMAND_ARENA_INVALIDARENA.say(sender);
+				return true;
+			}
+
+			((Player)sender).teleport(arena.getRegion().getCenter());
+			return true;
+		}
+
+		if(args[0].equalsIgnoreCase("seteffects") && sender instanceof Player)
+		{
+			arena.getEffects().clear();
+			Player player = (Player)sender;
+			arena.getEffects().addAll(player.getActivePotionEffects());
+			arena.save();
+			PvPMessage.COMMAND_ARENA_SETEFFECTS.say(sender);
+			return true;
+		}
+
+		if(args[0].equalsIgnoreCase("geteffects") && sender instanceof Player)
+		{
+			Player player = (Player)sender;
+			player.addPotionEffects(arena.getEffects());
+			PvPMessage.COMMAND_ARENA_GETEFFECTS.say(sender);
+			return true;
+		}
 		
 		if(args.length < 3)
 			return false;
