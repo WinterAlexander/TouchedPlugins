@@ -29,9 +29,9 @@ public class SignListener implements Listener
 
 		if(sign.getLines()[1].equalsIgnoreCase("§e§lVote"))
 		{
-			if(sign.getLines()[0].equals("§f§lSekai§4§lPvP"))
+			if(!sign.getLines()[0].equals("§4§lTouchedPvP"))
 			{
-				sign.setLine(0, "§4§lPvP");
+				sign.setLine(0, "§4§lTouchedPvP");
 				sign.update();
 			}
 			event.getPlayer().performCommand("pvp vote " + TextUtil.removeColorCodes(sign.getLine(2), '§'));
@@ -40,9 +40,9 @@ public class SignListener implements Listener
 
 		if(sign.getLines()[1].equalsIgnoreCase("§6§lTop"))
 		{
-			if(sign.getLines()[0].equals("§f§lSekai§4§lPvP"))
+			if(!sign.getLines()[0].equals("§4§lTouchedPvP"))
 			{
-				sign.setLine(0, "§4§lPvP");
+				sign.setLine(0, "§4§lTouchedPvP");
 				sign.update();
 			}
 			event.getPlayer().performCommand("pvp top " + TextUtil.removeColorCodes(sign.getLine(2), '§'));
@@ -51,9 +51,9 @@ public class SignListener implements Listener
 
 		if(sign.getLines()[1].equalsIgnoreCase("§a§lStats"))
 		{
-			if(sign.getLines()[0].equals("§f§lSekai§4§lPvP"))
+			if(!sign.getLines()[0].equals("§4§lTouchedPvP"))
 			{
-				sign.setLine(0, "§4§lPvP");
+				sign.setLine(0, "§4§lTouchedPvP");
 				sign.update();
 			}
 			event.getPlayer().performCommand("pvp stats " + TextUtil.removeColorCodes(sign.getLine(2), '§'));
@@ -70,7 +70,7 @@ public class SignListener implements Listener
 		if(!event.getLines()[0].equalsIgnoreCase("[pvp]"))
 			return;
 
-		event.setLine(0, "§4§lPvP");
+		event.setLine(0, "§4§lTouchedPvP");
 
 		if(event.getLines()[1].equalsIgnoreCase("vote"))
 		{

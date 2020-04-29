@@ -74,15 +74,9 @@ public class ArenaSubCommand extends SubCommand
 			return true;
 		}
 
-		if(args[0].equalsIgnoreCase("warp") && sender instanceof Player)
+		if(!(sender instanceof Player))
 		{
-			if(arena.getSpawnPoints().size() == 0)
-			{
-				PvPMessage.COMMAND_ARENA_INVALIDARENA.say(sender);
-				return true;
-			}
-
-			((Player)sender).teleport(arena.getSpawnPoints().get(0).getLocation());
+			ErrorMessage.COMMAND_INVALID_SENDER.say(sender);
 			return true;
 		}
 
@@ -270,5 +264,4 @@ public class ArenaSubCommand extends SubCommand
 	{
 		return null;
 	}
-
 }
