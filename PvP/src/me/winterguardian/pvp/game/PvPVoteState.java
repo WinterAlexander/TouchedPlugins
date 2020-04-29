@@ -10,6 +10,7 @@ import me.winterguardian.pvp.PvP;
 import me.winterguardian.pvp.PvPArena;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.PvPPlugin;
+import me.winterguardian.pvp.game.infected.Infected;
 import me.winterguardian.pvp.game.solo.FreeForAll;
 import me.winterguardian.pvp.game.solo.KingOfTheHill;
 import me.winterguardian.pvp.game.solo.OneInTheChamber;
@@ -234,51 +235,60 @@ public class PvPVoteState implements State, Runnable, LobbyState
 
 		if(game.getPlayers().size() < 4) //moins que 4
 		{
-			games.put(new FreeForAll(game), 1);
+			games.put(new FreeForAll(game), 2);
 			games.put(new Switch(game), 1);
-			games.put(new OneInTheChamber(game), 1);
-			games.put(new KingOfTheHill(game), 1);
+			games.put(new OneInTheChamber(game), 2);
+			games.put(new KingOfTheHill(game), 2);
 		}
 		else if(game.getPlayers().size() < 6) //à partir de 4
 		{
-			games.put(new FreeForAll(game), 1);
+			games.put(new FreeForAll(game), 2);
 			games.put(new Switch(game), 1);
-			games.put(new OneInTheChamber(game), 1);
-			games.put(new KingOfTheHill(game), 1);
-			games.put(new TeamDeathMatch(game, 2), 1);
+			games.put(new OneInTheChamber(game), 2);
+			games.put(new KingOfTheHill(game), 2);
+			games.put(new TeamDeathMatch(game, 2), 2);
+			games.put(new Infected(game), 2);
 		}
 		else if(game.getPlayers().size() < 10) //à partir de 6
 		{
-			games.put(new FreeForAll(game), 1);
+			games.put(new FreeForAll(game), 2);
 			games.put(new Switch(game), 1);
-			games.put(new OneInTheChamber(game), 1);
+			games.put(new OneInTheChamber(game), 2);
 			games.put(new KingOfTheHill(game), 2);
-			games.put(new TeamDeathMatch(game, 2), 2);
-			games.put(new CaptureTheFlag(game, 2), 2);
-			games.put(new Domination(game, 2), 2);
+			games.put(new TeamDeathMatch(game, 2), 3);
+			games.put(new CaptureTheFlag(game, 2), 3);
+			games.put(new Domination(game, 2), 3);
+			games.put(new Infected(game), 3);
 		}
 		else if(game.getPlayers().size() < 15) //à partir de 10
 		{
 			games.put(new FreeForAll(game), 1);
 			games.put(new Switch(game), 1);
-			games.put(new KingOfTheHill(game), 1);
-			games.put(new TeamDeathMatch(game, 2), 2);
-			games.put(new CaptureTheFlag(game, 2), 2);
-			games.put(new Domination(game, 2), 2);
+			games.put(new OneInTheChamber(game), 1);
+			games.put(new KingOfTheHill(game), 2);
+			games.put(new TeamDeathMatch(game, 2), 3);
+			games.put(new CaptureTheFlag(game, 2), 3);
+			games.put(new Domination(game, 2), 3);
+			games.put(new Infected(game), 3);
 		}
 		else if(game.getPlayers().size() < 20) //à partir de 15
 		{
-			games.put(new TeamDeathMatch(game, 2), 1);
+			games.put(new FreeForAll(game), 1);
+			games.put(new Infected(game), 2);
+
+			games.put(new TeamDeathMatch(game, 2), 2);
 			games.put(new TeamDeathMatch(game, 3), 1);
 
-			games.put(new CaptureTheFlag(game, 2), 1);
-			games.put(new CaptureTheFlag(game, 3), 1);
+			games.put(new CaptureTheFlag(game, 2), 2);
+			games.put(new CaptureTheFlag(game, 3), 2);
 
-			games.put(new Domination(game, 2), 1);
-			games.put(new Domination(game, 3), 1);
+			games.put(new Domination(game, 2), 2);
+			games.put(new Domination(game, 3), 2);
 		}
 		else if(game.getPlayers().size() < 30) //à partir de 20
 		{
+			games.put(new Infected(game), 1);
+
 			games.put(new TeamDeathMatch(game, 2), 1);
 			games.put(new TeamDeathMatch(game, 3), 1);
 			games.put(new TeamDeathMatch(game, 4), 1);
@@ -299,11 +309,11 @@ public class PvPVoteState implements State, Runnable, LobbyState
 
 			games.put(new CaptureTheFlag(game, 3), 1);
 			games.put(new CaptureTheFlag(game, 4), 1);
-			games.put(new CaptureTheFlag(game, 5), 1);
+			games.put(new CaptureTheFlag(game, 6), 1);
 
 			games.put(new Domination(game, 3), 1);
 			games.put(new Domination(game, 4), 1);
-			games.put(new Domination(game, 5), 1);
+			games.put(new Domination(game, 6), 1);
 		}
 		else if(game.getPlayers().size() < 60) //à partir de 40
 		{

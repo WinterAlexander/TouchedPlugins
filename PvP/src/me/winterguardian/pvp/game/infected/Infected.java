@@ -156,6 +156,7 @@ public class Infected extends PvPMatch
 		PlayerUtil.heal(toInfect);
 		PlayerUtil.clearInventory(toInfect);
 		getPlayerData(toInfect).getStuff().give(toInfect);
+		toInfect.addPotionEffects(getArena().getEffects());
 		toInfect.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, Integer.MAX_VALUE, 0, true, false));
 
 		firstInfecteds.add(toInfect);

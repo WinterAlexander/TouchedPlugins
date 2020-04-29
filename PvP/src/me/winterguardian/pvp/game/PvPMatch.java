@@ -79,7 +79,6 @@ public abstract class PvPMatch implements State, Runnable
 			PlayerUtil.clearInventory(p);
 			getNewStuff(p, false).give(p);
 			getPlayerData(p).start();
-			p.addPotionEffects(getArena().getEffects());
 		}
 		else
 		{
@@ -91,6 +90,7 @@ public abstract class PvPMatch implements State, Runnable
 			PlayerUtil.clearInventory(p);
 			getPlayerData(p).onJoin();
 		}
+		p.addPotionEffects(getArena().getEffects());
 	}
 
 	private void displayTab(Player p)
