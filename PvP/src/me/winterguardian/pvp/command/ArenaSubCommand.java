@@ -7,7 +7,6 @@ import me.winterguardian.pvp.PvPArena;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.PvPPlugin;
 import me.winterguardian.pvp.TeamColor;
-import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.ArmorStand;
@@ -77,13 +76,13 @@ public class ArenaSubCommand extends SubCommand
 
 		if(args[0].equalsIgnoreCase("warp") && sender instanceof Player)
 		{
-			if(arena.getRegion() == null)
+			if(arena.getSpawnPoints().size() == 0)
 			{
 				PvPMessage.COMMAND_ARENA_INVALIDARENA.say(sender);
 				return true;
 			}
 
-			((Player)sender).teleport(arena.getRegion().getCenter());
+			((Player)sender).teleport(arena.getSpawnPoints().get(0).getLocation());
 			return true;
 		}
 
@@ -181,7 +180,7 @@ public class ArenaSubCommand extends SubCommand
 				{
 					for(TeamColor col : TeamColor.values())
 					{
-						for(SerializableLocation loc : arena.getPoints())
+						for(SerializableLocation loc : arena.getSpawnPoints())
 						{
 							ArmorStand as = (ArmorStand) loc.getWorld().spawn(loc.getLocation(), ArmorStand.class);
 
@@ -195,7 +194,7 @@ public class ArenaSubCommand extends SubCommand
 				}
 				else
 				{
-					for(SerializableLocation loc : arena.getPoints(color))
+					for(SerializableLocation loc : arena.getSpawnPoints(color))
 					{
 						ArmorStand as = (ArmorStand) loc.getWorld().spawn(loc.getLocation(), ArmorStand.class);
 

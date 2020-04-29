@@ -38,8 +38,6 @@ public class PvPArena extends VotableArena
 	private HashMap<TeamColor, List<SerializableLocation>> spawnPoints;
 	private HashMap<TeamColor, List<SerializableLocation>> flags;
 	private List<SerializableLocation> zones;
-	private HashMap<TeamColor, SerializableRegion> spawnProtects;
-	private SerializableRegion gameRegion;
 
 	private List<PotionEffect> effects = new ArrayList<>();
 
@@ -49,8 +47,6 @@ public class PvPArena extends VotableArena
 		this.spawnPoints = new HashMap<>();
 		this.flags = new HashMap<>();
 		this.zones = new ArrayList<>();
-		this.spawnProtects = new HashMap<>();
-		this.gameRegion = null;
 	}
 
 	public void addSpawnPoint(Location point, TeamColor color)
@@ -85,12 +81,12 @@ public class PvPArena extends VotableArena
 		this.spawnPoints.clear();
 	}
 
-	public List<SerializableLocation> getPoints(TeamColor color)
+	public List<SerializableLocation> getSpawnPoints(TeamColor color)
 	{
 		return this.spawnPoints.get(color);
 	}
 
-	public List<SerializableLocation> getPoints()
+	public List<SerializableLocation> getSpawnPoints()
 	{
 		return this.spawnPoints.values().stream().flatMap(List::stream).collect(Collectors.toList());
 	}
@@ -118,26 +114,6 @@ public class PvPArena extends VotableArena
 	public void resetZones()
 	{
 		this.zones.clear();
-	}
-
-	public SerializableRegion getRegion()
-	{
-		return gameRegion;
-	}
-
-	public void setRegion(SerializableRegion region)
-	{
-		this.gameRegion = region;
-	}
-
-	public SerializableRegion getProtectionRegion(TeamColor color)
-	{
-		return this.spawnProtects.get(color);
-	}
-
-	public void setProtectionRegion(TeamColor color, SerializableRegion region)
-	{
-		this.spawnProtects.put(color, region);
 	}
 
 	@Override
@@ -184,11 +160,12 @@ public class PvPArena extends VotableArena
 		i = 0;
 		for(PotionEffect effect : effects)
 		{
-			config.set("effects." + i++ + ".name", effect.getType().getName());
-			config.set("effects." + i++ + ".duration", effect.getDuration());
-			config.set("effects." + i++ + ".amplifier", effect.getAmplifier());
-			config.set("effects." + i++ + ".ambient", effect.isAmbient());
-			config.set("effects." + i++ + ".particles", effect.hasParticles());
+			config.set("effects." + i + ".name", effect.getType().getName());
+			config.set("effects." + i + ".duration", effect.getDuration());
+			config.set("effects." + i + ".amplifier", effect.getAmplifier());
+			config.set("effects." + i + ".ambient", effect.isAmbient());
+			config.set("effects." + i + ".particles", effect.hasParticles());
+			i++;
 		}
 	}
 	
