@@ -11,6 +11,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.LeavesDecayEvent;
 import org.bukkit.permissions.Permission;
 import org.bukkit.permissions.PermissionDefault;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -115,6 +116,14 @@ public class HubCorePlugin extends JavaPlugin
 				{
 					event.getPlayer().sendMessage("§eDevenez §f§lÉlite §eet obtenez §625%§e de réduction sur §ltout§e en jeu !");
 				}
+			}
+		}, this);
+
+		Bukkit.getPluginManager().registerEvents(new Listener() {
+			@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
+			public void onLeavesDecay(LeavesDecayEvent event)
+			{
+				event.setCancelled(true);
 			}
 		}, this);
 	}

@@ -33,7 +33,7 @@ public class GUIListener implements Listener
 					gameSelection.getItems().add(((GUIItemGame)game).getGUIItem());
 
 			gameSelection.getItems().add(new CreaItem());
-			gameSelection.getItems().add(new FactionItem());
+			//gameSelection.getItems().add(new FactionItem());
 		});
 
 		this.hub = hub;

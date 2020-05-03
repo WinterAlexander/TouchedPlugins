@@ -26,7 +26,7 @@ public class CreaItem extends ServerItem
 
 		ItemStack item = new ItemStack(Material.WOOD_STAIRS, 1, (short)0);
 		ItemMeta meta = item.getItemMeta();
-		meta.setDisplayName("§d§lCréatif");
+		meta.setDisplayName("§a§lCréatif");
 		meta.setLore(Arrays.asList("§e" + creaPlayers + " connecté" + (creaPlayers > 1 ? "s" : ""), "§aUn clic vous téléporte !"));
 		item.setItemMeta(meta);
 		return item;

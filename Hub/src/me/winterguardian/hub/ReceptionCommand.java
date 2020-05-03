@@ -23,12 +23,12 @@ public class ReceptionCommand extends AutoRegistrationCommand
 				if(Hub.getPlugin().getNewPlayersSpawn() != null)
 				{
 					((Player)sender).teleport(Hub.getPlugin().getNewPlayersSpawn());
-					sender.sendMessage("§7Téléportation vers l'accueil de §f§lTouched§6§lMC§7...");
+					sender.sendMessage("§7Téléportation vers l'accueil de §f§lTouched§6§lCraft§7...");
 				}
 				else
 				{
 					((Player)sender).teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-					sender.sendMessage("§7Téléportation vers le spawn par défaut de §f§lTouched§6§lMC§7...");
+					sender.sendMessage("§7Téléportation vers le spawn par défaut de §f§lTouched§6§lCraft§7...");
 				}
 			}
 			else
@@ -40,12 +40,12 @@ public class ReceptionCommand extends AutoRegistrationCommand
 					if(Hub.getPlugin().getNewPlayersSpawn() != null)
 					{
 						p.teleport(Hub.getPlugin().getNewPlayersSpawn());
-						p.sendMessage("§7Téléportation vers l'accueil de §f§lTouched§6§lMC§7...");
+						p.sendMessage("§7Téléportation vers l'accueil de §f§lTouched§6§lCraft§7...");
 					}
 					else
 					{
 						p.teleport(Bukkit.getWorlds().get(0).getSpawnLocation());
-						p.sendMessage("§7Téléportation vers le spawn par défaut de §f§lTouched§6§lMC§7...");
+						p.sendMessage("§7Téléportation vers le spawn par défaut de §f§lTouched§6§lCraft§7...");
 					}
 				else
 					ErrorMessage.COMMAND_INVALID_PLAYER.say(sender);
