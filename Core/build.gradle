@@ -6,7 +6,5 @@ sourceCompatibility = 1.8
 sourceSets.main.java.srcDirs = [ "src" ]
 
 dependencies {
-    compile files('lib/Spigot.jar')
-    compile files('lib/PlaceholderAPI.jar')
-    compile files('lib/Vault.jar')
+    compile files('../lib/Spigot.jar')
 }

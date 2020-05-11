@@ -1,9 +1,10 @@
 bin/
 out/
 classes/
-*.jar
 *.iml
 .idea/
 .classpath
 .project
 .settings/
+.gradle/
+build/

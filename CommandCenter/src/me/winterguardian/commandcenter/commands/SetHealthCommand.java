@@ -78,7 +78,7 @@ public class SetHealthCommand extends AutoRegistrationCommand
 	@Override
 	public String getDescription()
 	{
-		return "Permet de changer la vie de soi même ou de d'autres joueurs.";
+		return "Permet de changer la vie de soi mÃªme ou de d'autres joueurs.";
 	}
 
 	@Override
@@ -96,7 +96,7 @@ public class SetHealthCommand extends AutoRegistrationCommand
 	@Override
 	public String getUsage()
 	{
-		return "§cSyntaxe: /" + getName() + " [player] [health] [food]";
+		return "Â§cSyntaxe: /" + getName() + " [player] [health] [food]";
 	}
 
 }

@@ -7,4 +7,6 @@ sourceSets.main.java.srcDirs = [ "src" ]
 
 dependencies {
     compile project(":Core")
+    compile files('../lib/PlaceholderAPI.jar')
+    compile files('../lib/Vault.jar')
 }
