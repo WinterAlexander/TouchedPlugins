@@ -111,7 +111,7 @@ public class HubCorePlugin extends JavaPlugin
 			{
 				if(event.getPlayer().hasPermission(vipPermission))
 				{
-					event.getPurchase().setPrice(event.getPurchase().getPrice() * config.getVipReduction() / 100);
+					event.getPurchase().setPrice(event.getPurchase().getPrice() * (100 - config.getVipReduction()) / 100);
 					event.getPlayer().sendMessage("§6§lVip > §aVous payez §f" + event.getPurchase().getPrice() + " §aau lieu de §f" + event.getPurchase().getBasePrice() + "§a. (-" + config.getVipReduction() + "%)");
 				}
 				else if(random.nextFloat() < 0.05)

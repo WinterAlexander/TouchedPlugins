@@ -46,7 +46,7 @@ public class PlayerState
 		this.flySpeed = player.getFlySpeed();
 		this.walkingSpeed = player.getWalkSpeed();
 		this.gamemode = player.getGameMode();
-		this.potionEffects = new ArrayList<PotionEffect>(player.getActivePotionEffects());
+		this.potionEffects = new ArrayList<>(player.getActivePotionEffects());
 		this.health = player.getHealth();
 		this.foodLevel = player.getFoodLevel();
 		this.saturation = player.getSaturation();

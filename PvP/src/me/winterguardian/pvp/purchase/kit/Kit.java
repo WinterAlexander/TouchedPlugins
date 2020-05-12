@@ -45,6 +45,7 @@ public class Kit
 	public boolean fits(PlayerInventory inventory)
 	{
 		ItemStack[] backup = inventory.getContents();
+		ItemStack[] armorBackup = inventory.getArmorContents();
 		try
 		{
 			for(ItemStack stack : this.content)
@@ -60,6 +61,7 @@ public class Kit
 		finally
 		{
 			inventory.setContents(backup);
+			inventory.setArmorContents(armorBackup);
 		}
 	}
 

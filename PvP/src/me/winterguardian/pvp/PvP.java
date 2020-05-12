@@ -49,7 +49,7 @@ public class PvP extends StateGame implements GUIItemGame
 		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shopvip]", "§f§lTouched", "§e§lAchat Kit §6§lVip")
 		{
 			@Override
-			public boolean canGive(Player player)
+			public boolean canGive(String[] sign, Player player)
 			{
 				if(player.hasPermission("HubCore.buy.vip"))
 					return true;

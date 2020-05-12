@@ -14,7 +14,7 @@ public class ErrorMessage extends HardcodedMessage
 	public static final ErrorMessage WORLD_INVALID_ENTITY = new ErrorMessage("Cette entitée est invalide ou inexistante.");
 	public static final ErrorMessage WORLD_INVALID_REGION = new ErrorMessage("Cette région est invalide.");
 
-	public static ErrorMessage INVENTORY_FULL = new ErrorMessage("Votre inventaire est pleins.");
+	public static ErrorMessage INVENTORY_FULL = new ErrorMessage("Votre inventaire est plein.");
 
 	public static final ErrorMessage
 			COMMAND_INVALID_VIPRANK = new ErrorMessage("§cVous devez au minimum être §6§lVip §cpour ça."),

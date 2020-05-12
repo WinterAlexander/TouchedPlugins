@@ -58,7 +58,7 @@ public class EnderChestCommand extends AutoRegistrationCommand
     @Override
     public String getDescription()
     {
-        return "Permet de voir ou éditer le coffre du néan d'un joueur.";
+        return "Permet de voir ou Ã©diter le coffre du nÃ©an d'un joueur.";
     }
 
     @Override
@@ -70,7 +70,7 @@ public class EnderChestCommand extends AutoRegistrationCommand
                 "enderchestsee", "endercsee", "echestsee", "ecsee",
                 "enderchestshow", "endercshow", "echestshow", "ecshow",
 
-                "voircoffre", "voircoffrenéan", "coffrenéan");
+                "voircoffre", "voircoffrenÃ©an", "coffrenÃ©an");
     }
 
     @Override
