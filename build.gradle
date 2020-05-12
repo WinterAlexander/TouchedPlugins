@@ -11,3 +11,35 @@ allprojects {
         destinationDir = file("$rootDir/out/jar")
     }
 }
+
+task cleanJars(type: Delete) {
+    def dirName = "$rootDir/out/jar"
+    file( dirName ).list().each{
+        f ->
+            delete "${dirName}/${f}"
+    }
+}
+
+task hub_server_dist {
+    dependsOn ":BlockFarmers:dist"
+    dependsOn ":ChatManager:dist"
+    dependsOn ":CommandCenter:dist"
+    dependsOn ":Core:Hub:dist"
+    dependsOn ":Duel:dist"
+    dependsOn ":IceRun:dist"
+    dependsOn ":JumpBox:dist"
+    dependsOn ":PvP:dist"
+}
+
+task crea_server_dist {
+    dependsOn ":ChatManager:dist"
+    dependsOn ":CommandCenter:dist"
+    dependsOn ":Core:Crea:dist"
+}
+
+task mobracers_server_dist {
+    dependsOn ":ChatManager:dist"
+    dependsOn ":CommandCenter:dist"
+    dependsOn ":Core:Hub:dist"
+    dependsOn ":MobRacers:dist"
+}
