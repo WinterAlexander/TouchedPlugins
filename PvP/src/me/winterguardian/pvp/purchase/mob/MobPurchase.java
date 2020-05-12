@@ -114,7 +114,7 @@ public class MobPurchase implements PurchaseType
 	}
 
 	@Override
-	public boolean canGive(Player player)
+	public boolean canGive(String[] sign, Player player)
 	{
 		if(!PvPPlugin.getGame().contains(player))
 			return true;

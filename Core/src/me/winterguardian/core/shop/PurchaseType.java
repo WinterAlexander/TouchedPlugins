@@ -37,7 +37,7 @@ public interface PurchaseType
 	 * @param player
 	 * @return true if can purchase, otherwise false
 	 */
-	boolean canGive(Player player);
+	boolean canGive(String[] sign, Player player);
 
 
 	/**

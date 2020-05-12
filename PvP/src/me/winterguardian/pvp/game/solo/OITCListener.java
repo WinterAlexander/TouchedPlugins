@@ -1,6 +1,7 @@
 package me.winterguardian.pvp.game.solo;
 
 import me.winterguardian.core.shop.PlayerPurchaseEvent;
+import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.game.PvPPlayerData;
 import org.bukkit.Material;
 import org.bukkit.entity.Arrow;
@@ -57,7 +58,10 @@ public class OITCListener implements Listener
 	public void onPlayerPurchase(PlayerPurchaseEvent event)
 	{
 		if(game.getGame().contains(event.getPlayer()))
+		{
+			event.setErrorMessage(PvPMessage.PURCHASE_CANTBUYNOW);
 			event.setCancelled(true);
+		}
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST)

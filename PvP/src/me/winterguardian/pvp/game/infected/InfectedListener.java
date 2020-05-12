@@ -1,6 +1,7 @@
 package me.winterguardian.pvp.game.infected;
 
 import me.winterguardian.core.shop.PlayerPurchaseEvent;
+import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.TeamColor;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -154,7 +155,10 @@ public class InfectedListener implements Listener
 		Player player = event.getPlayer();
 
 		if(infected.getGame().contains(player) && infected.getPlayerData(player).getTeam() == TeamColor.INFECTED)
+		{
+			event.setErrorMessage(PvPMessage.PURCHASE_CANTBUYNOW);
 			event.setCancelled(true);
+		}
 	}
 
 	@EventHandler

@@ -1,6 +1,7 @@
 package me.winterguardian.pvp.purchase.kit;
 
 import me.winterguardian.core.message.CoreMessage;
+import me.winterguardian.core.message.ErrorMessage;
 import me.winterguardian.core.message.Message;
 import me.winterguardian.core.shop.PurchaseType;
 import me.winterguardian.core.util.SoundEffect;
@@ -55,11 +56,20 @@ public class PvPKitPurchase implements PurchaseType
 	}
 
 	@Override
-	public boolean canGive(Player player)
+	public boolean canGive(String[] sign, Player player)
 	{
+		Kit kit = new Kit(TextUtil.removeColorCodes(sign[2], '§'));
+
+		kit.load();
+
+		if(!kit.fits(player.getInventory()))
+		{
+			ErrorMessage.INVENTORY_FULL.say(player);
+			return false;
+		}
+
 		return true;
 	}
-
 
 	@Override
 	public boolean match(String[] sign)

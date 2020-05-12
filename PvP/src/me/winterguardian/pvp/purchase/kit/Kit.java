@@ -12,6 +12,8 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import static me.winterguardian.core.util.InventoryUtil.addConvenient;
+
 /**
  *
  * Created by Alexander Winter on 2015-12-10.
@@ -38,6 +40,27 @@ public class Kit
 	public Kit(String name, PlayerInventory inventory)
 	{
 		this(name, inventory.getContents());
+	}
+
+	public boolean fits(PlayerInventory inventory)
+	{
+		ItemStack[] backup = inventory.getContents();
+		try
+		{
+			for(ItemStack stack : this.content)
+				if(stack != null)
+				{
+					if(inventory.firstEmpty() == -1)
+						return false;
+
+					addConvenient(inventory, stack);
+				}
+			return true;
+		}
+		finally
+		{
+			inventory.setContents(backup);
+		}
 	}
 
 	public void setContent(PlayerInventory inv)
@@ -102,7 +125,7 @@ public class Kit
 	{
 		for(ItemStack stack : this.content)
 			if(stack != null)
-				p.getInventory().addItem(stack);
+				addConvenient(p.getInventory(), stack);
 		p.updateInventory();
 	}
 

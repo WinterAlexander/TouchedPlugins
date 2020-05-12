@@ -16,6 +16,8 @@ public class CoreConfig extends Config
 {
 	private String url, username, password;
 
+	private int vipReduction;
+
 	public CoreConfig(File file)
 	{
 		super(file);
@@ -27,6 +29,7 @@ public class CoreConfig extends Config
 		this.url = config.getString("url", "jdbc:mysql://localhost/touched");
 		this.username = config.getString("username", "root");
 		this.password = config.getString("password", "root");
+		this.vipReduction = config.getInt("vip-reduction", 25);
 	}
 
 	public String getURL()
@@ -42,5 +45,10 @@ public class CoreConfig extends Config
 	public String getPassword()
 	{
 		return password;
+	}
+
+	public int getVipReduction()
+	{
+		return vipReduction;
 	}
 }

@@ -62,7 +62,7 @@ public class PvP extends StateGame implements GUIItemGame
 		Core.getShop().registerPurchaseType(new MobPurchase("[shopvip]", "§f§lTouched", "§e§lAchat Mob §6§lVip")
 		{
 			@Override
-			public boolean canGive(Player player)
+			public boolean canGive(String[] sign, Player player)
 			{
 				if(player.hasPermission("HubCore.buy.vip"))
 					return true;

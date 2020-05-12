@@ -11,8 +11,8 @@ import org.bukkit.entity.Player;
  */
 public class Purchase
 {
-    private PurchaseType type;
-    private String[] sign;
+    private final PurchaseType type;
+    private final String[] sign;
     private int price;
 
     public Purchase(PurchaseType type, String[] sign)
@@ -24,7 +24,7 @@ public class Purchase
 
     public boolean purchase(final Player player)
     {
-	    if(!type.canGive(player))
+	    if(!type.canGive(sign, player))
 		    return false;
 
         if(!Core.getUserDatasManager().isEnabled())
@@ -35,13 +35,16 @@ public class Purchase
 
         PlayerPurchaseEvent event = new PlayerPurchaseEvent(player, this);
 
-        event.setErrorMessage(type.getNotEnoughPointsMessage());
         event.setSuccessMessage(type.getPurchaseSuccessMessage());
 
-        if(points < getPrice())
-            event.setCancelled(true);
-
         Bukkit.getServer().getPluginManager().callEvent(event);
+
+
+        if(!event.isCancelled() && points < getPrice())
+        {
+            event.setErrorMessage(type.getNotEnoughPointsMessage());
+            event.setCancelled(true);
+        }
 
         if(event.isCancelled())
         {

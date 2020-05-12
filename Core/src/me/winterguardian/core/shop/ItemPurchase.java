@@ -1,5 +1,7 @@
 package me.winterguardian.core.shop;
 
+import me.winterguardian.core.message.ErrorMessage;
+import me.winterguardian.core.util.InventoryUtil;
 import me.winterguardian.core.util.SoundEffect;
 import me.winterguardian.core.util.TextUtil;
 import org.bukkit.Material;
@@ -13,7 +15,7 @@ import org.bukkit.inventory.ItemStack;
  */
 public abstract class ItemPurchase implements PurchaseType
 {
-    private String creationHeader, header, line2;
+    private final String creationHeader, header, line2;
 
     public ItemPurchase(String creationHeader, String header, String line2)
     {
@@ -22,19 +24,10 @@ public abstract class ItemPurchase implements PurchaseType
         this.line2 = line2;
     }
 
-    @Override
-    public boolean canGive(Player player)
-    {
-	    return true;
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public void give(String[] sign, Player player)
+    private ItemStack parseItem(String[] sign)
     {
         int id, amount;
         short data = 0;
-
         String item = TextUtil.removeColorCodes(sign[2], '§');
 
         amount = Integer.parseInt(item.split("[xX][ ]?")[0]);
@@ -47,7 +40,27 @@ public abstract class ItemPurchase implements PurchaseType
         else
             id = Integer.parseInt(item.split("[xX][ ]?")[1]);
 
-        player.getInventory().addItem(new ItemStack(Material.getMaterial(id), amount, data));
+        return new ItemStack(Material.getMaterial(id), amount, data);
+    }
+
+    @Override
+    public boolean canGive(String[] sign, Player player)
+    {
+        if(!InventoryUtil.canAdd(player.getInventory(), parseItem(sign)))
+        {
+            ErrorMessage.INVENTORY_FULL.say(player);
+            return false;
+        }
+
+	    return true;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public void give(String[] sign, Player player)
+    {
+        InventoryUtil.addConvenient(player.getInventory(), parseItem(sign));
+        player.updateInventory();
 	    new SoundEffect(Sound.LEVEL_UP, 1f, 1f).play(player);
     }
 

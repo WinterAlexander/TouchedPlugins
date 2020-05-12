@@ -1,7 +1,9 @@
 package me.winterguardian.core.util;
 
+import org.bukkit.Material;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 
 /**
  *
@@ -9,7 +11,7 @@ import org.bukkit.inventory.ItemStack;
  */
 public class InventoryUtil
 {
-	private InventoryUtil(){}
+	private InventoryUtil() {}
 
 	public static boolean canAdd(Inventory inventory, ItemStack item)
 	{
@@ -39,5 +41,82 @@ public class InventoryUtil
 				return true;
 
 		return false;
+	}
+
+	public static boolean isHelmet(ItemStack item)
+	{
+		return item.getType() == Material.LEATHER_HELMET
+				|| item.getType() == Material.CHAINMAIL_HELMET
+				|| item.getType() == Material.GOLD_HELMET
+				|| item.getType() == Material.IRON_HELMET
+				|| item.getType() == Material.DIAMOND_HELMET;
+	}
+
+	public static boolean isChestplate(ItemStack item)
+	{
+		return item.getType() == Material.LEATHER_CHESTPLATE
+				|| item.getType() == Material.CHAINMAIL_CHESTPLATE
+				|| item.getType() == Material.GOLD_CHESTPLATE
+				|| item.getType() == Material.IRON_CHESTPLATE
+				|| item.getType() == Material.DIAMOND_CHESTPLATE;
+	}
+
+	public static boolean isLeggings(ItemStack item)
+	{
+		return item.getType() == Material.LEATHER_LEGGINGS
+				|| item.getType() == Material.CHAINMAIL_LEGGINGS
+				|| item.getType() == Material.GOLD_LEGGINGS
+				|| item.getType() == Material.IRON_LEGGINGS
+				|| item.getType() == Material.DIAMOND_LEGGINGS;
+	}
+
+	public static boolean isBoots(ItemStack item)
+	{
+		return item.getType() == Material.LEATHER_BOOTS
+				|| item.getType() == Material.CHAINMAIL_BOOTS
+				|| item.getType() == Material.GOLD_BOOTS
+				|| item.getType() == Material.IRON_BOOTS
+				|| item.getType() == Material.DIAMOND_BOOTS;
+	}
+
+	public static void addConvenient(PlayerInventory inventory, ItemStack item)
+	{
+		if(isHelmet(item))
+		{
+			ItemStack oldHelmet = inventory.getHelmet();
+
+			if(oldHelmet != null)
+				inventory.addItem(oldHelmet);
+			inventory.setHelmet(item);
+		}
+		else if(isChestplate(item))
+		{
+			ItemStack oldChestplate = inventory.getChestplate();
+
+			if(oldChestplate != null)
+				inventory.addItem(oldChestplate);
+
+			inventory.setChestplate(item);
+		}
+		else if(isLeggings(item))
+		{
+			ItemStack oldLeggings = inventory.getLeggings();
+
+			if(oldLeggings != null)
+				inventory.addItem(oldLeggings);
+
+			inventory.setLeggings(item);
+		}
+		else if(isBoots(item))
+		{
+			ItemStack oldBoots = inventory.getBoots();
+
+			if(oldBoots != null)
+				inventory.addItem(oldBoots);
+
+			inventory.setBoots(item);
+		}
+		else
+			inventory.addItem(item);
 	}
 }

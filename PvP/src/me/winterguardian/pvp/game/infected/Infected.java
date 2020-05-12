@@ -178,12 +178,13 @@ public class Infected extends PvPMatch
 			playerData.getFriend().remove();
 
 		playerData.setTeam(TeamColor.INFECTED);
-		Bukkit.getScheduler().runTaskLater(getGame().getPlugin(), () -> {
+		if(getGame().getPlugin().isEnabled())
+			Bukkit.getScheduler().runTaskLater(getGame().getPlugin(), () -> {
 
-			humanTeam.removeEntry(player.getName());
-			infectedTeam.addEntry(player.getName());
-			updateBoard();
-		}, 10);
+				humanTeam.removeEntry(player.getName());
+				infectedTeam.addEntry(player.getName());
+				updateBoard();
+			}, 10);
 
 		if(countHumans() == 0)
 			endSoon();
@@ -194,16 +195,17 @@ public class Infected extends PvPMatch
 		if(ended)
 			return;
 
-		Bukkit.getScheduler().runTaskLater(getGame().getPlugin(), () -> {
-			if(ended)
-				return;
+		if(getGame().getPlugin().isEnabled())
+			Bukkit.getScheduler().runTaskLater(getGame().getPlugin(), () -> {
+				if(ended)
+					return;
 
-			end();
-			finish();
-			getGame().setState(new PvPVoteState(this.getGame()));
-			getGame().getState().start();
-			ended = true;
-		}, 3 * 20);
+				end();
+				finish();
+				getGame().setState(new PvPVoteState(this.getGame()));
+				getGame().getState().start();
+				ended = true;
+			}, 3 * 20);
 	}
 
 	public void announceKill(PvPPlayerData killer, PvPPlayerData killed)

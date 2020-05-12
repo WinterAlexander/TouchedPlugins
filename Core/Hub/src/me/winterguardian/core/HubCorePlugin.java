@@ -37,8 +37,8 @@ public class HubCorePlugin extends JavaPlugin
 		Core.getShop().enable(this);
 
 		final Permission createPermission = new Permission("HubCore.shop.create.item", "Permet de créer des panneaux d'achats d'items.", PermissionDefault.OP);
-		final Permission vipPermission = new Permission("HubCore.buy.vip", "Permet d'acheter des items vips.", PermissionDefault.OP);
-		final Permission elitePermission = new Permission("HubCore.buy.elite", "Permet d'avoir 25% de réduction sur tout.", PermissionDefault.OP);
+		final Permission vipPermission = new Permission("HubCore.buy.vip", "Permet d'acheter des items vips et avoir " + config.getVipReduction() + "% de réduction sur vos achats.", PermissionDefault.OP);
+		//final Permission elitePermission = new Permission("HubCore.buy.elite", "Permet d'avoir % de réduction sur tout.", PermissionDefault.OP);
 
 
 		if(Bukkit.getPluginManager().getPermission(createPermission.getName()) == null)
@@ -47,8 +47,8 @@ public class HubCorePlugin extends JavaPlugin
 		if(Bukkit.getPluginManager().getPermission(vipPermission.getName()) == null)
 			Bukkit.getPluginManager().addPermission(vipPermission);
 
-		if(Bukkit.getPluginManager().getPermission(elitePermission.getName()) == null)
-			Bukkit.getPluginManager().addPermission(elitePermission);
+		//if(Bukkit.getPluginManager().getPermission(elitePermission.getName()) == null)
+		//	Bukkit.getPluginManager().addPermission(elitePermission);
 
 		Core.getShop().registerPurchaseType(new ItemPurchase("[shop]", "§f§lTouched", "§e§lAchat Item")
 		{
@@ -92,7 +92,7 @@ public class HubCorePlugin extends JavaPlugin
 			}
 
 			@Override
-			public boolean canGive(Player player)
+			public boolean canGive(String[] sign, Player player)
 			{
 				if(player.hasPermission(vipPermission))
 					return true;
@@ -104,17 +104,19 @@ public class HubCorePlugin extends JavaPlugin
 
 		Bukkit.getPluginManager().registerEvents(new Listener()
 		{
+			private final Random random = new Random();
+
 			@EventHandler(ignoreCancelled = true, priority = EventPriority.HIGHEST)
 			public void onPlayerPurchase(PlayerPurchaseEvent event)
 			{
-				if(event.getPlayer().hasPermission(elitePermission))
+				if(event.getPlayer().hasPermission(vipPermission))
 				{
-					event.getPurchase().setPrice(event.getPurchase().getPrice() * 3 / 4);
-					event.getPlayer().sendMessage("§f§lÉlite > §aVous payez §f" + event.getPurchase().getPrice() + " §aau lieu de §f" + event.getPurchase().getBasePrice() + "§a. (-25%)");
+					event.getPurchase().setPrice(event.getPurchase().getPrice() * config.getVipReduction() / 100);
+					event.getPlayer().sendMessage("§6§lVip > §aVous payez §f" + event.getPurchase().getPrice() + " §aau lieu de §f" + event.getPurchase().getBasePrice() + "§a. (-" + config.getVipReduction() + "%)");
 				}
-				else if(new Random().nextFloat() < 0.05)
+				else if(random.nextFloat() < 0.05)
 				{
-					event.getPlayer().sendMessage("§eDevenez §f§lÉlite §eet obtenez §625%§e de réduction sur §ltout§e en jeu !");
+					event.getPlayer().sendMessage("§eDevenez §6§lVip §eet obtenez §6" + config.getVipReduction() + "%§e de réduction sur §ltout§e en jeu !");
 				}
 			}
 		}, this);
