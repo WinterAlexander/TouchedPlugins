@@ -4,9 +4,19 @@ sourceCompatibility = 1.8
 [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
 
 sourceSets.main.java.srcDirs = [ "src" ]
+sourceSets.main.resources.srcDirs = [ "res" ]
 
 dependencies {
     compile project(":Core")
     compile files('../lib/PlaceholderAPI.jar')
     compile files('../lib/Vault.jar')
 }
+
+
+task dist(type: Jar) {
+    from files(sourceSets.main.output.classesDirs)
+    from files(sourceSets.main.output.resourcesDir)
+
+    archiveName 'BlockFarmers.jar'
+}
+dist.dependsOn classes

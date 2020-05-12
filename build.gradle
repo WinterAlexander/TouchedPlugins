@@ -6,4 +6,8 @@ allprojects {
         jcenter()
         mavenLocal()
     }
+
+    tasks.withType(Jar) {
+        destinationDir = file("$rootDir/out/jar")
+    }
 }

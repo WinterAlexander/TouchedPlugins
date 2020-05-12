@@ -8,3 +8,11 @@ sourceSets.main.java.srcDirs = [ "src" ]
 dependencies {
     compile project(":Core")
 }
+
+task dist(type: Jar) {
+    from files(sourceSets.main.output.classesDirs)
+    from files(sourceSets.main.output.resourcesDir)
+
+    archiveName 'Core.jar'
+}
+dist.dependsOn classes
