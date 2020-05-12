@@ -1,0 +1,7 @@
+name: BlockFarmers
+main: me.winterguardian.blockfarmers.BlockFarmersPlugin
+version: 1.1.21
+description: A funny mini-game where you claim land with hoes!
+author: WinterGuardian
+load: POSTWORLD
+softdepend: [Core, PlaceHolderAPI]

@@ -1,7 +1,0 @@
-name: Hub
-main: me.winterguardian.hub.Hub
-version: 1.4.6
-desciption: Gestionnaire du monde d'arrivée des joueurs.
-author: Alexander Winter
-depend: [Core]
-load: POSTWORLD

@@ -1,0 +1,7 @@
+name: IceRun
+main: ice.IceRun
+version: 1.6.7
+description: Mini jeu de d'agilité en groupe.
+author: Darkmoustache
+depend: [Core]
+load: POSTWORLD

@@ -1,0 +1,7 @@
+name: CommandCenter
+main: me.winterguardian.commandcenter.CommandCenter
+version: 1.6.13
+description: Regroupement de toutes les commandes utiles du serveur.
+author: Alexander Winter
+loadbefore: [Core]
+load: POSTWORLD

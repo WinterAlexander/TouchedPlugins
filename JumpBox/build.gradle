@@ -1,0 +1,19 @@
+apply plugin: "java"
+
+sourceCompatibility = 1.8
+[compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+sourceSets.main.java.srcDirs = [ "src" ]
+sourceSets.main.resources.srcDirs = [ "res" ]
+
+dependencies {
+    compile project(":Core")
+}
+
+task dist(type: Jar) {
+    from files(sourceSets.main.output.classesDirs)
+    from files(sourceSets.main.output.resourcesDir)
+
+    archiveName 'JumpBox.jar'
+}
+dist.dependsOn classes

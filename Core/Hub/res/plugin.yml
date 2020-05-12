@@ -1,0 +1,5 @@
+name: Core
+main: me.winterguardian.core.HubCorePlugin
+version: TOUCHED
+author: WinterGuardian
+load: STARTUP

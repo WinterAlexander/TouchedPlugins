@@ -1,7 +1,0 @@
-name: TestingCenter
-main: me.winterguardian.test.TestingCenter
-version: 2.4.3
-description: Centre de tests utilisé pour tester les nouveautés.
-author: Alexander Winter
-loadbefore: [Core]
-load: POSTWORLD
