@@ -193,6 +193,21 @@ public abstract class StateGame implements Game
 		this.open = false;
 	}
 
+	public void autoJoinIfNeeded()
+	{
+		if(config.isAutoJoin())
+			for(Player player : Bukkit.getOnlinePlayers())
+			{
+				if(contains(player))
+					continue;
+
+				if(getNoAutoJoinPermission() != null && player.hasPermission(getNoAutoJoinPermission()))
+					continue;
+
+				join(player);
+			}
+	}
+
 	public void onDisable()
 	{
 		HandlerList.unregisterAll(this.plugin);

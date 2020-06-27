@@ -33,7 +33,7 @@ public class WelcomeListener implements Listener
 		else
 			event.setJoinMessage(null);
 
-		if(!Core.getUserDatasManager().isEnabled())
+		if(!Core.getUserDatasManager().isEnabled() || !ChatManager.getChatConfig().isEnableWelcome())
 			return;
 
 		Bukkit.getScheduler().runTaskLater(ChatManager.getPlugin(), new Runnable()

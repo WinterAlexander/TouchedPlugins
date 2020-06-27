@@ -99,13 +99,13 @@ public class MobRacersGame extends StateGame implements GUIItemGame
 	
 	public void savePlayerState(Player player)
 	{
-		if(((MobRacersConfig) this.getConfig()).keepPlayerStates())
+		if(this.getConfig().keepPlayerStates())
 			this.playerStates.add(new PlayerState(player));
 	}
 	
 	public void applyPlayerState(Player player)
 	{
-		if(!((MobRacersConfig) this.getConfig()).keepPlayerStates())
+		if(!this.getConfig().keepPlayerStates())
 			return;
 		PlayerState toRemove = null;
 		for(PlayerState state : this.playerStates)

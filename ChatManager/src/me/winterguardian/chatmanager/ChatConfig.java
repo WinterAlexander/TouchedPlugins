@@ -24,6 +24,7 @@ public class ChatConfig
 	private String joinSubTitle = "{text:'Amusez-vous bien !', color:yellow}";
 	private FileConfiguration helpSection;
 	private HashMap<Integer, String> chatFormats;
+	private boolean enableWelcome;
 
 	public ChatConfig()
 	{
@@ -35,6 +36,7 @@ public class ChatConfig
 		redirections = new ArrayList<>();
 
 		chatFormats = new HashMap<>();
+		enableWelcome = true;
 	}
 
 	public void save()
@@ -78,6 +80,12 @@ public class ChatConfig
 				config.set("chat-format.level" + integer, chatFormats.get(integer));
 			}
 		}
+
+		if(!config.isBoolean("enableWelcome"))
+		{
+			config.set("enableWelcome", true);
+		}
+
 		config.createSection("cmd-redirect");
 		for(CommandRedirection redirection : redirections)
 		{
@@ -121,6 +129,10 @@ public class ChatConfig
 
 			broadcasts = temp.toArray(broadcasts);
 		}
+
+		if(config.isBoolean("enableWelcome"))
+			enableWelcome = config.getBoolean("enableWelcome");
+
 		if(config.isConfigurationSection("chat-format"))
 		{
 			for(String key : config.getConfigurationSection("chat-format").getKeys(false))
@@ -222,5 +234,10 @@ public class ChatConfig
 	public HashMap<Integer, String> getChatFormats()
 	{
 		return chatFormats;
+	}
+
+	public boolean isEnableWelcome()
+	{
+		return enableWelcome;
 	}
 }

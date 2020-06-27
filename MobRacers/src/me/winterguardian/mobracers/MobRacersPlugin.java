@@ -152,6 +152,9 @@ public class MobRacersPlugin extends JavaPlugin
 	    {
 	    	hook = null;
 	    }
+
+
+		game.autoJoinIfNeeded();
 	}
 	
 	public void onDisable()
