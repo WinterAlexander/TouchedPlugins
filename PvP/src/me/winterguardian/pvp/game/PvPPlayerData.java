@@ -529,7 +529,8 @@ public class PvPPlayerData extends PlayerData
 				getFlagsCaptured(),
 				getZonesCaptured(),
 				getBestKillstreak(),
-				this.bonus);
+				this.bonus,
+				game.getGame().getEconomyConfig());
 	}
 	
 	public void addBonus(Bonus bonus)

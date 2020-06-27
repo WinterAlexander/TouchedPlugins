@@ -236,14 +236,14 @@ public class PvPVoteState implements State, Runnable, LobbyState
 		if(game.getPlayers().size() < 4) //moins que 4
 		{
 			games.put(new FreeForAll(game), 2);
-			games.put(new Switch(game), 1);
+			// games.put(new Switch(game), 1);
 			games.put(new OneInTheChamber(game), 2);
 			games.put(new KingOfTheHill(game), 2);
 		}
 		else if(game.getPlayers().size() < 6) //à partir de 4
 		{
 			games.put(new FreeForAll(game), 2);
-			games.put(new Switch(game), 1);
+			// games.put(new Switch(game), 1);
 			games.put(new OneInTheChamber(game), 2);
 			games.put(new KingOfTheHill(game), 2);
 			games.put(new TeamDeathMatch(game, 2), 2);
@@ -252,7 +252,7 @@ public class PvPVoteState implements State, Runnable, LobbyState
 		else if(game.getPlayers().size() < 10) //à partir de 6
 		{
 			games.put(new FreeForAll(game), 2);
-			games.put(new Switch(game), 1);
+			// games.put(new Switch(game), 1);
 			games.put(new OneInTheChamber(game), 2);
 			games.put(new KingOfTheHill(game), 2);
 			games.put(new TeamDeathMatch(game, 2), 3);
@@ -263,7 +263,7 @@ public class PvPVoteState implements State, Runnable, LobbyState
 		else if(game.getPlayers().size() < 15) //à partir de 10
 		{
 			games.put(new FreeForAll(game), 1);
-			games.put(new Switch(game), 1);
+			// games.put(new Switch(game), 1);
 			games.put(new OneInTheChamber(game), 1);
 			games.put(new KingOfTheHill(game), 2);
 			games.put(new TeamDeathMatch(game, 2), 3);

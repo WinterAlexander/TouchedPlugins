@@ -5,6 +5,7 @@ import me.winterguardian.core.playerstats.MappedData;
 import me.winterguardian.core.playerstats.PlayerStats;
 import me.winterguardian.core.util.MathUtil;
 import me.winterguardian.core.util.TextUtil;
+import me.winterguardian.pvp.PvPEconomyConfig;
 import me.winterguardian.pvp.PvPMessage;
 import me.winterguardian.pvp.PvPPlugin;
 import me.winterguardian.pvp.game.GameOutcome;
@@ -141,7 +142,7 @@ public class PvPStats extends PlayerStats
 		getContent().set("pvp.score", score);
 	}
 	
-	public void gameSummary(GameOutcome outcome, int kills, int deaths, int assists, long playTime, int capturedFlags, int capturedZones, int killingSpree, List<Bonus> bonus)
+	public void gameSummary(GameOutcome outcome, int kills, int deaths, int assists, long playTime, int capturedFlags, int capturedZones, int killingSpree, List<Bonus> bonus, PvPEconomyConfig economyConfig)
 	{
 		if(playTime < 500000 && kills == 0 && deaths == 0 && assists == 0 && capturedFlags == 0 && capturedZones == 0 && outcome.isBad())
 			return;
@@ -156,52 +157,60 @@ public class PvPStats extends PlayerStats
 			
 		if(outcome == GameOutcome.FIRST)
 		{
-			PvPMessage.STATS_SUMMARY_FIRSTPLACE.sayIfOnline(getPlayer(), "#", "500");
-			points += 500;
+			int amount = economyConfig.getSoloVictory();
+			PvPMessage.STATS_SUMMARY_FIRSTPLACE.sayIfOnline(getPlayer(), "#", amount + "");
+			points += amount;
 			setVictories(getVictories() + 1);
 		}
 		else if(outcome == GameOutcome.SECOND)
 		{
-			PvPMessage.STATS_SUMMARY_SECONDPLACE.sayIfOnline(getPlayer(), "#", "250");
-			points += 250;
+			int amount = economyConfig.getSoloSecond();
+			PvPMessage.STATS_SUMMARY_SECONDPLACE.sayIfOnline(getPlayer(), "#", amount + "");
+			points += amount;
 		}
 		else if(outcome == GameOutcome.THIRD)
 		{
-			PvPMessage.STATS_SUMMARY_THIRDPLACE.sayIfOnline(getPlayer(), "#", "50");
-			points += 50;
+			int amount = economyConfig.getSoloThird();
+			PvPMessage.STATS_SUMMARY_THIRDPLACE.sayIfOnline(getPlayer(), "#", amount + "");
+			points += amount;
 		}
 		else if(outcome == GameOutcome.TEAM_WIN)
 		{
-			PvPMessage.STATS_SUMMARY_TEAMVICTORY.sayIfOnline(player, "#", "400");
-			points += 400;
+			int amount = economyConfig.getTeamVictory();
+			PvPMessage.STATS_SUMMARY_TEAMVICTORY.sayIfOnline(player, "#", amount + "");
+			points += amount;
 			setVictories(getVictories() + 1);
 		}
 		else if(outcome == GameOutcome.TEAM_LOSE)
 		{
-			PvPMessage.STATS_SUMMARY_TEAMLOSE.sayIfOnline(player, "#", "-100");
-			points -= 100;
+			int amount = economyConfig.getTeamDefeat();
+			PvPMessage.STATS_SUMMARY_TEAMLOSE.sayIfOnline(player, "#", amount + "");
+			points += amount;
 		}
 		else if(outcome == GameOutcome.WON_AS_HUMAN)
 		{
-			PvPMessage.STATS_SUMMARY_INFWONASHUMAN.sayIfOnline(player, "#", "400");
-			points += 400;
+			int amount = economyConfig.getHumanVictory();
+			PvPMessage.STATS_SUMMARY_INFWONASHUMAN.sayIfOnline(player, "#", amount + "");
+			points += amount;
 			setVictories(getVictories() + 1);
 		}
 		else if(outcome == GameOutcome.WON_AS_INFECTED)
 		{
-			PvPMessage.STATS_SUMMARY_INFWONASINFECTED.sayIfOnline(player, "#", "500");
-			points += 500;
+			int amount = economyConfig.getInfectedVictory();
+			PvPMessage.STATS_SUMMARY_INFWONASINFECTED.sayIfOnline(player, "#", amount + "");
+			points += amount;
 			setVictories(getVictories() + 1);
 		}
 
 		setGamesPlayed(getGamesPlayed() + 1);
 
-		PvPMessage.STATS_SUMMARY_PARTICIPATION.sayIfOnline(player, "#", "50");
-		points += 50;
+		int participation = economyConfig.getParticipation();
+		PvPMessage.STATS_SUMMARY_PARTICIPATION.sayIfOnline(player, "#", participation + "");
+		points += participation;
 		
 		if(kills > 0)
 		{
-			int killPoints = kills * 20;
+			int killPoints = kills * economyConfig.getKill();
 			PvPMessage.STATS_SUMMARY_KILLS.sayIfOnline(player, "<kills>", "" + kills, "#", "" + killPoints);
 			points += killPoints;
 			setKills(getKills() + kills);
@@ -209,7 +218,7 @@ public class PvPStats extends PlayerStats
 		
 		if(deaths > 0)
 		{
-			int deathPoints = deaths * -10;
+			int deathPoints = deaths * economyConfig.getDeath();
 			PvPMessage.STATS_SUMMARY_DEATHS.sayIfOnline(player, "<deaths>", "" + deaths, "#", "" + deathPoints);
 			points += deathPoints;
 			setDeaths(getDeaths() + deaths);
@@ -217,7 +226,7 @@ public class PvPStats extends PlayerStats
 		
 		if(assists > 0)
 		{
-			int assistsPoints = assists * 10;
+			int assistsPoints = assists * economyConfig.getAssist();
 			PvPMessage.STATS_SUMMARY_ASSISTS.sayIfOnline(player, "<assists>", "" + assists, "#", "" + assistsPoints);
 			points += assistsPoints;
 			setAssists(getAssists() + assists);
@@ -225,7 +234,7 @@ public class PvPStats extends PlayerStats
 		
 		if(capturedFlags > 0)
 		{
-			int flagPoints = capturedFlags * 25;
+			int flagPoints = capturedFlags * economyConfig.getFlagCaptured();
 			PvPMessage.STATS_SUMMARY_CAPTUREDFLAGS.sayIfOnline(player, "<flags>", "" + capturedFlags, "#", "" + flagPoints);
 			points += flagPoints;
 			setCapturedFlags(getCapturedFlags() + capturedFlags);
@@ -233,7 +242,7 @@ public class PvPStats extends PlayerStats
 		
 		if(capturedZones > 0)
 		{
-			int zonePoints = capturedZones * 15;
+			int zonePoints = capturedZones * economyConfig.getZoneCaptured();
 			PvPMessage.STATS_SUMMARY_CAPTUREDZONES.sayIfOnline(player, "<zones>", "" + capturedZones, "#", "" + zonePoints);
 			points += zonePoints;
 			setCapturedZones(getCapturedZones() + capturedZones);

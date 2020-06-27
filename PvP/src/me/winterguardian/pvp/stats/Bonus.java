@@ -31,7 +31,7 @@ public enum Bonus
 	TEAM_POTION_HEAL("Médecin", 20), TEAM_POTION_OTHER("Travail d'équipe", 20),
 	;
 	
-	private String message;
+	private final String message;
 	private int value;
 	
 	private Bonus(String message)
@@ -48,6 +48,11 @@ public enum Bonus
 	public int getValue()
 	{
 		return this.value;
+	}
+
+	public void setValue(int value)
+	{
+		this.value = value;
 	}
 	
 	public void announce(Player player)

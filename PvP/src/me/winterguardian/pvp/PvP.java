@@ -30,6 +30,7 @@ import java.util.List;
 public class PvP extends StateGame implements GUIItemGame
 {
 	private final PvPPurchaseHistory purchaseHistory = new PvPPurchaseHistory();
+	private final PvPEconomyConfig economyConfig = new PvPEconomyConfig(new File(getDataFolder(), "economy.yml"));
 
 	public PvP(Plugin plugin)
 	{
@@ -44,6 +45,8 @@ public class PvP extends StateGame implements GUIItemGame
 		Bukkit.getPluginManager().registerEvents(new SignListener(), getPlugin());
 		Bukkit.getPluginManager().registerEvents(new ChatListener(this), getPlugin());
 		Bukkit.getPluginManager().registerEvents(purchaseHistory, getPlugin());
+
+		economyConfig.load();
 
 		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shop]", "§f§lTouched", "§e§lAchat Kit"));
 		Core.getShop().registerPurchaseType(new PvPKitPurchase("[shopvip]", "§f§lTouched", "§e§lAchat Kit §6§lVip")
@@ -260,5 +263,10 @@ public class PvP extends StateGame implements GUIItemGame
 	public PvPPurchaseHistory getPurchaseHistory()
 	{
 		return purchaseHistory;
+	}
+
+	public PvPEconomyConfig getEconomyConfig()
+	{
+		return economyConfig;
 	}
 }
