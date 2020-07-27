@@ -86,7 +86,10 @@ public class PvPStats extends PlayerStats
 	{
 		return getContent().getLong("pvp.timeplayed");
 	}
-	
+
+	/**
+	 * @param timePlayed time played in milliseconds
+	 */
 	public void setTimePlayed(long timePlayed)
 	{
 		getContent().set("pvp.timeplayed", timePlayed);

@@ -50,6 +50,6 @@ public class StatsSubCommand extends PlayerStatsAsyncSubCommand
 	    PvPMessage.COMMAND_STATS_SCOREPOINTSTIME.say(sender, 
 	    		"<score>", TextUtil.toString(stats.getScore()), 
 	    		"<points>", TextUtil.toString(stats.getPoints()), 
-	    		"<time>", TextUtil.toString(stats.getTimePlayed()));
+	    		"<time>", TextUtil.toString(Math.round(stats.getTimePlayed() / 1000.0 / 60.0 / 60.0 * 10.0) / 10.0));
 	}
 }

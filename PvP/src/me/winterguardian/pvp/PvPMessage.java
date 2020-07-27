@@ -39,7 +39,7 @@ public class PvPMessage extends HardcodedMessage
 	COMMAND_STATS_VICTORIESGAMES = new PvPMessage("&4Victoires: &f<victories> | &2Parties joués: &f<gamesplayed>", false),
 	COMMAND_STATS_FLAGSZONES = new PvPMessage("&9Drapeaux capturés: &f<flags> | &3Zones capturés: &f<zones>", false),
 	COMMAND_STATS_BESTSTREAKBESTGAME = new PvPMessage("&7Top série de victimes: &f<killstreak> | &fTop meutres en une partie: &f<kills>", false),
-	COMMAND_STATS_SCOREPOINTSTIME = new PvPMessage("&eScore: &f<score> | &bTemps de jeu: &f<time>", false),
+	COMMAND_STATS_SCOREPOINTSTIME = new PvPMessage("&eScore: &f<score> | &bTemps de jeu: &f<time> heures", false),
 
 	COMMAND_ARENA_GETEFFECTS = new PvPMessage("§eVous avez obtenus les effets de la map.", false),
 	COMMAND_ARENA_SETEFFECTS = new PvPMessage("§eEffets de la map mis à jour.", false),
