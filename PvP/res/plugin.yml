@@ -1,6 +1,6 @@
 name: TouchedPvP
 main: me.winterguardian.pvp.PvPPlugin
-version: 2.6.2
+version: 2.6.3
 description: Jeu de combats en arènes avec modes de jeux multiples.
 author: Alexander Winter
 depend: [Core]

@@ -74,13 +74,24 @@ public class ArenaSubCommand extends SubCommand
 			return true;
 		}
 
+		if(args[0].equalsIgnoreCase("rename"))
+		{
+			if(args.length < 3)
+				return false;
+
+			arena.delete();
+			arena.setName(args[2]);
+			arena.save();
+			PvPMessage.COMMAND_ARENA_RENAME.say(sender);
+		}
+
 		if(!(sender instanceof Player))
 		{
 			ErrorMessage.COMMAND_INVALID_SENDER.say(sender);
 			return true;
 		}
 
-		if(args[0].equalsIgnoreCase("seteffects") && sender instanceof Player)
+		if(args[0].equalsIgnoreCase("seteffects"))
 		{
 			arena.getEffects().clear();
 			Player player = (Player)sender;
@@ -90,7 +101,7 @@ public class ArenaSubCommand extends SubCommand
 			return true;
 		}
 
-		if(args[0].equalsIgnoreCase("geteffects") && sender instanceof Player)
+		if(args[0].equalsIgnoreCase("geteffects"))
 		{
 			Player player = (Player)sender;
 			player.addPotionEffects(arena.getEffects());

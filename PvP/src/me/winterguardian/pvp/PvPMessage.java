@@ -28,8 +28,9 @@ public class PvPMessage extends HardcodedMessage
 	
 	COMMAND_ARENA_INVALIDARENA = new PvPMessage("§cCette arène n'existe pas.", true),
 	COMMAND_ARENA_ADD = new PvPMessage("§a<type> de l'équipe <color> ajouté.", true),
-	COMMAND_ARENA_RESET = new PvPMessage("§aLes <type>(s) de couleur <color> a été réinitialisés.", true),
-	COMMAND_ARENA_CREATE = new PvPMessage("§aL'arène a été crée.", true),
+	COMMAND_ARENA_RESET = new PvPMessage("§aLes <type> de couleur <color> ont été réinitialisés.", true),
+	COMMAND_ARENA_CREATE = new PvPMessage("§aL'arène a été créée.", true),
+	COMMAND_ARENA_RENAME = new PvPMessage("§aL'arène a été renommée.", true),
 	COMMAND_ARENA_LIST = new PvPMessage("§eListe des arènes:", true),
 	COMMAND_ARENA_TEST = new PvPMessage("§aLes <type>(s) de couleur <color> ont été marqués avec des moutons.", true),
 	
